@@ -9,9 +9,11 @@
 <input type="button" value="Count" onclick="count();">
 
 <script>
-    month = parseInt(document.getElementById("month").value);
+   // month = parseInt(document.getElementById("month").value);
 
     function count() {
+        let month = parseInt(document.getElementById("month").value);
+
         switch (month) {
             case 1:
             case 3:
@@ -20,14 +22,14 @@
             case 8:
             case 10:
             case 12:
-                alert("Thang " + month + "co 31 ngay.");
+                alert("Thang " + month + " co 31 ngay.");
                 break;
 
             case 4:
             case 6:
             case 9:
             case 11:
-                alert("Thang " + month + "co 30 ngay.");
+                alert("Thang " + month + " co 30 ngay.");
                 break;
 
             case 2:

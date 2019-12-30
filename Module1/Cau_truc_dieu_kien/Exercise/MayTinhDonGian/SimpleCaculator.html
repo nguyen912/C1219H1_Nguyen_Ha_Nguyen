@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+<fieldset>
+    <input id="result">
+    <br><br>
+    <button value="1" onclick="inputValue(this.value)" onclick="receiveValue()">1</button>
+    <button value="2" onclick="inputValue(this.value)">2</button>
+    <button value="3" onclick="inputValue(this.value)">3</button>
+    <button value="+" onclick="inputValue(this.value)">+</button>
+    <br>
+    <button value="4" onclick="inputValue(this.value)">4</button>
+    <button value="5" onclick="inputValue(this.value)">5</button>
+    <button value="6" onclick="inputValue(this.value)">6</button>
+    <button value="-" onclick="inputValue(this.value)">-</button>
+    <br>
+    <button value="7" onclick="inputValue(this.value)">7</button>
+    <button value="8" onclick="inputValue(this.value)">8</button>
+    <button value="9" onclick="inputValue(this.value)">9</button>
+    <button value="x" onclick="inputValue(this.value)">x</button>
+    <br>
+    <button value="C" onclick="inputValue(this.value)">C</button>
+    <button value="0" onclick="inputValue(this.value)">0</button>
+    <button value="=" onclick="inputValue(this.value)">=</button>
+    <button value="/" onclick="inputValue(this.value)">/</button>
+</fieldset>
+
+<script>
+    let result = document.getElementById("result");
+
+    function inputValue(val) {
+        //let result = document.getElementById("result");
+        result.value = val;
+    }
+
+    function receiveValue() {
+        //let result = document.getElementById("result");
+        //let total;
+        switch (result.value) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+                result.value+=result.value;
+        }
+    }
+</script>
+</body>
+</html>
