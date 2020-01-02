@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        let text = " ";
+        let result = document.getElementById("result");
+        let n = prompt("Enter n: ");
+        let i;
+        for (i = 0;i<n;i++) {
+            text += "The number is " + n + "\n";
+        }
+        result.innerText = text;
+    </script>
+</body>
+</html>

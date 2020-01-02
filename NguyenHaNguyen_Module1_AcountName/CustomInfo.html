@@ -5,98 +5,126 @@
     <title>Customer Information</title>
 </head>
 <body>
-    <fieldset id="field">
-        <legend>Customer Information</legend>
-        Customer Name:
-        <input id="name" type="text" value="Nguyen Ha Nguyen">
-        <br><br>
-        ID Card:
-        <input type="text" id="idCard" value="123456789">
-        <br><br>
-        Birthday:
-        <input type="text" id="birth" value="09/12/1998">
-        <br><br>
-        Email:
-        <input type="email" id="email" value="nguyen@gmail.com">
-        <br><br>
-        Address:
-        <input type="text" id="add" value="123 PCT">
-        <br><br>
-        Customer Type:
-        <select id="cusType">
-            <option value="Diamond">Diamond</option>
-            <option value="Platium">Platium</option>
-            <option value="Gold" selected>Gold</option>
-            <option value="Sliver">Sliver</option>
-            <option value="Member">Member</option>
-        </select>
-        <br><br>
-        Discount:
-        <input type="number" id="dis" value="10">
-        <br><br>
-        The number of guests:
-        <input type="number" id="nog" value="2">
-        <br><br>
-        Number of days rented:
-        <input type="number" id="nor" value="3">
-        <br><br>
-        Service Type:
-        <select id="service">
-            <option value="Villa">Villa</option>
-            <option value="House">House</option>
-            <option value="Room" selected>Room</option>
-        </select>
-        <br><br>
-        Room Type:
-        <select id="room">
-            <option value="V.I.P" selected>V.I.P</option>
-            <option value="Business">Business</option>
-            <option value="Normal">Normal</option>
-        </select>
-    </fieldset>
-    <br>
-    <input type="button" value="Done" onclick="inputInfo();">
-    <br><br>
+<script>
+    let name = "Nguyen Ha Nguyen";
+    let idCard = "123456789";
+    let birth = "09/12/1998";
+    let email = "nguyen@gmail.com";
+    let add = "123 PCT";
+    let customer = "Gold";
+    let discount = "10";
+    let guests = "2";
+    let rentDay = "2";
+    let service = "House";
+    let room = "Normal";
 
-    <fieldset>
-        <p id="outName"></p>
-        <hr>
-        <p id="outID"></p>
-        <hr>
-        <p id="outBirth"></p>
-        <hr>
-        <p id="outEmail"></p>
-        <hr>
-        <p id="outAdd"></p>
-        <hr>
-        <p id="outCus"></p>
-        <hr>
-        <p id="outDis"></p>
-        <hr>
-        <p id="outNog"></p>
-        <hr>
-        <p id="outNor"></p>
-        <hr>
-        <p id="outService"></p>
-        <hr>
-        <p id="outRoom"></p>
-        <hr>
-        <p id="outTotal"></p>
-    </fieldset>
+    let option = prompt(
+        "1. Show customer information.\n" +
+        "2. Edit customer information.\n" +
+        "3. Show the amount to be paid after discount.");
 
-    <script src="CustomInfo.js"></script>
+    switch (option) {
+        case "1":
+            alert(
+                "CUSTOMER INFORMATION\n" +
+                "Name: " + name + "\n" +
+                "ID card: " + idCard + "\n" +
+                "Birthday: " + birth + "\n" +
+                "Email: " + email + "\n" +
+                "Address: " + add + "\n" +
+                "Customer type: " + customer + "\n" +
+                "Discount: " + discount + "\n" +
+                "The number of guests: " + guests + "\n" +
+                "The number of days rented: " + rentDay + "\n" +
+                "Service type: " + service + "\n" +
+                "Room type: " + room
+            );
+            break;
+
+        case "2":
+            let chooseEdit = prompt(
+                "Choose Customer Information You Want To Edit\n" +
+                "1. Name: " + name + "\n" +
+                "2. ID card: " + idCard + "\n" +
+                "3. Birthday: " + birth + "\n" +
+                "4. Email: " + email + "\n" +
+                "5. Address: " + add + "\n" +
+                "6. Customer type: " + customer + "\n" +
+                "7. Discount: " + discount + "\n" +
+                "8. The number of guests: " + guests + "\n" +
+                "9. The number of days rented: " + rentDay + "\n" +
+                "10. Service type: " + service + "\n" +
+                "11. Room type: " + room)
+            switch (chooseEdit) {
+                case "1":
+                    name = prompt("Enter name you want to edit: ");
+                    break;
+                case "2":
+                    idCard = prompt("Enter ID you want to edit: ");
+                    break;
+                case "3":
+                    birth = prompt("Enter birthday you want to edit: ");
+                    break;
+                case "4":
+                    email = prompt("Enter email you want to edit: ");
+                    break;
+                case "5":
+                    add = prompt("Enter address you want to edit: ");
+                    break;
+                case "6":
+                    customer = prompt("Enter customer type you want to edit: ");
+                    break;
+                case "7":
+                    discount = prompt("Enter discount you want to edit: ");
+                    break;
+                case "8":
+                    guests = prompt("Enter the number of guests you want to edit: ");
+                    break;
+                case "9":
+                    rentDay = prompt("Enter the number of days rented you want to edit: ");
+                    break;
+                case "10":
+                    service = prompt("Enter name you want to edit: ");
+                    break;
+                case "11":
+                    room = prompt("Enter name you want to edit: ");
+                default:
+                    alert("Failed");
+
+            }
+            alert(
+                "CUSTOMER INFORMATION AFTER EDITING\n" +
+                "Name: " + name + "\n" +
+                "ID card: " + idCard + "\n" +
+                "Birthday: " + birth + "\n" +
+                "Email: " + email + "\n" +
+                "Address: " + add + "\n" +
+                "Customer type: " + customer + "\n" +
+                "Discount: " + discount + "\n" +
+                "The number of guests: " + guests + "\n" +
+                "The number of days rented: " + rentDay + "\n" +
+                "Service type: " + service + "\n" +
+                "Room type: " + room
+            );
+            break;
+
+        case "3":
+            pay();
+    }
+    
+    function pay() {
+        let serviceVal;
+        switch (service) {
+            case "Villa": serviceVal = 500;
+            break;
+            case "House": serviceVal = 300;
+            break;
+            case "Room": serviceVal = 100;
+        }
+        let total = serviceVal*parseInt(rentDay)*(1-parseInt(discount)/100);
+        //alert("service: "+serviceVal + " rent: "+rentDay+" discount: "+discount);
+        alert("Total: " + total);
+    }
+</script>
 </body>
 </html>
-<!--Task 1:-->
-<!--Cho phép người dùng nhập vào tên, số CMND, ngày tháng năm sinh, email, địa chỉ,-->
-<!--loại Customer (Diamond, Platinum, Gold, Silver, Member), giảm giá, số lượng đi kèm,-->
-<!--số ngày thuê, loại dịch vụ (Villa, House, Room), loại phòng thuê (Vip, Business,  Normal).-->
-<!--(cố gắng đặt tên biến bằng tiếng anh và có ý nghĩa ví dụ: số ngày thuê = rentDays)-->
-<!--Bảng giá:-->
-<!-- -	Villa 500$/ 1 ngày-->
-<!-- -	House 300$/1 ngày-->
-<!-- -	Room: 100$/1 ngày-->
-<!--Task 2:-->
-<!--Hiển thị toàn bộ thông tin vừa nhập kèm theo giá sau khi đã được giảm giá-->
-<!--( Số tiền phải trả  = giá loại dịch vụ X số ngày X ( 1 – giảm giá/100 ) )-->
-<!--(gán giá trị trực tiếp cho giá loại dịch vụ từ bảng giá bên trên)-->
