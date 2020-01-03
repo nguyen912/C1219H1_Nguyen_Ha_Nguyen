@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let amount = parseInt(prompt("Enter number of primes."));
+        let countNum = 0;
+        let num = 2;
+        while (countNum < amount) {
+            let divideNum = 1;
+            let countDivide = 0;
+            while (divideNum <= num) {
+                if (num % divideNum == 0) {
+                    countDivide++;
+                }
+                divideNum++;
+            }
+            if (countDivide == 2) {
+                alert(num);
+                countNum++;
+            }
+            num++;
+        }
+    </script>
 </body>
 </html>

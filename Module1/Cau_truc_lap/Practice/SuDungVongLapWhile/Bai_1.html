@@ -7,11 +7,15 @@
 <body>
     <p id="result"></p>
     <script>
-        let n = prompt("Enter n: ");
-        while (n != 0) {
+        let total = 0;
+        let n;
+        do {
             n = prompt("Enter n: ");
             alert(n);
+            total += parseInt(n);
         }
+        while (n != -1)
+        alert(total);
 
     </script>
 </body>
