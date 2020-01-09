@@ -60,14 +60,14 @@ switch (option) {
                         continue;
                     }
                     idCard = Number.parseFloat(idCard);
-                    if (!Number.isInteger(idCard) {
+                    if (!Number.isInteger(idCard)) {
                         continue;
                     }
                     if (idCard >= 100000000 && idCard <= 999999999) {
                         checkValidate = true;
                     }
+                while (!checkValidate);
                 }
-
                 break;
             case "3":
                 birth = prompt("Enter birthday you want to edit: ");
@@ -87,7 +87,20 @@ switch (option) {
                 customer = prompt("Enter customer type you want to edit: ");
                 break;
             case "7":
-                discount = prompt("Enter discount you want to edit: ");
+                do {
+                    checkValidate = false;
+                    discount = prompt("Enter discount you want to edit: ");
+                    if (!isNaN(discount)) {
+                        discount = Number.parseFloat(discount);
+                        if (discount >= 0) {
+                            checkValidate = true;
+                        }
+                    }
+                    if (!checkValidate) {
+                        alert("Vui long thu lai");
+                    }
+                }
+                while (!checkValidate);
                 break;
             case "8":
                 guests = prompt("Enter the number of guests you want to edit: ");
