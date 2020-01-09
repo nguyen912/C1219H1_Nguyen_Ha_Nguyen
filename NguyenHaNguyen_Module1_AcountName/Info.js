@@ -126,11 +126,37 @@ switch (option) {
                 }
                 while (!checkValidate);
                 break;
-            case "8":
+            case "8": do {
+                checkValidate = false;
                 guests = prompt("Enter the number of guests you want to edit: ");
+                if (!isNaN(guests)) {
+                    guests = Number.parseFloat(guests);
+                    if (guests >= 0 && Number.isInteger(guests)) {
+                        checkValidate = true;
+                    }
+                }
+                if (!checkValidate) {
+                    alert("Vui long nhap lai");
+                }
+            }
+            while (!checkValidate);
+
                 break;
             case "9":
-                rentDay = prompt("Enter the number of days rented you want to edit: ");
+                do {
+                    checkValidate = false;
+                    rentDay = prompt("Enter the number of days rented you want to edit: ");
+                    if (!isNaN(rentDay)) {
+                        rentDay = Number.parseFloat(rentDay);
+                        if (rentDay >= 0 && Number.isInteger(rentDay)) {
+                            checkValidate = true;
+                        }
+                    }
+                    if (!checkValidate) {
+                        alert("Vui long nhap lai");
+                    }
+                }
+                while (!checkValidate);
                 break;
             case "10":
                 service = prompt("Enter name you want to edit: ");
