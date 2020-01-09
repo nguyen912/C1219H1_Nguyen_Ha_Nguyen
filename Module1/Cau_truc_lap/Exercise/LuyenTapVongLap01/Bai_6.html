@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let num = 0;
+        let sum = 0;
+        for (let count = 0; count < 29;) {
+            if (num % 7 == 0) {
+                sum += num;
+                count++;
+            }
+            num++;
+        }
+        alert("Tong 30 so dau tien chia het cho 7 trong day so tu nhien la: " + sum);
+    </script>
 </body>
 </html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let f1 = 0;
+        let f2 = 1;
+        let f3;
+        do {
+            f3 = f1 + f2;
+            if (f3 % 5 == 0) {
+                alert("So dau tien trong day fibonaci chia het cho 5 la: " + f3);
+            }
+            f1 = f2;
+            f2 = f3;
+        }
+        while (f3 % 5 != 0);
+    </script>
 </body>
 </html>

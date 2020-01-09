@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <button type="button" onclick="guess();">Play</button>
+    <script>
+        function guess() {
+            let count = 0;
+            let amount = parseInt(prompt("Nhap vao khoang so ma ban muon doan."));
+            let number1 = Math.floor(Math.random() * (amount + 1));
+            let number2 = parseInt(prompt("Ban doan so may?"));
+            while (count < 3) {
+                if (number2 == number1) {
+                    alert("Chinh xac!");
+                }
+                else {
+                    if (number2 > number1) {
+                        alert("So ban doan lon hon so ngau nhien.");
+                        number2 = parseInt(prompt("Moi ban nhap lai dap an khac."));
+                    }
+                    else {
+                        alert("So ban doan nho hon so ngau nhien.");
+                        number2 = parseInt(prompt("Moi ban nhap lai dap an khac."));
+                    }
+                }
+                count++;
+            }
+            if (count == 3) {
+                alert("Ban thua roi haha!");
+            }
+        }
+
+
+    </script>
 </body>
 </html>

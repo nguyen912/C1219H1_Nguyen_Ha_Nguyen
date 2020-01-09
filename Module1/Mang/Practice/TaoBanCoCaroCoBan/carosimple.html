@@ -5,8 +5,44 @@
     <title>Title</title>
 </head>
 <body>
-    <script>
-        
-    </script>
+    <h3>Caro Game Simple</h3>
+    <div id="carogame"></div>
+    <br>
+    <button type="button" onclick="changeValue();">Change Value</button>
+<script>
+    let b = document.getElementById("carogame");
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = new Array(0, 0, 0, 0, 0);
+    }
+
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "\t";
+        }
+        data += "\n";
+    }
+
+    b.innerText = data;
+
+    function changeValue() {
+        data = " ";
+        let number = parseInt(prompt("Nhap so muon doi:"));
+        let rowIndex = parseInt(prompt("Moi nhap vi tri hang:"));
+        let colIndex = parseInt(prompt("Moi nhap vi tri cot:"));
+
+        board[rowIndex][colIndex] = number;
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "\t";
+            }
+            data += "\n";
+        }
+
+        b.innerText = data;
+    }
+</script>
 </body>
 </html>

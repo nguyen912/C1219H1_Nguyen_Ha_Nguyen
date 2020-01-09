@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <input id="in">
+    <button type="button" onclick="addNum();">Add</button>
+    <button type="button" onclick="showArray();">Display</button>
+    <br>
+    <div id="out"></div>
+    <script>
+        let i = 0;
+        let arr = new Array();
+        function addNum() {
+            arr[i] = document.getElementById("in").value;
+            i++;
+        }
+        function showArray() {
+            let e = " ";
+            for (let i in arr) {
+                e += "Element " + i + " = " + arr[i] + "\n";
+            }
+            document.getElementById("out").innerText = e;
+        }
+    </script>
 </body>
 </html>

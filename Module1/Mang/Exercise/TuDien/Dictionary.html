@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>E-V Dictionary</title>
 </head>
 <body>
-$END$
+    English:
+    <input id="en">
+    Vietnamese:
+    <input id="vi">
+    <button onclick="trans()">Translate</button>
+
 </body>
+<script>
+    let eng = ["fan","laptop","mobile","chair","table"];
+    let vie = ["quạt","máy tính xách tay","điện thoại di động","ghế","bàn"];
+    function trans() {
+        let count = 0;
+        let en = document.getElementById("en").value;
+        let vi = document.getElementById("vi");
+        for (let i = 0; i < eng.length; i++) {
+            if (en === eng[i]) {
+                vi.value = vie[i];
+                break;
+            }
+            else {
+               count++;
+            }
+        }
+        if (count == eng.length) {
+            document.write("Khong tim thay.");
+        }
+    }
+</script>
 </html>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number = prompt("Enter the number:");
+    let str = number.toString();
+    let buffer = [str[0]];
+    for (let i = 1; i < str.length; i++) {
+        if (str[i-1] % 2 == 0 && str[i] % 2 == 0) {
+            buffer.push('-',str[i]);
+        }
+        else {
+            buffer.push(str[i]);
+        }
+    }
+    console.log(buffer.join(' '));
+</script>
 </body>
 </html>

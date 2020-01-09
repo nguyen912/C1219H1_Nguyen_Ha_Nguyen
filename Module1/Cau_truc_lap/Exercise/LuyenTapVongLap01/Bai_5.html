@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let f1 = 0;
+        let f2 = 1;
+        let f3;
+        let sum = 0;
+        for (let i =0; i < 18; i++) {
+            f3 = f1 + f2;
+            sum += f3;
+            f1 = f2;
+            f2 = f3;
+        }
+        sum += 1;
+        alert("Tong cua 20 so dau tien trong day fibonaci la: " + sum);
+    </script>
 </body>
 </html>

@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title></title>
 </head>
 <body>
-$END$
+    <script>
+        let arr = [1,4,6,43,2,0];
+        for (let i in arr) {
+            document.write(arr[i] + "\t");
+        }
+        let first = 0;
+        let last = arr.length - 1;
+        while (first < last) {
+            let num = arr[first];
+            arr[first] = arr[last];
+            arr[last] = num;
+            first++;
+            last--;
+        }
+        document.write("<br>");
+        for (let i in arr) {
+            document.write(arr[i] + "\t");
+        }
+    </script>
 </body>
 </html>

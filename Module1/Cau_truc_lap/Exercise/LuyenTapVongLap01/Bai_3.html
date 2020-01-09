@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let f1 = 0;
+        let f2 = 1;
+        let n;
+        document.write(f1 + "\t");
+        document.write(f2 + "\t");
+        for (let i = 0; i < 18; i++) {
+            n = f1 + f2;
+            document.write(n + "\t");
+            f1 = f2;
+            f2 = n;
+        }
+    </script>
 </body>
 </html>

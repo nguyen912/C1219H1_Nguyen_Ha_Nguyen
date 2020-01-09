@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let star = "*";
+        let n = prompt("Moi nhap canh cua tam giac: ");
+        let choose = parseInt(prompt("Moi chon 1 trong 4 hinh: "));
+        switch (choose) {
+            case 1:
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j <= i; j++) {
+                        document.write(star);
+                    }
+                    document.write("<br>");
+                }
+                break;
+            case 2:
+                for (let i = n; i >= 0; i--) {
+                    for (let j = 0; j <= i; j++) {
+                        document.write(star);
+                    }
+                    document.write("<br>");
+                }
+                break;
+            case 3:
+                for (let i = 0; i < n; i++) {
+                    for (let k = n - i; k > 1; k--) {
+                        document.write("&nbsp;&nbsp;");
+                    }
+                    for (let j = 0; j <= i; j++) {
+                        document.write(star);
+                    }
+                    document.write("<br>");
+                }
+                break;
+            case 4:
+                for (let i = n; i >= 0; i--) {
+                    for (let k = 0; k <= n - i; k++) {
+                        document.write("&nbsp;&nbsp;");
+                    }
+                    for (let j = 0; j <= i; j++) {
+                        document.write(star);
+                    }
+                    document.write("<br>");
+                }
+                break;
+        }
+
+    </script>
 </body>
 </html>
