@@ -70,7 +70,31 @@ switch (option) {
                 }
                 break;
             case "3":
-                birth = prompt("Enter birthday you want to edit: ");
+                do {
+                    checkValidate = false;
+                    birth = prompt("Enter birthday you want to edit: ");
+                    if (birth.charAt(2)!=='/' || birth.charAt(5)!=='/') {
+                        alert("Vui long thu lai");
+                        continue;
+                    }
+                    let day = birth.substring(0,2);
+                    let month = birth.substring(3,5);
+                    let year = birth.substring(6,10);
+                    if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+                        day = Number.parseFloat(day);
+                        month = Number.parseFloat(month);
+                        year = Number.parseFloat(year);
+                        if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                            if (day > 0 && day < 32 && month <13 && month > 0 && year >= 1960 & year <= 2019) {
+                                checkValidate = true;
+                            }
+                        }
+                    }
+                    if (checkValidate) {
+                        alert("Vui long nhap lai");
+                    }
+                }
+                while (!checkValidate);
                 break;
             case "4":
                 do {
