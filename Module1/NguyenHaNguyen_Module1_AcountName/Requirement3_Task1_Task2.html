@@ -7,10 +7,42 @@
 <body>
 <script>
     let checkValidate = false;
-    let name = prompt("Nhap ten":);
+    let name = prompt("Nhap ten:");
+    name = name.trim();
+    let str = name.split(" ");
+    let result = '';
+    for(let word in str) {
+        if (word.trim().length != 0) {
+            result += word + ' ';
+        }
+    }
+    result = result.trim();
+
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    let endingResult = [];
+
+    for(let x=0; x<result.length; x++)
+    {
+        if(UPPER.indexOf(result[x]) !== -1)
+        {
+            endingResult.push(result[x].toLowerCase());
+        }
+        else if(LOWER.indexOf(result[x]) !== -1)
+        {
+            endingResult.push(result[x].toUpperCase());
+        }
+        else
+        {
+            endingResult.push(result[x]);
+        }
+    }
+
+    name = endingResult;
+
     do {
         checkValidate = false;
-        idCard = parseInt(prompt("Nhap CMND: "));
+        let idCard = parseInt(prompt("Nhap CMND: "));
         if (isNaN(idCard)) {
             alert("Vui long nhap lai.");
             continue;
@@ -24,7 +56,6 @@
             checkValidate = true;
         }
         while (!checkValidate);
-    }
     do {
         checkValidate = false;
         let birth = prompt("Nhap ngay sinh:");
