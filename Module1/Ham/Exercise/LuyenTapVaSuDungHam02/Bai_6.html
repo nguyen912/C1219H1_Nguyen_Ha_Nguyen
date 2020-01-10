@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number = prompt("Enter a number.");
+    alert(checkInteger(number));
+    function checkInteger(n) {
+        if (n >= 0 && n % 1 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+</script>
 </body>
 </html>

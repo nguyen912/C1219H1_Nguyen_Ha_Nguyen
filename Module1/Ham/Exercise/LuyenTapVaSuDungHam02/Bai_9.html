@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [];
+    let len = prompt("Nhap so phan tu cua mang:");
+    inputArray(arr,len);
+    let character = prompt("Nhap mot ky tu bat ky:");
+    if (findCharacter(character,arr) != -1) {
+        alert("So lan xuat hien cua " + character + " la: " + findCharacter(character,arr));
+    }
+    else {
+        alert(character + " khong xuat hien trong mang ky tu nay.");
+    }
+    function inputArray(a,l) {
+        for (let i = 0; i < l; i++) {
+            a.push(prompt("Nhap phan tu thu " + i));
+        }
+    }
+    function findCharacter(c,a) {
+        let count = 0;
+        for (let i = 0; i < a.length; i++) {
+            if (c == a[i]) {
+                count ++;
+            }
+        }
+        if (count != 0) {
+            return count;
+        }
+        else {
+            return -1;
+        }
+    }
+</script>
 </body>
 </html>

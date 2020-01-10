@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let star = window.prompt();
+    alert(findStar(star));
+    function findStar(starName) {
+        let count = 0;
+        let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let constellation = ['Ursa Minor', 'Taurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        for (let i = 0; i < stars.length; i++) {
+            if (starName == stars[i]) {
+                return constellation[i];
+            }
+            else {
+                count++;
+            }
+        }
+        if (count == stars.length) {
+            return "Star not found.";
+        }
+    }
+
+</script>
 </body>
 </html>

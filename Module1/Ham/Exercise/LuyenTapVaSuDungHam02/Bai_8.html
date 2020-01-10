@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let arr = [];
+    let len = prompt("Nhap so phan tu cua mang:");
+    inputArray(arr,len);
+    document.write(reverseArray(arr));
+    function inputArray(a,l) {
+        for (let i = 0; i < l; i++) {
+            a.push(prompt("Nhap phan tu thu " + i));
+        }
+    }
+    function reverseArray(a) {
+        a.reverse();
+        // a.join('-');
+        return a.join('-');
+    }
+</script>
 </body>
 </html>

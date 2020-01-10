@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let c = prompt("Enter a character:");
+    alert(checkNumbers(c));
+    function checkNumbers(n) {
+        let numbers = '0123456789';
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers.indexOf(n) != -1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+    }
+</script>
 </body>
 </html>

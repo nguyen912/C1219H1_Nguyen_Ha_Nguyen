@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let a = parseFloat(prompt("Enter a:"));
+    let b = parseFloat(prompt("Enter b:"));
+    alert(compareNumbers(a,b));
+    function compareNumbers(a,b) {
+        if (a > b) {
+            return a + " > " + b;
+        }
+        if (a < b) {
+            return a + b;
+        }
+    }
+</script>
 </body>
 </html>

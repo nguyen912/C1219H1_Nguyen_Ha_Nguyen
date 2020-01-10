@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let radius = parseFloat(prompt("Enter circle radius:"));
+    alert("Circle perimeter: " + calculateCirclePerimeter(radius));
+    alert("Circle area: " + calculateCircleArea(radius));
+    function calculateCirclePerimeter(r) {
+        let P = 2 * Math.PI * r;
+        return P;
+    }
+    function calculateCircleArea(r) {
+        let A = Math.PI * Math.pow(r,2);
+        return A;
+    }
+</script>
 </body>
 </html>

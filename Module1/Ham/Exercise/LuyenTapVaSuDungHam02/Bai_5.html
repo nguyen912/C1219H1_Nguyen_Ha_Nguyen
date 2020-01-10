@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let number1 = prompt("Enter number 1:");
+    let number2 = prompt("Enter number 2:");
+    let number3 = prompt("Enter number 3:");
+    alert("So nho nhat trong ba so la: " + findMin(number1,number2,number3));
+    function findMin(a,b,c) {
+        if (a < b) {
+            if (a < c) {
+                return a;
+            }
+            else {
+                return c;
+            }
+        }
+        else {
+            if (b < c) {
+                return b;
+            }
+            else {
+                return c;
+            }
+        }
+    }
+</script>
 </body>
 </html>
