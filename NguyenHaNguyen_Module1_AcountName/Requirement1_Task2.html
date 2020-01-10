@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name = "Nguyen Ha Nguyen";
+    let idCard = "123456789";
+    let birth = "09/12/1998";
+    let email = "nguyen@gmail.com";
+    let add = "123 PCT Đà Nẵng";
+    let customer = "Gold";
+    let discount = "10";
+    let guests = "2";
+    let rentDay = "2";
+    let service = "House";
+    let room = "Normal";
+
+    let serviceVal;
+    switch (service) {
+        case "Villa": serviceVal = 500;
+            break;
+        case "House": serviceVal = 300;
+            break;
+        case "Room": serviceVal = 100;
+    }
+    let total = serviceVal*parseInt(rentDay)*(1-parseInt(discount)/100);
+    alert(total);
+</script>
+</body>
+</html>

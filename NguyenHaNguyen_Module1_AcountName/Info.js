@@ -126,7 +126,8 @@ switch (option) {
                 }
                 while (!checkValidate);
                 break;
-            case "8": do {
+            case "8":
+                do {
                 checkValidate = false;
                 guests = prompt("Enter the number of guests you want to edit: ");
                 if (!isNaN(guests)) {
