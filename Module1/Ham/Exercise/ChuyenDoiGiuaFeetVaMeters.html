@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Feet:</label>
+<input id="feet">
+<label>Meters</label>
+<input id="meters">
+<button onclick="convertTemperature();">Convert</button>
+<script>
+    function convertTemperature() {
+        let feet = document.getElementById("feet");
+        let meters = document.getElementById("meters");
+        if (parseInt(feet.value) > 0 ) {
+            meters.value = 0.305 * parseInt(feet.value);
+        }
+        else {
+            feet.value = 3.279 * parseInt(meters.value);
+        }
+    }
+
+</script>
+</body>
+</html>
