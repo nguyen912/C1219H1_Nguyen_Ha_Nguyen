@@ -6,7 +6,132 @@
 </head>
 <body>
 <script>
+    let checkValidate = false;
+    let name = prompt("Nhap ten":);
+    do {
+        checkValidate = false;
+        idCard = parseInt(prompt("Nhap CMND: "));
+        if (isNaN(idCard)) {
+            alert("Vui long nhap lai.");
+            continue;
+        }
+        idCard = Number.parseFloat(idCard);
+        if (!Number.isInteger(idCard)) {
+            alert("Vui long nhap lai.");
+            continue;
+        }
+        if (idCard >= 100000000 && idCard <= 999999999) {
+            checkValidate = true;
+        }
+        while (!checkValidate);
+    }
+    do {
+        checkValidate = false;
+        let birth = prompt("Nhap ngay sinh:");
+        if (birth.charAt(2) !== '/' || birth.charAt(5) !== '/') {
+            alert("Nhap sai. Vui long nhap lai!");
+            continue;
+        }
+        let day = birth.substring(0,2);
+        let month = birth.substring(3,5);
+        let year = birth.substring(6,10);
+        if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+            day = Number.parseFloat(day);
+            month = Number.parseFloat(month);
+            year = Number.parseFloat(year);
+            if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
+                if (day > 0 && day < 32 && month <13 && month > 0 && year >= 1960 & year <= 2019) {
+                    checkValidate = true;
+                }
+            }
+        }
+        if (checkValidate) {
+            alert("Vui long nhap lai");
+        }
+    }
+    while (!checkValidate);
 
+    do {
+        checkValidate = true;
+        let email = prompt("Nhap email:");
+        let countDoc = 0;
+        let countAt = 0;
+        for (let i = 0; i < email.length; i++) {
+            if (email.charAt(i) === '@') {
+                countAt++;
+            }
+            if (email.charAt(i) === '.') {
+                countDoc++;
+            }
+        }
+        if (countAt !== 1 || countDoc <1) {
+            checkValidate = false;
+            alert("Nhap sai. Vui long nhap lai!");
+        }
+    }
+    while (!checkValidate);
+
+    let add = prompt("Nhap dia chi:");
+    let customer = ("Nhap loai khach hang:");
+    do {
+        checkValidate = false;
+        discount = prompt("Nhap phan tram giam gia: ");
+        if (!isNaN(discount)) {
+            discount = Number.parseFloat(discount);
+            if (discount >= 0) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Vui long thu lai");
+        }
+    }
+    while (!checkValidate);
+    do {
+        checkValidate = false;
+        guests = prompt("Nhap so khach thue: ");
+        if (!isNaN(guests)) {
+            guests = Number.parseFloat(guests);
+            if (guests >= 0 && Number.isInteger(guests)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Vui long nhap lai");
+        }
+    }
+    while (!checkValidate);
+    do {
+        checkValidate = false;
+        rentDay = prompt("Nhap so ngay thue: ");
+        if (!isNaN(rentDay)) {
+            rentDay = Number.parseFloat(rentDay);
+            if (rentDay >= 0 && Number.isInteger(rentDay)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Vui long nhap lai");
+        }
+    }
+    while (!checkValidate);
+    let service = ("Nhap loai dich vu:");
+    let room = ("Nhap loai phong:");
+
+    alert(
+        "CUSTOMER INFORMATION AFTER EDITING\n" +
+        "Name: " + name + "\n" +
+        "ID card: " + idCard + "\n" +
+        "Birthday: " + birth + "\n" +
+        "Email: " + email + "\n" +
+        "Address: " + add + "\n" +
+        "Customer type: " + customer + "\n" +
+        "Discount: " + discount + "\n" +
+        "The number of guests: " + guests + "\n" +
+        "The number of days rented: " + rentDay + "\n" +
+        "Service type: " + service + "\n" +
+        "Room type: " + room
+    );
 </script>
 </body>
 </html>
