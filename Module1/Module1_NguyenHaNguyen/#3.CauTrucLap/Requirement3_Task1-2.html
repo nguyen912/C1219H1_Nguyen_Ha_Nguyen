@@ -7,106 +7,136 @@
 <body>
 <script>
     let checkValidate = false;
-    let name = prompt("Nhap ten:");
-    name = name.trim();
-    let str = name.split(" ");
-    let result = '';
-    for(let word in str) {
-        if (word.trim().length != 0) {
-            result += word + ' ';
+    let email;
+    let birth;
+    let idCard;
+    let discount;
+    let guests;
+    let rentDay;
+    let name = prompt("Enter customer name:");
+    function reduceSpace(s) {
+        let result = "";
+        let str = [];
+        s = s.trim();
+        str = s.split(" ");
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] != "") {
+                result += str[i] + " ";
+            }
         }
-    }
-    result = result.trim();
-
-    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let LOWER = 'abcdefghijklmnopqrstuvwxyz';
-    let endingResult = [];
-
-    for(let x=0; x<result.length; x++)
-    {
-        if(UPPER.indexOf(result[x]) !== -1)
-        {
-            endingResult.push(result[x].toLowerCase());
-        }
-        else if(LOWER.indexOf(result[x]) !== -1)
-        {
-            endingResult.push(result[x].toUpperCase());
-        }
-        else
-        {
-            endingResult.push(result[x]);
-        }
+        return result = result.trim();
     }
 
-    name = endingResult;
+    function capitalizeFirstLetter(s) {
+        let result = "";
+        for (let i = 0; i < s.length; i++) {
+            if (i == 0) {
+                result += s[0].toUpperCase();
+            }
+            else {
+                result += s[i];
+                if (s[i] == " ") {
+                    result += s[i+1].toUpperCase();
+                    i++;
+                }
+            }
+        }
+        return result;
+    }
+    function toLowerCaseString(s) {
+        let result = "";
+        for (let i = 0; i < s.length; i++) {
+            if (s[i] != " ") {
+                result += s[i].toLowerCase();
 
+            }
+            else {
+                result += s[i];
+            }
+        }
+        return result;
+    }
+    function standardize(s) {
+        let reduce = reduceSpace(s);
+        let lower = toLowerCaseString(reduce);
+        let result = capitalizeFirstLetter(lower);
+        return result;
+    }
     do {
-        checkValidate = false;
-        let idCard = parseInt(prompt("Nhap CMND: "));
-        if (isNaN(idCard)) {
-            alert("Vui long nhap lai.");
+        let integerNumbers = "0123456789";
+        let countNum = 0;
+        idCard = prompt("Enter customer ID card:");
+        if (idCard.length != 8) {
+            alert("ID card is invalid. Please try again!");
             continue;
         }
-        idCard = Number.parseFloat(idCard);
-        if (!Number.isInteger(idCard)) {
-            alert("Vui long nhap lai.");
-            continue;
+        for (let i = 0; i< idCard.length; i++) {
+            if (integerNumbers.indexOf(idCard[i]) !== -1) {
+                countNum++;
+            }
         }
-        if (idCard >= 100000000 && idCard <= 999999999) {
+        if (countNum == 8) {
             checkValidate = true;
         }
-        while (!checkValidate);
+        else {
+            checkValidate = false;
+            alert("ID card is invalid. Please try again!");
+        }
+
+    }
+    while (!checkValidate);
+
     do {
-        checkValidate = false;
-        let birth = prompt("Nhap ngay sinh:");
-        if (birth.charAt(2) !== '/' || birth.charAt(5) !== '/') {
-            alert("Nhap sai. Vui long nhap lai!");
-            continue;
+        birth = prompt("Enter customer birthday (dd/MM/YYYY):");
+        if (birth.charAt(2) != '/' || birth.charAt(5) != '/') {
+            alert("Birthday is invalid. Please try again!");
+            continue;//cho nay doi thanh break co duoc khong??
         }
         let day = birth.substring(0,2);
         let month = birth.substring(3,5);
         let year = birth.substring(6,10);
+        let currentYear = new Date().getFullYear();
+
         if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
             day = Number.parseFloat(day);
             month = Number.parseFloat(month);
             year = Number.parseFloat(year);
             if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)) {
-                if (day > 0 && day < 32 && month <13 && month > 0 && year >= 1960 & year <= 2019) {
+                if (day > 0 && day < 32 && month > 0 && month < 13 && year > 1920 && year < currentYear) {
                     checkValidate = true;
                 }
             }
         }
-        if (checkValidate) {
-            alert("Vui long nhap lai");
+        if (!checkValidate) {
+            alert("Birthday is invalid. Please try again!");
         }
     }
     while (!checkValidate);
 
     do {
         checkValidate = true;
-        let email = prompt("Nhap email:");
-        let countDoc = 0;
         let countAt = 0;
+        let countDoc = 0;
+        email = prompt("Enter customer email:");
         for (let i = 0; i < email.length; i++) {
-            if (email.charAt(i) === '@') {
+            if (email.charAt(i) === "@") {
                 countAt++;
             }
-            if (email.charAt(i) === '.') {
+            if (email.charAt(i) === ".") {
                 countDoc++;
             }
         }
-        if (countAt !== 1 || countDoc <1) {
+        if (countAt !== 1 || countDoc < 1) {
             checkValidate = false;
-            alert("Nhap sai. Vui long nhap lai!");
+            alert("Email is invalid. Please try again!");
         }
     }
     while (!checkValidate);
 
-    let add = prompt("Nhap dia chi:");
-    let customer = ("Nhap loai khach hang:");
+    let add = prompt("Enter customer address:");
+    let customer = ("Enter customer type:");
     do {
-        checkValidate = false;
-        discount = prompt("Nhap phan tram giam gia: ");
+        discount = ("Enter discount:");
         if (!isNaN(discount)) {
             discount = Number.parseFloat(discount);
             if (discount >= 0) {
@@ -114,13 +144,13 @@
             }
         }
         if (!checkValidate) {
-            alert("Vui long thu lai");
+            alert("Discount is invalid. Please try again!")
         }
     }
     while (!checkValidate);
+
     do {
-        checkValidate = false;
-        guests = prompt("Nhap so khach thue: ");
+        guests = prompt("Enter the number of guests:");
         if (!isNaN(guests)) {
             guests = Number.parseFloat(guests);
             if (guests >= 0 && Number.isInteger(guests)) {
@@ -128,30 +158,32 @@
             }
         }
         if (!checkValidate) {
-            alert("Vui long nhap lai");
+            alert("The number of guests is invalid. Please try again!")
         }
     }
     while (!checkValidate);
+
     do {
-        checkValidate = false;
-        rentDay = prompt("Nhap so ngay thue: ");
+        rentDay = prompt("Enter the number of days rented:");
+
         if (!isNaN(rentDay)) {
             rentDay = Number.parseFloat(rentDay);
-            if (rentDay >= 0 && Number.isInteger(rentDay)) {
+            if (rentDay > 0 && Number.isInteger(rentDay)) {
                 checkValidate = true;
             }
         }
         if (!checkValidate) {
-            alert("Vui long nhap lai");
+            alert("The number of days rented is invalid. Please try again!")
         }
     }
     while (!checkValidate);
-    let service = ("Nhap loai dich vu:");
-    let room = ("Nhap loai phong:");
+
+    let service = ("Enter service type:");
+    let room = ("Enter room type:");
 
     alert(
         "CUSTOMER INFORMATION AFTER EDITING\n" +
-        "Name: " + name + "\n" +
+        "Name: " + standardize(name) + "\n" +
         "ID card: " + idCard + "\n" +
         "Birthday: " + birth + "\n" +
         "Email: " + email + "\n" +
@@ -161,7 +193,8 @@
         "The number of guests: " + guests + "\n" +
         "The number of days rented: " + rentDay + "\n" +
         "Service type: " + service + "\n" +
-        "Room type: " + room
+        "Room type: " + room + "\n" +
+        "Total pay: " + total
     );
 </script>
 </body>

@@ -9,19 +9,27 @@
 <input id="feet">
 <label>Meters</label>
 <input id="meters">
-<button onclick="convertTemperature();">Convert</button>
+<button onclick="convert();">Convert</button>
 <script>
-    function convertTemperature() {
+    function convert() {
         let feet = document.getElementById("feet");
         let meters = document.getElementById("meters");
-        if (parseInt(feet.value) > 0 ) {
-            meters.value = 0.305 * parseInt(feet.value);
+        if (feet.value != ' ') {
+            meters.value = convertFeetToMeters(feet.value);
         }
-        else {
-            feet.value = 3.279 * parseInt(meters.value);
+        else if (meters.value != ' ') {
+            feet.value = convertMetersToFeet(meters.value);
         }
     }
+    function convertFeetToMeters(feet) {
+        let result = 3.279 * parseInt(feet);
+        return result;
+    }
 
+    function convertMetersToFeet(meters) {
+        let result = 0.305 * parseInt(meters);
+        return result;
+    }
 </script>
 </body>
 </html>

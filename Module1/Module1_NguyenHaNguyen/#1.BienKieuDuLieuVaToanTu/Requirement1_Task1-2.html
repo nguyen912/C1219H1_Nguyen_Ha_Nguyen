@@ -6,17 +6,17 @@
 </head>
 <body>
 <script>
-    let name = prompt("Nhap ten":);
-    let idCard = prompt("Nhap CMND:");
-    let birth = prompt("Nhap ngay sinh:");
-    let email = prompt("Nhap email:");
-    let add = prompt("Nhap dia chi:");
-    let customer = ("Nhap loai khach hang:");
-    let discount = ("Nhap giam gia:");
-    let guests = prompt("Nhap so luong khach:");
-    let rentDay = prompt("Nhap so ngay thue:");
-    let service = ("Nhap loai dich vu:");
-    let room = ("Nhap loai phong:");
+    let name = prompt("Enter customer name:");
+    let idCard = prompt("Enter customer ID card:");
+    let birth = prompt("Enter customer birthday:");
+    let email = prompt("Enter customer email:");
+    let add = prompt("Enter customer address:");
+    let customer = ("Enter customer type:");
+    let discount = ("Enter discount:");
+    let guests = prompt("Enter the number of guests:");
+    let rentDay = prompt("Enter the number of days rented:");
+    let service = ("Enter service type:");
+    let room = ("Enter room type:");
 
     let servicePrice;
     switch (service) {
@@ -26,8 +26,22 @@
             break;
         case "Room": servicePrice = 100;
     }
-    let total = servicePrice*parseInt(rentDay)*(1-parseInt(discount)/100);
-    alert(total);
+    // let total = servicePrice*parseInt(rentDay)*(1-parseInt(discount)/100);
+    let total = servicePrice*3*(1-10/100);
+    alert(
+        "CUSTOMER INFORMATION AFTER EDITING\n" +
+        "Name: " + name + "\n" +
+        "ID card: " + idCard + "\n" +
+        "Birthday: " + birth + "\n" +
+        "Email: " + email + "\n" +
+        "Address: " + add + "\n" +
+        "Customer type: " + customer + "\n" +
+        "Discount: " + discount + "\n" +
+        "The number of guests: " + guests + "\n" +
+        "The number of days rented: " + rentDay + "\n" +
+        "Service type: " + service + "\n" +
+        "Room type: " + room + "\n" +
+        "Total pay: " + total);
 </script>
 </body>
 </html>
