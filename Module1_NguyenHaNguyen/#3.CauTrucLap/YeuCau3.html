@@ -134,7 +134,9 @@
     while (!checkValidate);
 
     let add = prompt("Enter customer address:");
+
     let customer = ("Enter customer type:");
+
     do {
         discount = ("Enter discount:");
         if (!isNaN(discount)) {
@@ -179,6 +181,7 @@
     while (!checkValidate);
 
     let service = ("Enter service type:");
+
     let room = ("Enter room type:");
 
     alert(
@@ -187,8 +190,8 @@
         "ID card: " + idCard + "\n" +
         "Birthday: " + birth + "\n" +
         "Email: " + email + "\n" +
-        "Address: " + add + "\n" +
-        "Customer type: " + customer + "\n" +
+        "Address: " + standardize(add) + "\n" +
+        "Customer type: " + standardize(customer) + "\n" +
         "Discount: " + discount + "\n" +
         "The number of guests: " + guests + "\n" +
         "The number of days rented: " + rentDay + "\n" +
