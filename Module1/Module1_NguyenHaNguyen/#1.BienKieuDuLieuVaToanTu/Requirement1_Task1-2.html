@@ -18,6 +18,16 @@
     let service = ("Nhap loai dich vu:");
     let room = ("Nhap loai phong:");
 
+    let servicePrice;
+    switch (service) {
+        case "Villa": servicePrice = 500;
+            break;
+        case "House": servicePrice = 300;
+            break;
+        case "Room": servicePrice = 100;
+    }
+    let total = servicePrice*parseInt(rentDay)*(1-parseInt(discount)/100);
+    alert(total);
 </script>
 </body>
 </html>
