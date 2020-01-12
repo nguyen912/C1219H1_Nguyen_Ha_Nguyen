@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let customNames = [];
+    let customerNames = ['Nguyen', 'Ha', 'Thuy', 'Xuan', 'Vinh', 'Nga', 'Hoang', 'Duy', 'Huong', 'Quynh'];
+    let option = prompt(
+        "Moi chon thao tac:\n" +
+        "1. Add New Customer\n" +
+        "2. Delete Customer"
+    );
+    let amountCustomer;
+    switch (option) {
+        case "1":
+            amountCustomer = prompt("Moi nhap so luong khach muon them vao");
+            inputCustomerName(customNames,amountCustomer);
+            outputCustomerName(customNames,amountCustomer);
+            customNames.sort();
+            outputCustomerName(customNames,amountCustomer);
+            break;
+        case "2":
+            let index = prompt(
+                "Chon ten khach hang ban muon xoa:\n" +
+                    "1. Nguyen\n" +
+                    "2. Ha\n" +
+                    "3. Thuy\n" +
+                    "4. Xuan\n" +
+                    "5. Vinh\n" +
+                    "6. Nga\n" +
+                    "7. Hoang\n" +
+                    "8. Duy\n" +
+                    "9. Huong\n" +
+                    "10. Quynh"
+            ) - 1;
+            deleteCustomer(customerNames,10,index);
+            // for (let i = 0; i < 10; i++) {
+            //     if (index == )
+            // }
+            outputCustomerName(customerNames,9);
+    }
+    function inputCustomerName(names,amount) {
+        for (let i = 0; i < amount; i++) {
+            names[i] = prompt("Nhap ten khach hang thu " + (i+1));
+        }
+    }
+
+    function outputCustomerName(names,amount) {
+        for (let i = 0; i < amount; i++) {
+            document.writeln(names[i] + "<br>");
+        }
+    }
+
+    function deleteCustomer(names,amount,index) {
+        for (let i = 0; i < amount; i++) {
+            if (index == i) {
+                for (let j = i; j < amount - 1; j++) {
+                    names[j] = names [j+1];
+                }
+                break;
+            }
+        }
+    }
+</script>
 </body>
 </html>
