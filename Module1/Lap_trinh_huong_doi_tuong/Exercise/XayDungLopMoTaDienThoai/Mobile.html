@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <div id="phone1">
+        <h1>NOKIA</h1>
+        ON
+        <input id="on1" type="radio" name="status1">
+        OFF
+        <input id="off1" type="radio" name="status1">
+        <button onclick="phone1.checkStatus();">Check</button>
+        <button onclick="phone1.chargePin();">Charge Pin</button>
+        <br>
+        <input id="mess" type= "text">
+        <button onclick="phone1.sendMessenger();">Send</button>
+        <button onclick="phone1.writingMessenger();">Draft</button>
+        <br>
+        Draft messenger:
+        <p id="draft"></p>
+        Sent messenger:
+        <p id="sent"></p>
+        Receive messenger:
+        <p id="receive"></p>
+        <p id="result1"></p>
+    </div>
+    <hr>
+    <div id="phone2">
+        <h1>IPHONE</h1>
+        ON
+        <input type="radio" name="status2" value="on">
+        OFF
+        <input type="radio" name="status2" value="off">
+        <p id="result2"></p>
+    </div>
+<script src="Mobile.js"></script>
 </body>
 </html>
