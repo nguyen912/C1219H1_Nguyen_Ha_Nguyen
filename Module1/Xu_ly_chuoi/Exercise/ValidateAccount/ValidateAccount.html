@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkValidate(account) {
+        let pattern = /^[_a-z0-9]{6,}$/;
+        if (pattern.test(account)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    let account = prompt("Enter your account:");
+    alert(checkValidate(account));
+</script>
+</body>
+</html>

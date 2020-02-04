@@ -1,91 +1,98 @@
-let result = document.getElementById("result1");
-let status = document.getElementsByName("status1");
-let draftMessenger = document.getElementById("draft");
-let sentMessenger = document.getElementById("sent");
-let receivedMessenger = document.getElementById("receive");
-let messenger = document.getElementById("mess");
-let Mobile = function (pin,draftMessenger,receivedMessenger,sentMessenger,status) {
-    this.draftMessenger = new Array();
-    this.receivedMessenger = new Array();
-    this.sentMessenger = new Array();
-
-    this.getPin = function () {
+let name1 = document.getElementById("name1");
+let name2 = document.getElementById("name2");
+let pst1 = document.getElementById("pin1");
+let pst2 = document.getElementById("pin2");
+let mst1 = document.getElementsByName("mst1");
+let mst2 = document.getElementsByName("mst2");
+let mstn1 = document.getElementById("mstn1");
+let mbox1 = document.getElementById("box1");
+let result = document.getElementById("result");
+class Mobile {
+    constructor(name,pin) {
+        this.name = name;
+        this.pin = 100;
+        this.draftMessenger = [];
+        this.receivedMessenger = [];
+        this.sentMessenger = [];
+    }
+    getName() {
+        return this.name;
+    }
+    getPin() {
         return this.pin;
     }
-    this.getDraftMessenger = function () {
+    getDraftMessenger() {
         return this.draftMessenger;
     }
-    this.getReceivedMessenger = function () {
+    getReceiveMessenger() {
         return this.receivedMessenger;
     }
-    this.getSentMessenger = function () {
+    getSentMessenger() {
         return this.sentMessenger;
     }
-    this.getStatus = function () {
-        return this.status;
+    setName(newName) {
+        this.name = name;
     }
-
-    this.setPin = function (pin) {
-        this.pin = pin;
+    setPin(newPin) {
+        this.pin = newPin;
     }
-    this.setDraftMessenger = function (draftMessenger) {
-        this.draftMessenger = draftMessenger;
+    setDraftMessenger(newDraftMessenger) {
+        this.draftMessenger = newDraftMessenger;
     }
-    this.setReceivedMessenger = function (receivedMessenger) {
-        this.receivedMessenger = receivedMessenger;
+    setReceivedMessenger(newReceivedMessenger) {
+        this.receivedMessenger = newReceivedMessenger;
     }
-    this.setSentMessenger = function (sentMessenger) {
-        this.sentMessenger = sentMessenger;
+    setSentMessenger(newSentMessenger) {
+        this.sentMessenger = newSentMessenger;
     }
-    this.setStatus = function (status) {
-        this.status = status;
-    }
-
-    this.checkStatus = function () {
-        if (this.status == true) {
-            return result.innerText = "The phone is on.";
+    checkPinStatus() {
+        if (this.getPin() > 0) {
+            return true;
         }
         else {
-            return result.innerText = "The phone is off.";
+            return false;
         }
     }
-
-    // this.changeStatus = function () {
-    //     if (status1.value[0] === "on") {
-    //         this.setStatus(true);
-    //     }
-    //     else if (status1.value[1] === "off"){
-    //         this.setStatus(false);
-    //     }
-    // }
-
-    this.chargePin = function () {
-        let percent = new Array();
-        for (let i = 0; i <= 100; i++) {
-            percent.push(i);
+    checkPhoneStatus(mst) {
+        for (let i = 0; i < 2; i++) {
+            if (mst[i].checked === "On") {
+                return true;
+            }
         }
-        result.innerText = percent.join(".");
     }
-
-    this.writingMessenger = function () {
-        this.draftMessenger.innerText = messenger.value;
+    switchPhone() {
+        this.setPin(this.getPin()-1);
+        !this.checkPhoneStatus();
     }
-
-    this.receiveMessenger = function () {
+    chargePin() {
 
     }
-    this.sendMessenger = function () {
+    typeMessenger() {
+        this.setPin(this.getPin()-1);
+        return result.innerText = "Draft Messenger: " + mbox1.value;
+    }
+    receiveMessenger() {
 
     }
-
-    this.viewReceivedMessenger = function () {
-
-    }
-
-    this.viewSentMessenger = function () {
+    sendMessenger() {
 
     }
+    viewReceivedMessenger() {
+
+    }
+    viewSentMessenger() {
+
+    }
+}
+let phone1 = new Mobile("NOKIA",);
+name1.innerText = phone1.getName();
+pst1.innerText = phone1.getPin();
+if (phone1.checkPhoneStatus(mst1) === true) {
 
 }
-let phone1 = new Mobile();
-result.innerText = phone1.checkStatus();
+else {
+    phone1.switchPhone();
+}
+let phone2 = new Mobile("IPHONE",);
+name2.innerText = phone2.getName();
+pst2.innerText = phone2.getPin();

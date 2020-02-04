@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkValidate(className) {
+        let pattern = /^[CAP][0-9]{4,}[GHIKLM]$/;
+        if (pattern.test(className)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    let className = prompt("Enter your class name:");
+    alert(checkValidate(className));
+</script>
+</body>
+</html>

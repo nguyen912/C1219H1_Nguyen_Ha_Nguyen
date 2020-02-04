@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkValidate(telNum) {
+        let pattern = /\(\d{2}\)\-\(0\d{9}\)/;
+        if (pattern.test(telNum)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    let telNum = prompt("Enter your telephone number:");
+    alert(checkValidate(telNum));
+</script>
+</body>
+</html>

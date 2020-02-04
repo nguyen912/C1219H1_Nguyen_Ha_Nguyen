@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkValidate(email) {
+        let pattern = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+        if (pattern.test(email)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    let email = prompt("Enter your email:");
+    alert(checkValidate(email));
+</script>
+</body>
+</html>

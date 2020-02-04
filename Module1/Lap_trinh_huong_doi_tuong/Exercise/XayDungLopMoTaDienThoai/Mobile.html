@@ -5,36 +5,41 @@
     <title>Title</title>
 </head>
 <body>
-    <div id="phone1">
-        <h1>NOKIA</h1>
-        ON
-        <input id="on1" type="radio" name="status1">
-        OFF
-        <input id="off1" type="radio" name="status1">
-        <button onclick="phone1.checkStatus();">Check</button>
-        <button onclick="phone1.chargePin();">Charge Pin</button>
+    <span style="width:50%">
+        <h2 id="name1"></h2>
+        Mobile Status:
+        <input type="radio" name="mst1" value="On">
+        <input type="radio" name="mst1" value="Off" checked>
+        <p id="mstn1"><p>
         <br>
-        <input id="mess" type= "text">
-        <button onclick="phone1.sendMessenger();">Send</button>
-        <button onclick="phone1.writingMessenger();">Draft</button>
+        Pin Status:
+        <p id="pin1"></p>
         <br>
-        Draft messenger:
-        <p id="draft"></p>
-        Sent messenger:
-        <p id="sent"></p>
-        Receive messenger:
-        <p id="receive"></p>
-        <p id="result1"></p>
-    </div>
-    <hr>
-    <div id="phone2">
-        <h1>IPHONE</h1>
-        ON
-        <input type="radio" name="status2" value="on">
-        OFF
-        <input type="radio" name="status2" value="off">
-        <p id="result2"></p>
-    </div>
+        Messenger Box:
+        <input id="box1">
+        <button>Send</button>
+        <button onclick="phone1.typeMessenger();">Draft</button>
+        <br>
+        Result:
+        <p id="result"></p>
+        Draft Messenger:
+        <p id="draft1"></p>
+        <br>
+        Received Messenger:
+        <p id="received1"></p>
+        <br>
+        Sent Messenger:
+        <p id="sent1"></p>
+    </span>
+    <span style="width:50%">
+        <h2 id="name2"></h2>
+        Mobile Status:
+        <input type="radio" name="mst2" value="On">
+        <input type="radio" name="mst2" value="Off">
+        <br>
+        Pin Status:
+        <p id="pin2"></p>
+    </span>
 <script src="Mobile.js"></script>
 </body>
 </html>
