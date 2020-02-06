@@ -9,7 +9,19 @@
 <script>
     function displayArr(arr) {
         for (let i = 0; i < arr.length; i++) {
-            document.write(arr[i]);
+            document.write(arr[i] + "\t");
+        }
+    }
+    function sortArr(arr) {
+        let b;
+        for (let i = 0; i < arr.length-1; i++) {
+            for (let j = i+1; j < arr.length; j++) {
+                if (arr[j] < arr[i]) {
+                    b = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = b;
+                }
+            }
         }
     }
     function searchNumber1(arr, n) {
@@ -41,15 +53,21 @@
     }
     let N = prompt("Enter your number:");
     let nums = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 100; i++) {
         nums[i] = Math.floor(Math.random() * 101);
     }
-    if (searchNumber1(nums, N) == true) {
+    displayArr(nums);
+    document.write("<br>");
+    sortArr(nums);
+    displayArr(nums);
+    document.write("<br>");
+    if (searchNumber2(nums, N) == true) {
         alert("Correct!");
     }
     else {
         alert("Wrong!");
     }
+    //phai viet them ham sapxep tang dan
 </script>
 </body>
 </html>

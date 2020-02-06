@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let products = ["car", "pen", "laptop", "mobile", "chair", "table"];
+    function displayList(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "\t");
+        }
+    }
+    function addThing(arr, thing) {
+        arr = arr.push(thing);
+    }
+    function editList(arr, thing, replacedThing) {
+        for (let i = 1; i < arr.length; i++) {
+            if (thing == arr[i]) {
+                arr[i] = replacedThing;
+            }
+        }
+    }
+    function deleteThing(arr, thing) {
+        let index;
+        for (let i = 1; i < arr.length; i++) {
+            if (thing == arr[i]) {
+                arr[i] = arr[i+1];
+                index = i;
+                break;
+            }
+        }
+        for (let i = index+1; i < arr.length; i++) {
+            arr[i] = arr[i+1];
+        }
+        arr.length--;
+    }
+    displayList(products);
+    document.write("<br>");
+    addThing(products, "glass");
+    displayList(products);
+    document.write("<br>");
+    editList(products, "laptop", "TV");
+    displayList(products);
+    document.write("<br>");
+    deleteThing(products, "table");
+    displayList(products);
+    document.write("<br>");
+</script>
+</body>
+</html>

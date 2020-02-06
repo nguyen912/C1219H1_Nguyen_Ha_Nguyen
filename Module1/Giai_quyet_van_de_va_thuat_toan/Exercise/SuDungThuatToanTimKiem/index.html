@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function checkViettelNumber(n) {
+        let pattern = /^0((86)|(9[678])|(3[23456789]))\d{7}$/gm;
+        let result = pattern.test(n);
+        return result;
+    }
+    let number = parseInt(prompt("Enter your phone number: "));
+    if (checkViettelNumber(number) == true) {
+        alert("The phone number is Viettel!");
+    }
+    else {
+        alert("The phone number is NOT Viettel!");
+    }
+</script>
+</body>
+</html>
