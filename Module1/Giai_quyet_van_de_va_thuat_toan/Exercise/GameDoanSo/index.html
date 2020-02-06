@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function displayArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i]);
+        }
+    }
+    function searchNumber1(arr, n) {
+        for (let i = 0; i < arr.length; i++) {
+            if (n == arr[i]) {
+                return true;
+            }
+        }
+    }
+    function searchNumber2(arr, n) {
+        let mid = Math.floor(arr.length / 2);
+        if (n == arr[mid]) {
+            return true;
+        }
+        else if (n < arr[mid]) {
+            for (let i = 0; i < mid; i++) {
+                if (n == arr[i]) {
+                    return true;
+                }
+            }
+        }
+        else {
+            for (let i = arr.length; i > mid; i--) {
+                if (n == arr[i]) {
+                    return true;
+                }
+            }
+        }
+    }
+    let N = prompt("Enter your number:");
+    let nums = [];
+    for (let i = 0; i < 10; i++) {
+        nums[i] = Math.floor(Math.random() * 101);
+    }
+    if (searchNumber1(nums, N) == true) {
+        alert("Correct!");
+    }
+    else {
+        alert("Wrong!");
+    }
+</script>
+</body>
+</html>
