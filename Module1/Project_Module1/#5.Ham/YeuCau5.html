@@ -9,6 +9,7 @@
     <script>
         let arrListCustomers = [];
         let checkEditCustomer = false;
+        let checkDeleteCustomer = false;
         function displayMainMenu() {
             let choose = prompt(
                 "1. Add New Customer." +
@@ -68,12 +69,20 @@
                 result += "\n" + (i+1) + ". " + "Name: " + arrListCustomers[i][0] +
                     "; ID Card: " + arrListCustomers[i][1];
             }
-            result += "\n" + (arrListCustomers.length+1) + ". Back to Menu.";
+            result += "\n" + (arrListCustomers.length + 1) + ". Back to Menu.";
             let chooseDisplayInfo = prompt(result);
             if (chooseDisplayInfo.toString() !== (arrListCustomers.length+1).toString()) {
-                displayCustomers(Number.parseInt(chooseDisplayInfo)-1);
+                if (!checkDeleteCustomer) {
+                    displayCustomers(Number.parseInt(chooseDisplayInfo) - 1);
+                }
+                else {
+                    deleteCustomer(Number.parseInt(chooseDisplayInfo) - 1);
+
+                }
             }
             else {
+                checkEditCustomer = false;
+                checkDeleteCustomer = false;
                 displayMainMenu();
             }
         }
@@ -166,6 +175,23 @@
                     return;
             }
             checkEditCustomer = false;
+            displayMainMenu();
+        }
+        function chooseDeleteCustomer() {
+            checkDeleteCustomer = true;
+            displayCustomers();
+        }
+        function deleteCustomer(index) {
+            let chooseConfirm = prompt(
+                "Are you sure delete customer: Name: " + arrListCustomers[index][0] +
+                "\nID card: " + arrListCustomers[index][1] +
+                "\n1. YES\t2. NO"
+            );
+            if (chooseConfirm === "1") {
+                arrListCustomers.slice(index, 1);
+                alert("Delete Complete!");
+            }
+            checkDeleteCustomer = false;
             displayMainMenu();
         }
         displayMainMenu();
