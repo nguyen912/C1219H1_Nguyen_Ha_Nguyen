@@ -1,16 +1,8 @@
 function isMainNumber(n) {
-    if (n === 0) {
-        return false;
-    }
-    else if (Math.sqrt(n) === parseInt(Math.sqrt(n))) {
-        return true;
-    }
-    else {
-        return false;
-    }
+   return (Math.pow(Math.sqrt(n),2) === n);
 }
-let num = parseInt(prompt("Nhap mot so bat ky:"));
-if (isMainNumber(num) === true) {
+let num = prompt("Nhap mot so bat ky:")*1;
+if (isMainNumber(num)) {
     alert(num + " la so chinh phuong.");
 }
 else {

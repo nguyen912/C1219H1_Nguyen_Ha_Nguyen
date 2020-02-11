@@ -22,6 +22,8 @@ function Students(index,name,birthday,avgScore) {
     }
 }
 let nguyen = new Students("01","Nguyen Ha Nguyen","09/12/98",8.1);
-document.write(nguyen.name + " xep loai: " + nguyen.getStudentLevel() + "<br>");
+document.write(nguyen.index + "||" + nguyen.name + "||" + nguyen.birthday + "||"
+    + nguyen.avgScore + "||" + nguyen.getStudentLevel() + "<br>");
 let ha = new Students("02","Nguyen Ngoc Ha","09/03/98",4);
-document.write(ha.name + " xep loai: " + ha.getStudentLevel() + "<br>");
+document.write(ha.index + "||" + ha.name + "||" + ha.birthday + "||"
+    + ha.avgScore + "||" + ha.getStudentLevel() + "<br>");

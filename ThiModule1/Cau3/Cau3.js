@@ -7,7 +7,7 @@ function findMaxScore(arr) {
             index = i;
         }
     }
-    return "Diem cao nhat: " + max + " o vi tri: " + (index+1);
+    return "Diem cao nhat: " + max + " o vi tri thu: " + (index+1);
 }
 let diem = [10,5,8,9,10];
 alert(findMaxScore(diem));
