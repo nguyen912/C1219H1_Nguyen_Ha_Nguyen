@@ -1,5 +1,7 @@
 package NgonNguLapTrinhJava.Exercise;
 
+import sun.plugin2.ipc.windows.WindowsIPCFactory;
+
 import java.util.Scanner;
 
 public class ConvertingNumberToString {
@@ -12,18 +14,28 @@ public class ConvertingNumberToString {
         if (number >= 0 && number < 10) {
             covertBelow10Number(number);
         }
-        convertBelow100Number(number);
-        if (number > 999) {
-            System.out.println("out of ability");
+        else if (number < 100){
+            convertBelow100Number(number);
         }
         else {
-            int hundreds = number / 100;
-            int surplus = number % 100;
-            covertBelow10Number(hundreds);
-            System.out.print(" hundred");
-            if (surplus != 0) {
-                System.out.print(" and ");
-                convertBelow100Number(surplus);
+            if (number > 999) {
+                System.out.println("out of ability");
+            }
+            else {
+                int hundreds = number / 100;
+                int surplus = number % 100;
+                covertBelow10Number(hundreds);
+                System.out.print(" hundred");
+                //System.out.println(surplus);
+                if (surplus != 0) {
+                    System.out.print(" and ");
+                    if (surplus < 10) {
+                        covertBelow10Number(surplus);
+                    }
+                    else {
+                        convertBelow100Number(surplus);
+                    }
+                }
             }
         }
     }
