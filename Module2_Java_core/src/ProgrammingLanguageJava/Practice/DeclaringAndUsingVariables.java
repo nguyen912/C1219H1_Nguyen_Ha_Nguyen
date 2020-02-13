@@ -1,4 +1,4 @@
-package NgonNguLapTrinhJava.Practice;
+package ProgrammingLanguageJava.Practice;
 
 public class DeclaringAndUsingVariables {
     public static void main(String[] args) {

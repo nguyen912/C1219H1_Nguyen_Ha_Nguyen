@@ -1,6 +1,4 @@
-package NgonNguLapTrinhJava.Exercise;
-
-import sun.plugin2.ipc.windows.WindowsIPCFactory;
+package ProgrammingLanguageJava.Exercise;
 
 import java.util.Scanner;
 

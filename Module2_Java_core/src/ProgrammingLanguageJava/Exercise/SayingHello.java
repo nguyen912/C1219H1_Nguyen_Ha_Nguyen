@@ -1,4 +1,4 @@
-package NgonNguLapTrinhJava.Exercise;
+package ProgrammingLanguageJava.Exercise;
 
 import java.util.Scanner;
 
