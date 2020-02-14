@@ -2,34 +2,45 @@ package ArrayAndMethodInJava.Practice;
 
 import java.util.Scanner;
 
-public class ReversingElementsInArray {
+public class ReversingElementsInArray { Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ReversingElementsInArray reversedArray = new ReversingElementsInArray();
 
         int[] numbers = new int[9];
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Enter element " + (i+1) + ": ");
-            numbers[i] = scanner.nextInt();
-        }
-
+        reversedArray.inputArray(numbers);
         System.out.print("Numbers: ");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + "\t");
-        }
+        reversedArray.outputArray(numbers);
 
-        int i = 0;
-        int j = numbers.length - 1;
-        for (;i <= numbers.length/2; i++, j--) {
-                int temp = numbers[i];
-                numbers[i] = numbers[j];
-                numbers[j] = temp;
-
-        }
+        reversedArray.reverse(numbers);
 
         System.out.println();
         System.out.print("Numbers after reversing: ");
-        for (i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i] + "\t");
+        reversedArray.outputArray(numbers);
+    }
+
+    public void inputArray (int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Enter element " + (i+1) + ": ");
+            arr[i] = scanner.nextInt();
+        }
+    }
+
+    public void outputArray (int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
+        }
+    }
+
+    public void reverse (int arr[]) {
+        int i = 0;
+        int j = arr.length - 1;
+        for (;i <= arr.length/2; i++, j--) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+
         }
     }
 }

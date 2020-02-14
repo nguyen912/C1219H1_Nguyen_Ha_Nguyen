@@ -1,6 +1,6 @@
 package ArrayAndMethodInJava.Practice;
 
-public class MaxInArray_UsingMethod {
+public class MinInArray_UsingMethod {
     public static void main(String[] args) {
         int[] numbers = {3,6,9,7,1,0};
         minValue(numbers);
