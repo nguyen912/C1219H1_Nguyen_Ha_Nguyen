@@ -1,5 +1,6 @@
 package ArrayAndMethodInJava.Exercise;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class SumDiagonal {
@@ -22,6 +23,11 @@ public class SumDiagonal {
         sumDiagonal.output2DArray(matrix,x);
 
         System.out.println("Matrix diagonal sum is: " + sumDiagonal.calculateSumDiagonal(matrix,x));
+
+        long begin = Calendar.getInstance().getTimeInMillis();
+        long end = Calendar.getInstance().getTimeInMillis();
+        System.out.println();
+        System.out.println("Process time: " + (end - begin));
     }
 
     public void input2DArray (int arr[][], int len) {

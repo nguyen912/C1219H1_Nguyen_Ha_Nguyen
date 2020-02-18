@@ -1,9 +1,11 @@
 package ProgrammingLanguageJava.Exercise;
 
+import java.util.Calendar;
 import java.util.Scanner;
 
 public class ConvertingNumberToString {
     public static void main(String[] args) {
+        long begin = Calendar.getInstance().getTimeInMillis();
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter a number: ");
@@ -36,6 +38,9 @@ public class ConvertingNumberToString {
                 }
             }
         }
+        long end = Calendar.getInstance().getTimeInMillis();
+        System.out.println();
+        System.out.println("Process time: " + (end - begin));
     }
     public static void covertBelow10Number(int number) {
         switch (number) {
@@ -124,5 +129,6 @@ public class ConvertingNumberToString {
                 covertBelow10Number(ones);
             }
         }
+
     }
 }
