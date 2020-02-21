@@ -1,4 +1,4 @@
-package ProjectModule2_NguyenHaNguyen.People;
+package ProjectModule2_NguyenHaNguyen.person;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package ProjectModule2_NguyenHaNguyen.People;
+package ProjectModule2_NguyenHaNguyen.person;
 
 public class Customers extends Employees {
     private String gender;
