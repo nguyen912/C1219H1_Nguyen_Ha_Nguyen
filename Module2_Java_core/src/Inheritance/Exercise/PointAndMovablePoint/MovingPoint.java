@@ -11,5 +11,11 @@ public class MovingPoint {
         for (float i : ((MovablePoint) point).move()) {
             System.out.print(i + " ");
         }
+
+        ((MovablePoint) point).setSpeed(10,30);
+        System.out.print("speed2 = ");
+        for (float i : ((MovablePoint) point).move()) {
+            System.out.print(i + " ");
+        }
     }
 }
