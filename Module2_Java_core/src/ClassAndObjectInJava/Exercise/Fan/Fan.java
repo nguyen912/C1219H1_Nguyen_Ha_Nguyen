@@ -57,7 +57,6 @@ public class Fan {
 
     }
 
-    @Override
     public String toString() {
         if (this.on) {
             return "Fan is on{" +
