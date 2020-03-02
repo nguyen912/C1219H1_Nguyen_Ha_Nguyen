@@ -1,12 +1,24 @@
-package ProjectModule2_NguyenHaNguyen.models;
+package FuramaResort.Models;
 
-public class Services {
+public abstract class Services {
     private String id;
     private String serviceName;
     private double usedArea;
     private int cost;
     private int maxPerson;
     private String rentedType;
+
+    public Services() {
+    }
+
+    public Services(String id, String serviceName, double usedArea, int cost, int maxPerson, String rentedType) {
+        this.id = id;
+        this.serviceName = serviceName;
+        this.usedArea = usedArea;
+        this.cost = cost;
+        this.maxPerson = maxPerson;
+        this.rentedType = rentedType;
+    }
 
     public String getId() {
         return id;
@@ -55,4 +67,6 @@ public class Services {
     public void setRentedType(String rentedType) {
         this.rentedType = rentedType;
     }
+
+    public abstract void showInfo();
 }

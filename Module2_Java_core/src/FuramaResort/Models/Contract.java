@@ -1,4 +1,4 @@
-package ProjectModule2_NguyenHaNguyen.models;
+package FuramaResort.Models;
 
 import java.util.Date;
 
