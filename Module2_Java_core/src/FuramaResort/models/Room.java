@@ -1,4 +1,4 @@
-package FuramaResort.Models;
+package FuramaResort.models;
 
 public class Room extends Services {
     private String freeService;

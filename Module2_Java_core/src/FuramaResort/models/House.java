@@ -1,4 +1,4 @@
-package FuramaResort.Models;
+package FuramaResort.models;
 
 public class House extends Services {
     private String roomStandard;

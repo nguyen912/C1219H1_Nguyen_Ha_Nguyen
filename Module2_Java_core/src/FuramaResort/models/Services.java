@@ -1,4 +1,4 @@
-package FuramaResort.Models;
+package FuramaResort.models;
 
 public abstract class Services {
     private String id;

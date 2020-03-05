@@ -1,4 +1,4 @@
-package FuramaResort.Models;
+package FuramaResort.models;
 
 public class Villa extends Services {
     private String standard;
@@ -9,7 +9,9 @@ public class Villa extends Services {
     public Villa() {
     }
 
-    public Villa(String id, String serviceName, double usedArea, int cost, int maxPerson, String rentedType, String standard, String otherFacility, double poolArea, int floor) {
+    public Villa(String id, String serviceName, double usedArea, int cost, int maxPerson,
+                 String rentedType, String standard, String otherFacility, double poolArea,
+                 int floor) {
         super(id, serviceName, usedArea, cost, maxPerson, rentedType);
         this.standard = standard;
         this.otherFacility = otherFacility;

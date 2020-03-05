@@ -1,7 +1,7 @@
 package FuramaResort.Views;
 
-import FuramaResort.Models.Services;
-import FuramaResort.Models.Villa;
+import FuramaResort.models.Services;
+import FuramaResort.models.Villa;
 
 public class Main {
     public static void main(String[] args) {
