@@ -1,4 +1,4 @@
-package FuramaResort.Views;
+package FuramaResort.views;
 
 import FuramaResort.models.Services;
 import FuramaResort.models.Villa;

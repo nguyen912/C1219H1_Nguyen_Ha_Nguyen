@@ -24,8 +24,8 @@ public class Room extends Services {
     }
 
     @Override
-    public void showInfo() {
-        System.out.println(
+    public String showInfo() {
+        return
                 "Room information: " +
                         "\n1. ID: " +
                         "\n2. Service name: " +
@@ -34,7 +34,7 @@ public class Room extends Services {
                         "\n5. Max person: " +
                         "\n6. Rented type: " +
                         "\n7. Free service: "
-        );
+        ;
 
     }
 }
