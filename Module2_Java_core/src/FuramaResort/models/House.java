@@ -41,18 +41,9 @@ public class House extends Services {
 
     @Override
     public String showInfo() {
-        return
-            "House information: " +
-                "\n1. ID: " +
-                "\n2. Service name: " +
-                "\n3. Used area: " +
-                "\n4. Cost: " +
-                "\n5. Max person: " +
-                "\n6. Rented type: " +
-                "\n7. Standard: " +
-                "\n8. Other Facility: " +
-                "\n9. The number of floors: "
-        ;
+        return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
+                getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
+                getRoomStandard() + "\t" + getOtherFacility() + "\t" + getFloor();
 
     }
 }
