@@ -7,14 +7,13 @@ import FuramaResort.models.Services;
 import FuramaResort.models.Villa;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class ServicesController {
     Scanner scanner = new Scanner(System.in);
-    static ArrayList<Services>villas = new ArrayList<>();
-    static ArrayList<Services>houses = new ArrayList<>();
-    static ArrayList<Services>rooms = new ArrayList<>();
+    static ArrayList<Villa>villas = new ArrayList<>();
+    static ArrayList<House>houses = new ArrayList<>();
+    static ArrayList<Room>rooms = new ArrayList<>();
 
     static String confirm;
 
@@ -54,7 +53,7 @@ public class ServicesController {
         villas.add(villa);
 
 
-        FileManager.writeFileCSV(villas, "villa","D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv");
+        FileManager.writeFileCSVVilla(villas,"D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv");
     }
 
 
@@ -74,30 +73,47 @@ public class ServicesController {
         System.out.println("Do you want to continue? Type \"n\" to exit.");
         confirm = scanner.nextLine();
 
-        FileManager.writeFileCSV(houses, "house","D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv");
+        FileManager.writeFileCSVHouse(houses,"D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv");
     }
 
     void addNewRoom() {
         Room room = new Room();
 
-        addNewGeneralService(new Room());
+        addNewGeneralService(room);
         System.out.println("Enter the free service: ");
         room.setFreeService(scanner.nextLine());
 
         rooms.add(room);
-        FileManager.writeFileCSV(rooms, "room","D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv");
+        FileManager.writeFileCSVRoom(rooms,"D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv");
     }
 
     void showAllVilla() {
-
+        System.out.println("*******************************************************************");
+        System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tROOM STANDARD\t" +
+                "OTHER FACILITIES\tTHE NUMBER OF FLOORS\tSWIMMING POOL AREA");
+        for (Villa villa : FileManager.readFileCSVVilla("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv")) {
+            System.out.println(villa);
+        }
+        System.out.println("*******************************************************************");
     }
 
     void showAllHouse() {
-
+        System.out.println("*******************************************************************");
+        System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tROOM STANDARD\t" +
+                "OTHER FACILITIES\tTHE NUMBER OF FLOORS");
+        for (House house : FileManager.readFileCSVHouse("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv")) {
+            System.out.println(house);
+        }
+        System.out.println("*******************************************************************");
     }
 
     void showAllRoom() {
-
+        System.out.println("*******************************************************************");
+        System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tFREE SERVICE");
+        for (Room room : FileManager.readFileCSVRoom("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv")) {
+            System.out.println(room);
+        }
+        System.out.println("*******************************************************************");
     }
 
     void showAllVillaNotDuplication() {

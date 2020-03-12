@@ -68,5 +68,5 @@ public abstract class Services {
         this.rentedType = rentedType;
     }
 
-    public abstract String showInfo();
+    public abstract String toString();
 }

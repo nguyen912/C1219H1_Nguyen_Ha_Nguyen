@@ -40,7 +40,7 @@ public class House extends Services {
     }
 
     @Override
-    public String showInfo() {
+    public String toString() {
         return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
                 getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
                 getRoomStandard() + "\t" + getOtherFacility() + "\t" + getFloor();

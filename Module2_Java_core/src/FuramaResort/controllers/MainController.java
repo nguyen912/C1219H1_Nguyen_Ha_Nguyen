@@ -132,12 +132,6 @@ public class MainController {
                 System.out.println("Choose the option again!");
                 showServices();
         }
-        System.out.println("====================================================================");
-        System.out.println("ID\tNAME\tAREA\tCOST\tMAX PEOPLE\tTYPE\tSTANDARD\tOTHER\tFLOOR\tPOOL");
-        for (Villa villa : villas) {
-            System.out.println(villa.showInfo());
-        }
-        System.out.println("====================================================================");
     }
 
     private static void addNewCustomer() {

@@ -20,7 +20,8 @@ public class Villa extends House {
     }
 
     @Override
-    public String showInfo() {
-        return super.showInfo() + "\t" + getPoolArea();
+    public String toString() {
+        return super.toString() + "\t" + getPoolArea();
     }
+
 }

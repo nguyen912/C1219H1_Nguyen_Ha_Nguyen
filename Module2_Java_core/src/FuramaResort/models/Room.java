@@ -24,17 +24,10 @@ public class Room extends Services {
     }
 
     @Override
-    public String showInfo() {
-        return
-                "Room information: " +
-                        "\n1. ID: " +
-                        "\n2. Service name: " +
-                        "\n3. Used area: " +
-                        "\n4. Cost: " +
-                        "\n5. Max person: " +
-                        "\n6. Rented type: " +
-                        "\n7. Free service: "
-        ;
+    public String toString() {
+        return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
+                getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
+                getFreeService();
 
     }
 }
