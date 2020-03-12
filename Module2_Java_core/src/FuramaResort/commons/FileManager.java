@@ -6,8 +6,8 @@ import FuramaResort.models.Services;
 import FuramaResort.models.Villa;
 
 import java.io.*;
+import  java.text.NumberFormat;
 import java.util.ArrayList;
-import java.lang.Double;
 
 public class FileManager {
     //Write File CSV
@@ -119,12 +119,21 @@ public class FileManager {
             BufferedReader br = new BufferedReader(isr);
 
             String line = br.readLine();
+            line = br.readLine();
             while (line != null) {
                 String[] arr = line.split(",");
                 if (arr.length == 10) {
-                    Villa villa = new Villa(arr[0], arr[1], Double.parseDouble(arr[2]),
-                            Integer.parseInt(arr[3]), Integer.parseInt(arr[4]), arr[5],
-                            arr[6], arr[7], Integer.parseInt(arr[8]), Double.parseDouble(arr[9]));
+                    Villa villa = new Villa(
+                            arr[0],
+                            arr[1],
+                            Double.parseDouble(arr[2]),
+                            Integer.parseInt(arr[3]),
+                            Integer.parseInt(arr[4]),
+                            arr[5],
+                            arr[6],
+                            arr[7],
+                            Integer.parseInt(arr[8]),
+                            Double.parseDouble(arr[9]));
                     villas.add(villa);
                 }
                 line = br.readLine();
@@ -148,6 +157,7 @@ public class FileManager {
             BufferedReader br = new BufferedReader(isr);
 
             String line = br.readLine();
+            line = br.readLine();
             while (line != null) {
                 String[] arr = line.split(",");
                 if (arr.length == 9) {
@@ -177,6 +187,7 @@ public class FileManager {
             BufferedReader br = new BufferedReader(isr);
 
             String line = br.readLine();
+            line = br.readLine();
             while (line != null) {
                 String[] arr = line.split(",");
                 if (arr.length == 7) {

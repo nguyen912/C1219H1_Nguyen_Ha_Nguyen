@@ -92,7 +92,7 @@ public class ServicesController {
         System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tROOM STANDARD\t" +
                 "OTHER FACILITIES\tTHE NUMBER OF FLOORS\tSWIMMING POOL AREA");
         for (Villa villa : FileManager.readFileCSVVilla("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv")) {
-            System.out.println(villa);
+            System.out.println(villa.toString());
         }
         System.out.println("*******************************************************************");
     }
