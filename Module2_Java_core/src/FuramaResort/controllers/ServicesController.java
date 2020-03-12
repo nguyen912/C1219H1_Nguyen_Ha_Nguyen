@@ -11,80 +11,156 @@ import java.util.Scanner;
 
 public class ServicesController {
     Scanner scanner = new Scanner(System.in);
-    static ArrayList<Villa>villas = new ArrayList<>();
-    static ArrayList<House>houses = new ArrayList<>();
-    static ArrayList<Room>rooms = new ArrayList<>();
+    static ArrayList<Villa> villas = new ArrayList<>();
+    static ArrayList<House> houses = new ArrayList<>();
+    static ArrayList<Room> rooms = new ArrayList<>();
 
-    static String confirm;
+    String confirm;
+    String patternUpperCaseFirst = "^[A-Z][a-z]+$";
 
     private void addNewGeneralService(Services service) {
-        System.out.println("Enter ID: ");
-        service.setId(scanner.nextLine());
 
-        System.out.println("Enter service name: ");
-        service.setServiceName(scanner.nextLine());
+        boolean typeOfRent =
+                service.getRentedType().equals("year") ||
+                service.getRentedType().equals("month") ||
+                service.getRentedType().equals("day") ||
+                service.getRentedType().equals("hour");
+        do {
+            System.out.println("Enter service name: ");
+            service.setServiceName(scanner.nextLine());
+        }
+        while (!service.getServiceName().matches(patternUpperCaseFirst));
 
-        System.out.println("Enter usable area: ");
-        service.setUsedArea(scanner.nextDouble());
+        do {
+            System.out.println("Enter usable area: ");
+            service.setUsedArea(scanner.nextDouble());
+        }
+        while (service.getUsedArea() <= 30);
 
-        System.out.println("Enter cost: ");
-        service.setCost(scanner.nextInt());
+        do {
+            System.out.println("Enter cost: ");
+            service.setCost(scanner.nextInt());
+        }
+        while (service.getCost() <= 0);
 
-        System.out.println("Enter max people: ");
-        service.setMaxPerson(scanner.nextInt());
+        do {
+            System.out.println("Enter max people: ");
+            service.setMaxPerson(scanner.nextInt());
+        }
+        while (service.getMaxPerson() < 0 || service.getMaxPerson() > 20);
 
         scanner.nextLine();
-        System.out.println("Enter rented type: ");
-        service.setRentedType(scanner.nextLine());
+        do {
+            System.out.println("Enter rented type: ");
+            service.setRentedType(scanner.nextLine());
+        }
+        while (!typeOfRent || !service.getRentedType().matches(patternUpperCaseFirst));
     }
 
     void addNewVilla() {
         Villa villa = new Villa();
+        String patternVillaId = "^SVVL\\d{4}$";
+        boolean isOtherFacilityService =
+                villa.getOtherFacility().equals("massage") ||
+                        villa.getOtherFacility().equals("karaoke") ||
+                        villa.getOtherFacility().equals("food") ||
+                        villa.getOtherFacility().equals("drink") ||
+                        villa.getOtherFacility().equals("car");
+
+
+        do {
+            System.out.println("Enter ID: ");
+            villa.setId(scanner.nextLine());
+        }
+        while (!villa.getId().matches(patternVillaId));
+
         addNewGeneralService(villa);
-        System.out.println("Enter the room standard: ");
-        villa.setRoomStandard(scanner.nextLine());
-        System.out.println("Enter other facilities: ");
-        villa.setOtherFacility(scanner.nextLine());
-        System.out.println("Enter the number of floor: ");
-        villa.setFloor(scanner.nextInt());
-        String space = scanner.nextLine();
-        System.out.println("Enter the area of swimming pool: ");
-        villa.setPoolArea(scanner.nextDouble());
+
+        do {
+            System.out.println("Enter the room standard: ");
+            villa.setRoomStandard(scanner.nextLine());
+        }
+        while (!villa.getRoomStandard().matches(patternUpperCaseFirst));
+
+        do {
+            System.out.println("Enter other facilities: ");
+            villa.setOtherFacility(scanner.nextLine());
+        }
+        while (!isOtherFacilityService);
+
+        do {
+            System.out.println("Enter the number of floor: ");
+            villa.setFloor(scanner.nextInt());
+        }
+        while (villa.getFloor() <= 0);
+
+        do {
+            System.out.println("Enter the area of swimming pool: ");
+            villa.setPoolArea(scanner.nextDouble());
+        }
+        while (villa.getPoolArea() >= villa.getUsedArea() || villa.getPoolArea() >= 30);
+
         villas.add(villa);
 
-
-        FileManager.writeFileCSVVilla(villas,"D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv");
+        FileManager.writeFileCSVVilla(villas, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv");
     }
 
-
-     void addNewHouse() {
+    void addNewHouse() {
         House house = new House();
+        String patternHouseId = "^SVHO\\d{4}$";
+        boolean isOtherFacilityService =
+                house.getOtherFacility().equals("massage") ||
+                house.getOtherFacility().equals("karaoke") ||
+                house.getOtherFacility().equals("food") ||
+                house.getOtherFacility().equals("drink") ||
+                house.getOtherFacility().equals("car");
+
+        do {
+            System.out.println("Enter ID: ");
+            house.setId(scanner.nextLine());
+        }
+        while (!house.getId().matches(patternHouseId));
 
         addNewGeneralService(house);
-        System.out.println("Enter the room standard: ");
-        house.setRoomStandard(scanner.nextLine());
-        System.out.println("Enter other facilities: ");
-        house.setOtherFacility(scanner.nextLine());
-        System.out.println("Enter the number of floor: ");
-        house.setFloor(scanner.nextInt());
+
+        do {
+            System.out.println("Enter the room standard: ");
+            house.setRoomStandard(scanner.nextLine());
+        }
+        while (!house.getRoomStandard().matches(patternUpperCaseFirst));
+
+        do {
+            System.out.println("Enter other facilities: ");
+            house.setOtherFacility(scanner.nextLine());
+        }
+        while (!isOtherFacilityService);
+
+        do {
+            System.out.println("Enter the number of floor: ");
+            house.setFloor(scanner.nextInt());
+        }
+        while (house.getFloor() <= 0);
 
         houses.add(house);
 
-        System.out.println("Do you want to continue? Type \"n\" to exit.");
-        confirm = scanner.nextLine();
-
-        FileManager.writeFileCSVHouse(houses,"D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv");
+        FileManager.writeFileCSVHouse(houses, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv");
     }
 
     void addNewRoom() {
         Room room = new Room();
+        String patternRoomId = "^SVRO\\d{4}$";
 
+        do {
+            System.out.println("Enter ID: ");
+            room.setId(scanner.nextLine());
+        }
+        while (!room.getId().matches(patternRoomId));
         addNewGeneralService(room);
         System.out.println("Enter the free service: ");
         room.setFreeService(scanner.nextLine());
 
         rooms.add(room);
-        FileManager.writeFileCSVRoom(rooms,"D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv");
+        FileManager.writeFileCSVRoom(rooms, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv");
     }
 
     void showAllVilla() {

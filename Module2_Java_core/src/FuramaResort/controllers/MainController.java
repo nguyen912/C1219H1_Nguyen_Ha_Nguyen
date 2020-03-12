@@ -12,6 +12,9 @@ public class MainController {
     static Scanner scanner = new Scanner(System.in);
     static List<Villa> villas = new ArrayList<>();
 
+    static ServicesController servicesController = new ServicesController();
+    static CustomersController customersController = new CustomersController();
+
     public static void displayMainMenu() {
         System.out.println(
                 "Choose these options below: \n" +
@@ -34,10 +37,10 @@ public class MainController {
                 showServices();
                 break;
             case 3:
-                addNewCustomer();
+                customersController.addNewCustomer();
                 break;
             case 4:
-                showInformation();
+                customersController.showInfoCustomer();
                 break;
             case 5:
                 addNewBooking();
@@ -56,8 +59,6 @@ public class MainController {
     }
 
     private static void addNewServices() {
-        String confirm = "y";
-        ServicesController servicesController = new ServicesController();
         System.out.println(
                 "Choose these options below: \n" +
                 "1.\tAdd New Villa\n" +
@@ -85,13 +86,10 @@ public class MainController {
             default:
                 System.out.println("Choose the option again!");
                 addNewServices();
-
         }
     }
 
     private static void showServices() {
-        ServicesController servicesController = new ServicesController();
-
         System.out.println("Show the services: " +
                             "1.\tShow all Villa\n" +
                             "2.\tShow all House\n" +
@@ -134,9 +132,6 @@ public class MainController {
         }
     }
 
-    private static void addNewCustomer() {
-
-    }
 
     private static void showInfoEmployee() {
     }
@@ -144,6 +139,4 @@ public class MainController {
     private static void addNewBooking() {
     }
 
-    private static void showInformation() {
-    }
 }

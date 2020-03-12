@@ -1,9 +1,6 @@
 package FuramaResort.commons;
 
-import FuramaResort.models.House;
-import FuramaResort.models.Room;
-import FuramaResort.models.Services;
-import FuramaResort.models.Villa;
+import FuramaResort.models.*;
 
 import java.io.*;
 import  java.text.NumberFormat;
@@ -24,7 +21,6 @@ public class FileManager {
             FileOutputStream fos = new FileOutputStream(path);
             OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
             BufferedWriter bw = new BufferedWriter(osw);
-
 
             bw.write(generalServiceHeader + houseOnlyHeader + villaOnlyHeader);
             bw.newLine();
@@ -85,6 +81,35 @@ public class FileManager {
                 bw.newLine();
             }
 
+            bw.close();
+            osw.close();
+            fos.close();
+            return true;
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean writeFileCSVCustomer(ArrayList<Customer>customers, String path) {
+        try {
+            FileOutputStream fos = new FileOutputStream(path);
+            OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
+            BufferedWriter bw = new BufferedWriter(osw);
+
+            String header = "CUSTOMER NAME" + "," + "BIRTHDAY" + "," + "GENDER" + "," + "ID CARD" + ","
+                    + "PHONE NUMBER" + "," + "EMAIL" + "," + "CUSTOMER TYPE" + "," + "ADDRESS";
+            bw.write(header);
+            bw.newLine();
+
+            for (Customer customer : customers) {
+                bw.write(customer.getCustomerName() + "," + customer.getBirthday() + "," +
+                        customer.isGender() + "," + customer.getIdCard() + "," +
+                        customer.getPhoneNumber() + "," + customer.getEmail() + "," +
+                        customer.getCustomerType() + "," + customer.getAddress());
+                bw.newLine();
+            }
             bw.close();
             osw.close();
             fos.close();
@@ -196,8 +221,6 @@ public class FileManager {
                                 arr[6]);
                         rooms.add(room);
                 }
-
-
                 line = br.readLine();
             }
             br.close();
@@ -208,6 +231,35 @@ public class FileManager {
             ex.printStackTrace();
         }
         return rooms;
+    }
+
+    public static ArrayList<Customer> readFileCSVCustomer(String path) {
+        ArrayList<Customer>customers = new ArrayList<>();
+
+        try {
+            FileInputStream fis = new FileInputStream(path);
+            InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
+            BufferedReader br = new BufferedReader(isr);
+
+            String line = br.readLine();
+            line = br.readLine();
+
+            while (line != null) {
+                String arr[] = line.split(",");
+                if (arr.length == 8) {
+                    Customer customer = new Customer(arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7]);
+                    customers.add(customer);
+                }
+                line = br.readLine();
+            }
+            br.close();
+            isr.close();
+            fis.close();
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return customers;
     }
     //*******************************************************************************************
 
