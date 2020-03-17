@@ -25,6 +25,7 @@ public class ServicesController {
                 service.getRentedType().equals("month") ||
                 service.getRentedType().equals("day") ||
                 service.getRentedType().equals("hour");
+
         do {
             System.out.println("Enter service name: ");
             service.setServiceName(scanner.nextLine());

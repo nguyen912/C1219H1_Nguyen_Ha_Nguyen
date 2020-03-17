@@ -13,8 +13,15 @@ public class CustomersController {
     Customer customer = new Customer();
 
     public void addNewCustomer() {
-        System.out.println("Enter the customer full name: ");
-        customer.setCustomerName(scanner.nextLine());
+        String namePattern = "^(([A-Z])([a-z]+)(\\s?))+$";
+        String emailPattern = "^\\w+@[a-z]+(.[a-z]+){1,2}$";
+        String idCardPattern = "^\\d{9}$";
+
+        do {
+            System.out.println("Enter the customer full name: ");
+            customer.setCustomerName(scanner.nextLine());
+        }
+        while (!customer.getCustomerName().matches(namePattern));
 
         System.out.println("Enter the customer birthday: ");
         customer.setBirthday(scanner.nextLine());
@@ -22,14 +29,20 @@ public class CustomersController {
         System.out.println("Enter the customer gender: ");
         customer.setGender(scanner.nextLine());
 
-        System.out.println("Enter the customer ID card: ");
-        customer.setIdCard(scanner.nextLine());
+        do {
+            System.out.println("Enter the customer ID card: ");
+            customer.setIdCard(scanner.nextLine());
+        }
+        while (!customer.getIdCard().matches(idCardPattern));
 
         System.out.println("Enter the customer phone number: ");
         customer.setPhoneNumber(scanner.nextLine());
 
-        System.out.println("Enter the customer email: ");
-        customer.setEmail(scanner.nextLine());
+        do {
+            System.out.println("Enter the customer email: ");
+            customer.setEmail(scanner.nextLine());
+        }
+        while (!customer.getEmail().matches(emailPattern));
 
         System.out.println("Enter the customer type: ");
         customer.setCustomerType(scanner.nextLine());
