@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FuramaResort.iml" filepath="$PROJECT_DIR$/FuramaResort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project_Module2_FuramaResort/Project_Module2_FuramaResort.iml" filepath="$PROJECT_DIR$/Project_Module2_FuramaResort/Project_Module2_FuramaResort.iml" />
     </modules>
   </component>
 </project>
