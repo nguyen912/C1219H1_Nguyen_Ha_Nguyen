@@ -1,23 +1,19 @@
 package controllers;
 
+import commons.ScannerUtils;
 
-import case_study.FuramaResort.commons.ScannerUtils;
-import case_study.FuramaResort.models.Villa;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static case_study.FuramaResort.commons.Menu.displayMainMenu;
-import static case_study.FuramaResort.commons.Menu.displayMenuBackToMain;
-import static case_study.FuramaResort.controllers.BookingController.addNewBooking;
-import static case_study.FuramaResort.controllers.BookingController.bookingMovieTicket4D;
-import static case_study.FuramaResort.controllers.CustomersController.addNewCustomer;
-import static case_study.FuramaResort.controllers.CustomersController.showInfoCustomer;
-import static case_study.FuramaResort.controllers.EmployeeController.findEmployeeFromResume;
-import static case_study.FuramaResort.controllers.EmployeeController.showInfoEmployee;
-import static case_study.FuramaResort.controllers.ServicesController.addNewServices;
-import static case_study.FuramaResort.controllers.ServicesController.showServices;
+import static commons.Menu.displayMainMenu;
+import static commons.Menu.displayMenuBackToMain;
+import static controllers.BookingController.addNewBooking;
+import static controllers.BookingController.bookingMovieTicket4D;
+import static controllers.CustomersController.addNewCustomer;
+import static controllers.CustomersController.showInfoCustomer;
+import static controllers.EmployeeController.findEmployeeFromResume;
+import static controllers.EmployeeController.showInfoEmployee;
+import static controllers.ServicesController.addNewServices;
+import static controllers.ServicesController.showServices;
 
 public class MainController {
     static Scanner scanner = new Scanner(System.in);

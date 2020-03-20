@@ -1,33 +1,21 @@
 package controllers;
 
-
-import case_study.FuramaResort.commons.FileManager;
-import case_study.FuramaResort.commons.FuncGeneric;
-import case_study.FuramaResort.commons.FuncWriteAndReadFileCSV;
-import case_study.FuramaResort.commons.ScannerUtils;
-import case_study.FuramaResort.models.House;
-import case_study.FuramaResort.models.Room;
-import case_study.FuramaResort.models.Services;
-import case_study.FuramaResort.models.Villa;
+import commons.FuncGeneric;
+import commons.FuncWriteAndReadFileCSV;
+import commons.ScannerUtils;
+import models.House;
+import models.Room;
+import models.Services;
+import models.Villa;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static case_study.FuramaResort.commons.Menu.displayMainMenu;
-import static case_study.FuramaResort.commons.Menu.displayMenuAddNewServices;
-import static case_study.FuramaResort.controllers.MainController.backMainMenu;
+import static commons.Menu.displayMainMenu;
+import static commons.Menu.displayMenuAddNewServices;
+import static controllers.MainController.backMainMenu;
 
 public class ServicesController {
-    Scanner scanner = new Scanner(System.in);
-    //static ArrayList<Villa> villas = new ArrayList<>();
-    static ArrayList<House> houses = new ArrayList<>();
-    static ArrayList<Room> rooms = new ArrayList<>();
-
-    String patternUpperCaseFirst = "^([A-Z][a-z]+\\s?)+$";
-    String patternOtherFacility = "^massage|karaoke|food|drink|car$";
-    String patternTypeOfRent = "^year|month|day|hour$";
-    String patternStandard = "^[1-5]\\s(star)(s?)$";
-
     public static void processMeuAddNewServices() {
         switch (ScannerUtils.scanner.nextLine()) {
             case "1":
@@ -86,24 +74,24 @@ public class ServicesController {
         addNewGeneralService(villa);
 
         System.out.println("Enter the room standard: ");
-        ((Villa)villa).setStandard(ScannerUtils.scanner.nextLine());
+        ((Villa) villa).setStandard(ScannerUtils.scanner.nextLine());
 
         System.out.println("Enter other facilities: ");
-        ((Villa)villa).setOtherFacility(ScannerUtils.scanner.nextLine());
+        ((Villa) villa).setOtherFacility(ScannerUtils.scanner.nextLine());
 
 
         System.out.println("Enter the number of floor: ");
-        ((Villa)villa).setFloor(Integer.parseInt(ScannerUtils.scanner.nextLine()));
+        ((Villa) villa).setFloor(Integer.parseInt(ScannerUtils.scanner.nextLine()));
 
 
         System.out.println("Enter the area of swimming pool: ");
-        ((Villa)villa).setPoolArea(Double.parseDouble(ScannerUtils.scanner.nextLine()));
+        ((Villa) villa).setPoolArea(Double.parseDouble(ScannerUtils.scanner.nextLine()));
 
         //get list villa from CSV
-        ArrayList<Villa>villaList = FuncGeneric.getListFromCSV(funcgeneric.EntityType.VILLA);
+        ArrayList<Villa> villaList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.VILLA);
 
         //add villa to list
-        villaList.add((Villa)villa);
+        villaList.add((Villa) villa);
 
         //write to CSV
         FuncWriteAndReadFileCSV.writeVillaToFileCSV(villaList);
@@ -111,60 +99,52 @@ public class ServicesController {
         System.out.println("Add villa " + villa.getName() + " successfully!");
 
         backMainMenu();
-
-        //FileManager.writeFileCSVVilla(villas, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv");
     }
 
     public static void addNewHouse() {
         House house = new House();
-        String patternHouseId = "^SVHO\\d{4}$";
-
-        do {
-            System.out.println("Enter ID: ");
-            house.setId(scanner.nextLine());
-        }
-        while (!house.getId().matches(patternHouseId));
 
         addNewGeneralService(house);
 
-        do {
-            System.out.println("Enter the room standard: ");
-            house.setStandard(scanner.nextLine());
-        }
-        while (!house.getStandard().matches(patternStandard));
+        System.out.println("Enter the room standard: ");
+        house.setStandard(ScannerUtils.scanner.nextLine());
 
-        do {
-            System.out.println("Enter other facilities: ");
-            house.setOtherFacility(scanner.nextLine());
-        }
-        while (!house.getOtherFacility().matches(patternOtherFacility));
+        System.out.println("Enter other facilities: ");
+        house.setOtherFacility(ScannerUtils.scanner.nextLine());
 
-        do {
-            System.out.println("Enter the number of floor: ");
-            house.setFloor(scanner.nextInt());
-        }
-        while (house.getFloor() <= 0);
+        System.out.println("Enter the number of floor: ");
+        house.setFloor(Integer.parseInt(ScannerUtils.scanner.nextLine()));
 
-        houses.add(house);
+        ArrayList<House> houseList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.HOUSE);
 
-        FileManager.writeFileCSVHouse(houses, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv");
+        houseList.add((House) house);
+
+        FuncWriteAndReadFileCSV.writeHouseToFileCSV(houseList);
+
+        System.out.println("Add house " + house.getName() + " successfully!");
+
+        backMainMenu();
+
+
     }
 
     public static void addNewRoom() {
         Room room = new Room();
-        String patternRoomId = "^SVRO\\d{4}$";
 
-        do {
-            System.out.println("Enter ID: ");
-            room.setId(scanner.nextLine());
-        }
-        while (!room.getId().matches(patternRoomId));
         addNewGeneralService(room);
-        System.out.println("Enter the free service: ");
-        room.setFreeService(scanner.nextLine());
 
-        rooms.add(room);
-        FileManager.writeFileCSVRoom(rooms, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv");
+        System.out.println("Enter the free service: ");
+        room.setFreeService(ScannerUtils.scanner.nextLine());
+
+        ArrayList<Room> roomList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.ROOM);
+
+        roomList.add((Room) room);
+
+        FuncWriteAndReadFileCSV.writeRoomToFileCSV(roomList);
+
+        System.out.println("Add room " + room.getName() + " successfully!");
+
+        backMainMenu();
     }
 
     public static void showServices() {
@@ -178,30 +158,29 @@ public class ServicesController {
                 "7.\tBack to menu\n" +
                 "8.\tExit\n");
 
-        int chooseDisplay = scanner.nextInt();
-        switch (chooseDisplay) {
-            case 1:
-                servicesController.showAllVilla();
+        switch (ScannerUtils.scanner.nextLine()) {
+            case "1":
+                showAllVilla();
                 break;
-            case 2:
-                servicesController.showAllHouse();
+            case "2":
+                showAllHouse();
                 break;
-            case 3:
-                servicesController.showAllRoom();
+            case "3":
+                showAllRoom();
                 break;
-            case 4:
-                servicesController.showAllVillaNotDuplication();
+            case "4":
+                showAllVillaNotDuplication();
                 break;
-            case 5:
-                servicesController.showAllHouseNotDuplication();
+            case "5":
+                showAllHouseNotDuplication();
                 break;
-            case 6:
-                servicesController.showAllRoomNotDuplication();
+            case "6":
+                showAllRoomNotDuplication();
                 break;
-            case 7:
+            case "7":
                 displayMainMenu();
                 break;
-            case 8:
+            case "8":
                 System.exit(0);
                 break;
             default:
@@ -210,44 +189,27 @@ public class ServicesController {
         }
     }
 
-    void showAllVilla() {
-        System.out.println("*******************************************************************");
-        System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tROOM STANDARD\t" +
-                "OTHER FACILITIES\tTHE NUMBER OF FLOORS\tSWIMMING POOL AREA");
-        for (Villa villa : FileManager.readFileCSVVilla("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\villas.csv")) {
-            System.out.println(villa.showInfo());
-        }
-        System.out.println("*******************************************************************");
-    }
-
-    void showAllHouse() {
-        System.out.println("*******************************************************************");
-        System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tROOM STANDARD\t" +
-                "OTHER FACILITIES\tTHE NUMBER OF FLOORS");
-        for (House house : FileManager.readFileCSVHouse("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\houses.csv")) {
-            System.out.println(house.showInfo());
-        }
-        System.out.println("*******************************************************************");
-    }
-
-    void showAllRoom() {
-        System.out.println("*******************************************************************");
-        System.out.println("ID\tSERVICE NAME\tAREA\tCOST\tMAX PEOPLE\tRENTED TYPE\tFREE SERVICE");
-        for (Room room : FileManager.readFileCSVRoom("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\rooms.csv")) {
-            System.out.println(room.showInfo());
-        }
-        System.out.println("*******************************************************************");
-    }
-
-    void showAllVillaNotDuplication() {
+    public static void showAllVilla() {
 
     }
 
-    void showAllHouseNotDuplication() {
+    public static void showAllHouse() {
 
     }
 
-    void showAllRoomNotDuplication() {
+    public static void showAllRoom() {
+
+    }
+
+    public static void showAllVillaNotDuplication() {
+
+    }
+
+    public static void showAllHouseNotDuplication() {
+
+    }
+
+    public static void showAllRoomNotDuplication() {
 
     }
 }
