@@ -111,7 +111,7 @@ public class Customer implements Comparable<Customer> {
         this.usingService = usingService;
     }
 
-    public String showIfo() {
+    public String showInfo() {
         return "Customer{" +
                 "customerName='" + customerName + '\'' +
                 ", birthday=" + birthday +

@@ -18,6 +18,31 @@ public class FuncGeneric {
         EMPLOYEE
     }
 
+    public static <E> void displayList(ArrayList<E> list) {
+        int i = 1;
+        System.out.println("===============================================================");
+        for (E item : list) {
+            System.out.printf("No." + i);
+            if (item instanceof Villa) {
+                ((Villa)item).showInfo();
+            }
+            else if (item instanceof House) {
+                ((House)item).showInfo();
+            }
+            else if (item instanceof Room) {
+                ((Room)item).showInfo();
+            }
+            else if (item instanceof Customer) {
+                ((Customer)item).showInfo();
+            }
+            else if (item instanceof Employee) {
+                ((Employee)item).showInfo();
+            }
+            i++;
+        }
+        System.out.println("===============================================================");
+    }
+
     public static <E> ArrayList<E> getListFromCSV(EntityType entityType) {
         String csvPath = "";
         String[] headerRecord;

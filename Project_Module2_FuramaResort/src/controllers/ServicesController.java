@@ -5,8 +5,9 @@ import models.*;
 
 import java.util.ArrayList;
 
-import static commons.Menu.displayMainMenu;
-import static commons.Menu.displayMenuAddNewServices;
+import static commons.FuncGeneric.*;
+import static commons.FuncValidation.*;
+import static commons.Menu.*;
 import static controllers.MainController.backMainMenu;
 
 public class ServicesController {
@@ -22,7 +23,7 @@ public class ServicesController {
                 addNewRoom();
                 break;
             case "4":
-                displayMainMenu();
+                backMainMenu();
                 break;
             case "5":
                 System.exit(0);
@@ -82,7 +83,7 @@ public class ServicesController {
         ((Villa) villa).setPoolArea(Double.parseDouble(ScannerUtils.scanner.nextLine()));
 
         //get list villa from CSV
-        ArrayList<Villa> villaList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.VILLA);
+        ArrayList<Villa> villaList = getListFromCSV(EntityType.VILLA);
 
         //add villa to list
         villaList.add((Villa) villa);
@@ -109,7 +110,7 @@ public class ServicesController {
         System.out.println("Enter the number of floor: ");
         house.setFloor(Integer.parseInt(ScannerUtils.scanner.nextLine()));
 
-        ArrayList<House> houseList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.HOUSE);
+        ArrayList<House> houseList = getListFromCSV(EntityType.HOUSE);
 
         houseList.add((House) house);
 
@@ -130,7 +131,7 @@ public class ServicesController {
         System.out.println("Enter the free service: ");
         room.setFreeService(ScannerUtils.scanner.nextLine());
 
-        ArrayList<Room> roomList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.ROOM);
+        ArrayList<Room> roomList = getListFromCSV(EntityType.ROOM);
 
         roomList.add((Room) room);
 
@@ -142,16 +143,11 @@ public class ServicesController {
     }
 
     public static void showServices() {
-        System.out.println("Show the services: \n" +
-                "1.\tShow all Villa\n" +
-                "2.\tShow all House\n" +
-                "3.\tShow all Room\n" +
-                "4.\tShow All Name Villa Not Duplicate\n" +
-                "5.\tShow All Name House Not Duplicate\n" +
-                "6.\tShow All Name Room Not Duplicate\n" +
-                "7.\tBack to menu\n" +
-                "8.\tExit\n");
+        displayMenuShowServices();
+        processMenuShowServices();
+    }
 
+    public static void processMenuShowServices() {
         switch (ScannerUtils.scanner.nextLine()) {
             case "1":
                 showAllVilla();
@@ -172,7 +168,7 @@ public class ServicesController {
                 showAllRoomNotDuplication();
                 break;
             case "7":
-                displayMainMenu();
+                backMainMenu();
                 break;
             case "8":
                 System.exit(0);
@@ -184,15 +180,21 @@ public class ServicesController {
     }
 
     public static void showAllVilla() {
-
+        ArrayList<Villa> villaList = getListFromCSV(EntityType.VILLA);
+        displayList(villaList);
+        backMainMenu();
     }
 
     public static void showAllHouse() {
-
+        ArrayList<House> houseList = getListFromCSV(EntityType.HOUSE);
+        displayList(houseList);
+        backMainMenu();
     }
 
     public static void showAllRoom() {
-
+        ArrayList<Room> roomList = getListFromCSV(EntityType.ROOM);
+        displayList(roomList);
+        backMainMenu();
     }
 
     public static void showAllVillaNotDuplication() {
