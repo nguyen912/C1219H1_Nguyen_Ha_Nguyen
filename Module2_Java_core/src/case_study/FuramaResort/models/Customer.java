@@ -1,8 +1,10 @@
-package FuramaResort.models;
+package case_study.FuramaResort.models;
+
+import FuramaResort.models.Services;
 
 import java.util.Date;
 
-public class Customer {
+public class Customer implements Comparable<Customer> {
     private String customerName;
     private String birthday;
     private String gender;
@@ -111,8 +113,7 @@ public class Customer {
         this.usingService = usingService;
     }
 
-    @Override
-    public String toString() {
+    public String showIfo() {
         return "Customer{" +
                 "customerName='" + customerName + '\'' +
                 ", birthday=" + birthday +
@@ -124,5 +125,9 @@ public class Customer {
                 ", address='" + address + '\'' +
                 ", usingService=" + usingService +
                 '}';
+    }
+
+    public int compareTo(Customer customer) {
+        return this.customerName.compareTo(customer.customerName);
     }
 }

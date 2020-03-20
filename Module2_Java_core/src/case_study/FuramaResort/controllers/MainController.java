@@ -1,5 +1,7 @@
-package FuramaResort.controllers;
+package case_study.FuramaResort.controllers;
 
+import FuramaResort.controllers.CustomersController;
+import FuramaResort.controllers.ServicesController;
 import FuramaResort.models.House;
 import FuramaResort.models.Services;
 import FuramaResort.models.Villa;
@@ -90,7 +92,7 @@ public class MainController {
     }
 
     private static void showServices() {
-        System.out.println("Show the services: " +
+        System.out.println("Show the services: \n" +
                             "1.\tShow all Villa\n" +
                             "2.\tShow all House\n" +
                             "3.\tShow all Room\n" +

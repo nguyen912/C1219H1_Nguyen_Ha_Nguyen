@@ -1,4 +1,6 @@
-package FuramaResort.models;
+package case_study.FuramaResort.models;
+
+import FuramaResort.models.Services;
 
 public class Room extends Services {
     private String freeService;
@@ -24,7 +26,7 @@ public class Room extends Services {
     }
 
     @Override
-    public String toString() {
+    public String showInfo() {
         return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
                 getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
                 getFreeService();

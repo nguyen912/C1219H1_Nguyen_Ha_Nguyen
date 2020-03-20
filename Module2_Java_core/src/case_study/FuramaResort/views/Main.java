@@ -1,4 +1,4 @@
-package FuramaResort.views;
+package case_study.FuramaResort.views;
 
 import FuramaResort.controllers.MainController;
 import FuramaResort.models.Services;

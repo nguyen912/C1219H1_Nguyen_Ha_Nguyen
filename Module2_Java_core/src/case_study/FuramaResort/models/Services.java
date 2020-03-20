@@ -1,4 +1,4 @@
-package FuramaResort.models;
+package case_study.FuramaResort.models;
 
 public abstract class Services {
     private String id;
@@ -68,5 +68,5 @@ public abstract class Services {
         this.rentedType = rentedType;
     }
 
-    public abstract String toString();
+    public abstract String showInfo();
 }

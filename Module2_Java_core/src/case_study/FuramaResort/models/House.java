@@ -1,4 +1,6 @@
-package FuramaResort.models;
+package case_study.FuramaResort.models;
+
+import FuramaResort.models.Services;
 
 public class House extends Services {
     private String roomStandard;
@@ -40,7 +42,7 @@ public class House extends Services {
     }
 
     @Override
-    public String toString() {
+    public String showInfo() {
         return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
                 getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
                 getRoomStandard() + "\t" + getOtherFacility() + "\t" + getFloor();
