@@ -1,6 +1,4 @@
-package case_study.FuramaResort.models;
-
-import FuramaResort.models.Services;
+package models;
 
 import java.util.Date;
 

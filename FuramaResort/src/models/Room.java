@@ -1,6 +1,5 @@
-package case_study.FuramaResort.models;
+package models;
 
-import FuramaResort.models.Services;
 
 public class Room extends Services {
     private String freeService;
@@ -12,8 +11,8 @@ public class Room extends Services {
         this.freeService = freeService;
     }
 
-    public Room(String id, String serviceName, double usedArea, int cost, int maxPerson, String rentedType, String freeService) {
-        super(id, serviceName, usedArea, cost, maxPerson, rentedType);
+    public Room(String id, String name, double usedArea, int cost, int maxPeople, String type, String freeService) {
+        super(id, name, usedArea, cost, maxPeople, type);
         this.freeService = freeService;
     }
 
@@ -27,8 +26,8 @@ public class Room extends Services {
 
     @Override
     public String showInfo() {
-        return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
-                getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
+        return getId() + "\t" + getName() + "\t" + getUsedArea() + "\t" +
+                getCost() + "\t" + getMaxPeople() + "\t" + getType() + "\t" +
                 getFreeService();
 
     }

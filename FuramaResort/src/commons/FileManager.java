@@ -1,6 +1,6 @@
-package case_study.FuramaResort.commons;
+package commons;
 
-import FuramaResort.models.*;
+import case_study.FuramaResort.models.*;
 
 import java.io.*;
 import  java.text.NumberFormat;
@@ -26,7 +26,7 @@ public class FileManager {
             bw.newLine();
 
             for (Villa villa : villas) {
-                bw.write(writeGeneralServiceDetail(villa) + "," + villa.getRoomStandard() +
+                bw.write(writeGeneralServiceDetail(villa) + "," + villa.getStandard() +
                         "," + villa.getOtherFacility() +
                         "," + villa.getFloor() + "," + villa.getPoolArea());
                 bw.newLine();
@@ -53,7 +53,7 @@ public class FileManager {
             bw.newLine();
 
             for (House house : houses) {
-                bw.write(writeGeneralServiceDetail(house) + "," + house.getRoomStandard() +
+                bw.write(writeGeneralServiceDetail(house) + "," + house.getStandard() +
                         "," + house.getOtherFacility() + "," + house.getFloor());
                 bw.newLine();
             }
@@ -124,8 +124,8 @@ public class FileManager {
     }
 
     private static String writeGeneralServiceDetail(Services services) {
-        String serviceDetail = services.getId() + "," + services.getServiceName() + "," + services.getUsedArea() +
-                "," + services.getCost() + "," + services.getMaxPerson() + "," + services.getRentedType();
+        String serviceDetail = services.getId() + "," + services.getName() + "," + services.getUsedArea() +
+                "," + services.getCost() + "," + services.getMaxPeople() + "," + services.getType();
         return serviceDetail;
     }
     //*******************************************************************************************

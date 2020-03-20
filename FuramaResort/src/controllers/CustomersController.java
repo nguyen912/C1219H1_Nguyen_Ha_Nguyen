@@ -1,8 +1,8 @@
-package case_study.FuramaResort.controllers;
+package controllers;
 
-import FuramaResort.commons.FileManager;
-import FuramaResort.models.Customer;
-import FuramaResort.models.Room;
+
+import case_study.FuramaResort.commons.FileManager;
+import case_study.FuramaResort.models.Customer;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,7 +14,7 @@ public class CustomersController {
     static ArrayList<Customer>customers = new ArrayList<>();
     Customer customer = new Customer();
 
-    public void addNewCustomer() {
+    public static void addNewCustomer() {
         String namePattern = "^([A-Z][a-z]+\\s?)+$";
         String emailPattern = "^\\w+@[a-z]+(.[a-z]+){1,2}$";
         String idCardPattern = "^\\d{9}$";
@@ -56,7 +56,7 @@ public class CustomersController {
         FileManager.writeFileCSVCustomer(customers, "D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\customers.csv");
     }
 
-    public void showInfoCustomer() {
+    public static void showInfoCustomer() {
         ArrayList<Customer> customers = FileManager.readFileCSVCustomer("D:\\C1219H1_Nguyen_Ha_Nguyen\\Module2_Java_core\\src\\FuramaResort\\data\\customers.csv");
 
         System.out.println("*******************************************************************");

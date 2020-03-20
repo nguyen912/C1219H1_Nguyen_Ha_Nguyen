@@ -1,9 +1,8 @@
-package case_study.FuramaResort.models;
+package models;
 
-import FuramaResort.models.Services;
 
 public class Villa extends Services {
-    private String roomStandard;
+    private String standard;
     private String otherFacility;
     private int floor;
     private double poolArea;
@@ -11,20 +10,20 @@ public class Villa extends Services {
     public Villa() {
     }
 
-    public Villa(String id, String serviceName, double usedArea, int cost, int maxPerson, String rentedType, String roomStandard, String otherFacility, int floor, double poolArea) {
-        super(id, serviceName, usedArea, cost, maxPerson, rentedType);
-        this.roomStandard = roomStandard;
+    public Villa(String id, String name, double usedArea, int cost, int maxPeople, String type, String standard, String otherFacility, int floor, double poolArea) {
+        super(id, name, usedArea, cost, maxPeople, type);
+        this.standard = standard;
         this.otherFacility = otherFacility;
         this.floor = floor;
         this.poolArea = poolArea;
     }
 
-    public String getRoomStandard() {
-        return roomStandard;
+    public String getStandard() {
+        return standard;
     }
 
-    public void setRoomStandard(String roomStandard) {
-        this.roomStandard = roomStandard;
+    public void setStandard(String standard) {
+        this.standard = standard;
     }
 
     public String getOtherFacility() {
@@ -53,9 +52,9 @@ public class Villa extends Services {
 
     @Override
     public String showInfo() {
-        return getId() + "\t" + getServiceName() + "\t" + getUsedArea() + "\t" +
-                getCost() + "\t" + getMaxPerson() + "\t" + getRentedType() + "\t" +
-                getRoomStandard() + "\t" + getOtherFacility() + "\t" + getFloor() +
+        return getId() + "\t" + getName() + "\t" + getUsedArea() + "\t" +
+                getCost() + "\t" + getMaxPeople() + "\t" + getType() + "\t" +
+                getStandard() + "\t" + getOtherFacility() + "\t" + getFloor() +
                 "\t" + getPoolArea();
     }
 }

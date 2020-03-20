@@ -1,8 +1,6 @@
-package case_study.FuramaResort.views;
+package views;
 
-import FuramaResort.controllers.MainController;
-import FuramaResort.models.Services;
-import FuramaResort.models.Villa;
+import case_study.FuramaResort.controllers.MainController;
 
 import java.util.Scanner;
 
