@@ -1,7 +1,10 @@
 <component name="libraryTable">
   <library name="libs">
-    <CLASSES />
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Project_Module2_FuramaResort/src/libs" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/Project_Module2_FuramaResort/src/libs" recursive="false" />
   </library>
 </component>
