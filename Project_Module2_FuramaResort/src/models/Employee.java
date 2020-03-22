@@ -1,94 +1,59 @@
 package models;
 
 public class Employee {
-    private String name;
-    private String birthday;
-    private String idCard;
-    private String phoneNumber;
-    private String email;
-    private String degree;
-    private String position;
-    private long salary;
+    private String id;
+    private String fullName;
+    private int age;
+    private String address;
 
     public Employee() {
     }
 
-    public Employee(String name, String birthday, String idCard, String phoneNumber, String email, String degree, String position, long salary) {
-        this.name = name;
-        this.birthday = birthday;
-        this.idCard = idCard;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.degree = degree;
-        this.position = position;
-        this.salary = salary;
+    public Employee(String id, String fullName, int age, String address) {
+        this.id = id;
+        this.fullName = fullName;
+        this.age = age;
+        this.address = address;
     }
 
-    public String getName() {
-        return name;
+    public String getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getIdCard() {
-        return idCard;
+    public int getAge() {
+        return age;
     }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDegree() {
-        return degree;
-    }
-
-    public void setDegree(String degree) {
-        this.degree = degree;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public long getSalary() {
-        return salary;
-    }
-
-    public void setSalary(long salary) {
-        this.salary = salary;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String showInfo() {
-        return "";
+        return "Employee{" +
+                "id='" + id + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

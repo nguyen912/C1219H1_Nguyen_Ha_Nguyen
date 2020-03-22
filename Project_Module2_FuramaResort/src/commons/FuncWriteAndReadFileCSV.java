@@ -29,7 +29,7 @@ public class FuncWriteAndReadFileCSV {
     public static String[] headerRecordRoom = {"ID" , "SERVICE NAME" , "AREA" , "COST" , "MAX PEOPLE" , "RENTED TYPE" , "FREE SERVICE"};
     public static String[] headerRecordCustomer = {"CUSTOMER NAME" , "BIRTHDAY" , "GENDER" , "ID CARD" , "PHONE NUMBER" , "EMAIL" , "CUSTOMER TYPE" , "ADDRESS"};
     public static String[] headerRecordBooking = {"CUSTOMER NAME" , "BIRTHDAY" , "GENDER" , "ID CARD" , "PHONE NUMBER" , "EMAIL" , "CUSTOMER TYPE" , "ADDRESS", "ID" , "SERVICE NAME" , "AREA" , "COST" , "MAX PEOPLE" , "RENTED TYPE"};
-    public static String[] headerRecordEmployee = {};
+    public static String[] headerRecordEmployee = {"ID", "FULL NAME", "AGE", "ADDRESS"};
 
     public static void writeVillaToFileCSV(ArrayList<Villa> arrayList) {
         try (
