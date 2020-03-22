@@ -17,12 +17,12 @@ public class FuncWriteAndReadFileCSV {
     public static final char DEFAULT_QUOTE = '"';
     public static final int NUMBER_OF_LINE_SKIP = 1;
 
-    public static final String PATH_VILLA = "src/data/villas.csv";
-    public static final String PATH_HOUSE = "src/data/houses.csv";
-    public static final String PATH_ROOM = "src/data/rooms.csv";
-    public static final String PATH_CUSTOMER = "src/data/customers.csv";
-    public static final String PATH_EMPLOYEE = "src/data/employees.csv";
-    public static final String PATH_BOOKING = "bookings.csv";
+    public static final String PATH_VILLA = "D:\\C1219H1_Nguyen_Ha_Nguyen\\Project_Module2_FuramaResort\\src\\data\\villas.csv";
+    public static final String PATH_HOUSE = "D:\\C1219H1_Nguyen_Ha_Nguyen\\Project_Module2_FuramaResort\\src\\data\\houses.csv";
+    public static final String PATH_ROOM = "D:\\C1219H1_Nguyen_Ha_Nguyen\\Project_Module2_FuramaResort\\src\\data\\rooms.csv";
+    public static final String PATH_CUSTOMER = "D:\\C1219H1_Nguyen_Ha_Nguyen\\Project_Module2_FuramaResort\\src\\data\\customers.csv";
+    public static final String PATH_EMPLOYEE = "D:\\C1219H1_Nguyen_Ha_Nguyen\\Project_Module2_FuramaResort\\src\\data\\employees.csv";
+    public static final String PATH_BOOKING = "D:\\C1219H1_Nguyen_Ha_Nguyen\\Project_Module2_FuramaResort\\src\\data\\bookings.csv";
 
     public static String[] headerRecordVilla = {"ID" , "SERVICE NAME" , "AREA" , "COST" , "MAX PEOPLE" , "RENTED TYPE" , "ROOM STANDARD" , "THE OTHER FACILITIES" , "THE NUMBER OF FLOORS" , "SWIMMING POOL AREA"};
     public static String[] headerRecordHouse = {"ID" , "SERVICE NAME" , "AREA" , "COST" , "MAX PEOPLE" , "RENTED TYPE" , "ROOM STANDARD" , "THE OTHER FACILITIES" , "THE NUMBER OF FLOORS"};
