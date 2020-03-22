@@ -41,4 +41,11 @@ public class Menu {
                 "7.\tBack to menu\n" +
                 "8.\tExit\n");
     }
+
+    public static void displayMenuBooking() {
+        System.out.println("1.\tBooking Villa\n" +
+                "2.\tBooking House\n" +
+                "3.\tBooking Room\n");
+        System.out.println("Choose services booking.");
+    }
 }

@@ -8,8 +8,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import static commons.FuncWriteAndReadFileCSV.*;
+import static controllers.MainController.backMainMenu;
 
 public class FuncGeneric {
     public enum EntityType {
@@ -121,5 +123,35 @@ public class FuncGeneric {
             System.out.println(ex.getMessage());
         }
         return (ArrayList<E>)csvToBean.parse();
+    }
+
+    public static void showAllNameNotDuplicate(EntityType entityType) {
+        String csvPath = "";
+
+        switch (entityType) {
+            case VILLA:
+                csvPath = PATH_VILLA;
+                break;
+            case HOUSE:
+                csvPath = PATH_HOUSE;
+                break;
+            case ROOM:
+                csvPath = PATH_ROOM;
+                break;
+        }
+
+        Path path = Paths.get(csvPath);
+        if (!Files.exists(path)) {
+            System.out.println("File CSV does not exist!");
+            backMainMenu();
+        }
+        TreeSet<String> treeSet = FuncWriteAndReadFileCSV.getAllNameServiceFromCSV(csvPath);
+        System.out.println("List name service does not duplicate: ");
+        for (String str : treeSet) {
+            System.out.println(str);
+            System.out.println("========================");
+        }
+        backMainMenu();
+
     }
 }

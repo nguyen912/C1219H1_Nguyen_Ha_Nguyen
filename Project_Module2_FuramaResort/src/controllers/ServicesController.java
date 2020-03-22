@@ -197,14 +197,14 @@ public class ServicesController {
     }
 
     public static void showAllVillaNotDuplication() {
-
+        showAllNameNotDuplicate(EntityType.VILLA);
     }
 
     public static void showAllHouseNotDuplication() {
-
+        showAllNameNotDuplicate(EntityType.HOUSE);
     }
 
     public static void showAllRoomNotDuplication() {
-
+        showAllNameNotDuplicate(EntityType.ROOM);
     }
 }
