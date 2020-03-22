@@ -9,12 +9,18 @@ import models.Room;
 import models.Villa;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import static commons.FuncGeneric.displayList;
+import static commons.FuncGeneric.getListFromCSV;
 import static commons.Menu.displayMenuBooking;
+import static commons.Menu.displayMenuBookingMovieTicket4D;
 import static controllers.MainController.backMainMenu;
 
 public class BookingController {
+    private static Queue<Customer> customerQueueBookingTicket = new LinkedList<Customer>();
+
     public static void addNewBooking() {
         ArrayList<Customer>customerList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.CUSTOMER);
         displayList(customerList);
@@ -66,6 +72,52 @@ public class BookingController {
         }
     }
     public static void bookingMovieTicket4D() {
+        displayMenuBookingMovieTicket4D();
+        processMenuBookingMovieTicket4D();
+    }
 
+    public static void processMenuBookingMovieTicket4D() {
+        switch (ScannerUtils.scanner.nextLine()) {
+            case "1":
+                addBookingMovieTicket4D();
+                break;
+            case "2":
+                showBookingMovieTicket4D();
+                break;
+            case "3":
+                System.exit(0);
+            default:
+                System.out.println("Error! Back to menu.");
+                backMainMenu();
+        }
+    }
+
+    private static void addBookingMovieTicket4D() {
+        //select customer booking ticket
+        try {
+            ArrayList<Customer> customerList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.CUSTOMER);
+            displayList(customerList);
+            System.out.println("Choose customer want to booking.");
+            Customer customer = customerList.get(Integer.parseInt(ScannerUtils.scanner.nextLine()) - 1);
+            customerQueueBookingTicket.add(customer);
+            System.out.println("Add booking for: " + customer.getCustomerName() + " successfully!");
+        }
+        catch (IndexOutOfBoundsException e) {
+            System.out.println("Customer booking movie ticket 4D not exist. Try again!");
+            addBookingMovieTicket4D();
+        }
+        backMainMenu();
+    }
+
+    private static void showBookingMovieTicket4D() {
+        int i = 1;
+        System.out.println("===============LIST================");
+        for (Customer customer : customerQueueBookingTicket) {
+            System.out.println("No. " + i);
+            customer.showInfo();
+            i++;
+            System.out.println("===================");
+        }
+        backMainMenu();
     }
 }

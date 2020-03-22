@@ -48,4 +48,13 @@ public class Menu {
                 "3.\tBooking Room\n");
         System.out.println("Choose services booking.");
     }
+
+    public static void displayMenuBookingMovieTicket4D() {
+        System.out.println(
+                "1. Booking movie ticket.\n" +
+                "2. Show customer booking movie ticket.\n" +
+                "3. Exit."
+        );
+        System.out.println("Please select one function!");
+    }
 }
