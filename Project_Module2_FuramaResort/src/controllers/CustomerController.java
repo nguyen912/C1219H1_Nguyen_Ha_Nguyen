@@ -4,10 +4,13 @@ import commons.FuncGeneric;
 import commons.FuncWriteAndReadFileCSV;
 import commons.ScannerUtils;
 import models.Customer;
+import models.SortNameAndYear;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static commons.FuncGeneric.displayList;
+import static commons.FuncValidation.*;
 import static controllers.MainController.backMainMenu;
 
 public class CustomerController {
@@ -25,23 +28,18 @@ public class CustomerController {
     public static void addNewCustomer() {
         Customer customer = new Customer();
 
-        System.out.println("Enter the customer full name: ");
-        customer.setCustomerName(ScannerUtils.scanner.nextLine());
+        customer.setCustomerName(getValidCustomerName(ENTER_CUSTOMER_NAME, INVALID_CUSTOMER_NAME));
 
-        System.out.println("Enter the customer birthday: ");
-        customer.setBirthday(ScannerUtils.scanner.nextLine());
+        customer.setBirthday(getValidBirthday(ENTER_BIRTHDAY, INVALID_BIRTHDAY));
 
-        System.out.println("Enter the customer gender: ");
-        customer.setGender(ScannerUtils.scanner.nextLine());
+        customer.setGender(getValidGender(ENTER_GENDER, INVALID_GENDER));
 
-        System.out.println("Enter the customer ID card: ");
-        customer.setIdCard(ScannerUtils.scanner.nextLine());
+        customer.setIdCard(getValidIdCard(ENTER_ID_CARD, INVALID_ID_CARD));
 
         System.out.println("Enter the customer phone number: ");
         customer.setPhoneNumber(ScannerUtils.scanner.nextLine());
 
-        System.out.println("Enter the customer email: ");
-        customer.setEmail(ScannerUtils.scanner.nextLine());
+        customer.setEmail(getValidEmail(ENTER_EMAIL, INVALID_EMAIL));
 
         System.out.println("Enter the customer type: ");
         customer.setCustomerType(ScannerUtils.scanner.nextLine());
@@ -58,7 +56,10 @@ public class CustomerController {
     }
 
     public static void showInfoCustomer() {
-//            System.out.println("*******************************************************************");
-//            System.out.println("*******************************************************************");
+        ArrayList<Customer> customerList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.CUSTOMER);
+        customerList.sort(new SortNameAndYear());
+        displayList(customerList);
+        backMainMenu();
+
     }
 }

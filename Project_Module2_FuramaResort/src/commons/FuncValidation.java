@@ -1,9 +1,12 @@
 package commons;
 
+import customer_exceptions.*;
 import models.House;
 import models.Room;
 import models.Services;
 import models.Villa;
+
+import java.util.Calendar;
 
 public class FuncValidation {
     private static String pattern = "";
@@ -104,4 +107,105 @@ public class FuncValidation {
         return result;
     }
 
+    public static String getValidCustomerName(String strDisplay, String errMess) {
+        String result = "";
+        System.out.println(strDisplay);
+        try {
+            result = ScannerUtils.scanner.nextLine();
+            if (!isValidNameServices(result)) {
+                throw new NameException(errMess);
+            }
+        }
+        catch (NameException e) {
+            System.out.println(errMess);
+            result = getValidCustomerName(strDisplay, errMess);
+        }
+        return result;
+    }
+
+    public static boolean isValidBirthday(String str) {
+        pattern = "^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d\\d$";
+        return str.matches(pattern);
+    }
+    public static String getValidBirthday(String strDisplay, String errMess) {
+        String result = null;
+        System.out.println(strDisplay);
+        try {
+            result = ScannerUtils.scanner.nextLine();
+            if (!isValidBirthday(result)) {
+                throw new BirthdayException(errMess);
+            }
+            int year = Integer.parseInt(result.substring(6,10));
+            int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+            if (year <= 1900 || currentYear - year <= 18) {
+                throw new BirthdayException(errMess);
+            }
+        }
+        catch (BirthdayException e) {
+            System.out.println(errMess);
+            result = getValidBirthday(strDisplay, errMess);
+        }
+        return result;
+    }
+
+    public static boolean isValidGender(String str) {
+        pattern = "^(?i:Male|Female|Unknown)$";
+        return str.matches(pattern);
+    }
+
+    public static String getValidGender(String strDisplay, String errMess) {
+        String result = null;
+        System.out.println(strDisplay);
+        try {
+            result = ScannerUtils.scanner.nextLine();
+            if (!isValidGender(result)) {
+                throw new GenderException(errMess);
+            }
+        }
+        catch (GenderException e) {
+            System.out.println(errMess);
+            result = getValidGender(strDisplay, errMess);
+        }
+        return result;
+    }
+
+    public static boolean isValidIdCard(String str) {
+        pattern = "^\\d{9}$";
+        return str.matches(pattern);
+    }
+    public static String getValidIdCard(String strDisplay, String errMess) {
+        String result = null;
+        System.out.println(strDisplay);
+        try {
+            result = ScannerUtils.scanner.nextLine();
+            if (!isValidIdCard(result)) {
+                throw new IdCardException(errMess);
+            }
+        }
+        catch (IdCardException e) {
+            System.out.println(errMess);
+            result = getValidIdCard(strDisplay, errMess);
+        }
+        return result;
+    }
+
+    public static boolean isValidEmail(String str) {
+        pattern = "^[A-Z0-9._%+-]++@[A-Z0-9.-]++\\.[A-Z]{2,}+$";
+        return str.matches(pattern);
+    }
+    public static String getValidEmail(String strDisplay, String errMess) {
+        String result = null;
+        System.out.println(strDisplay);
+        try {
+            result = ScannerUtils.scanner.nextLine();
+            if (!isValidEmail(result)) {
+                throw new EmailException(errMess);
+            }
+        }
+        catch (EmailException e) {
+            System.out.println(errMess);
+            result = getValidEmail(strDisplay, errMess);
+        }
+        return result;
+    }
 }
