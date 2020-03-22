@@ -11,6 +11,27 @@ import static commons.Menu.*;
 import static controllers.MainController.backMainMenu;
 
 public class ServicesController {
+    public static final String ENTER_SERVICE_ID = "Enter service ID: ";
+    public static final String INVALID_SERVICE_ID = "Service ID is invalid. Service ID must be format SVXX-YYYY!";
+    public static final String ENTER_SERVICE_NAME = "Enter service name: ";
+    public static final String INVALID_SERVICE_NAME = "Service name is invalid!";
+    public static final String ENTER_AREA_USED = "Enter area used: ";
+    public static final String INVALID_AREA_USED = "Area used is invalid!";
+    public static final String ENTER_RENTAL_COST = "Enter rental cost: ";
+    public static final String INVALID_RENTAL_COST = "rental cost is invalid!";
+    public static final String ENTER_MAX_NUMBER_OF_PEOPLE = "Enter max number of people: ";
+    public static final String INVALID_MAX_NUMBER_OF_PEOPLE = "max number of people is invalid!";
+    public static final String ENTER_RENT_TYPE = "Enter rent type: ";
+    public static final String INVALID_RENT_TYPE = "rent type is invalid!";
+    public static final String ENTER_ROOM_STANDARD = "Enter room standard: ";
+    public static final String INVALID_ROOM_STANDARD = "room standard is invalid!";
+    public static final String ENTER_AREA_POOL = "Enter area pool: ";
+    public static final String INVALID_AREA_POOL = "area pool is invalid!";
+    public static final String ENTER_NUMBER_OF_FLOORS = "Enter number of floors: ";
+    public static final String INVALID_NUMBER_OF_FLOORS = "number of floors is invalid!";
+    public static final String ENTER_FREE_SERVICES = "Enter free services: ";
+    public static final String INVALID_FREE_SERVICES = "free services is invalid!";
+
     public static void processMeuAddNewServices() {
         switch (ScannerUtils.scanner.nextLine()) {
             case "1":
@@ -39,48 +60,29 @@ public class ServicesController {
         processMeuAddNewServices();
     }
 
-
     private static Services addNewGeneralService(Services service) {
-        System.out.println("Enter ID: ");
-        service.setId(ScannerUtils.scanner.nextLine());
-
-        System.out.println("Enter service name: ");
-        service.setName(ScannerUtils.scanner.nextLine());
-
-        System.out.println("Enter usable area: ");
-        service.setUsedArea(Double.parseDouble(ScannerUtils.scanner.nextLine()));
-
-        System.out.println("Enter cost: ");
-        service.setCost(Integer.parseInt(ScannerUtils.scanner.nextLine()));
-
-        System.out.println("Enter max people: ");
-        service.setMaxPeople(Integer.parseInt(ScannerUtils.scanner.nextLine()));
-
-        System.out.println("Enter rented type: ");
-        service.setType(ScannerUtils.scanner.nextLine());
-
+        service.setId(getValidIdService(service, ENTER_SERVICE_ID, INVALID_SERVICE_ID));
+        service.setName(getValidName(ENTER_SERVICE_NAME, INVALID_SERVICE_NAME));
+        service.setUsedArea(getValidNumberDouble(ENTER_AREA_USED, INVALID_AREA_USED, 30.0));
+        service.setCost((int) getValidNumberDouble(ENTER_RENTAL_COST, INVALID_RENTAL_COST,0.0));
+        service.setMaxPeople(getValidNumberInteger(ENTER_MAX_NUMBER_OF_PEOPLE, INVALID_MAX_NUMBER_OF_PEOPLE,1, 20));
+        service.setType(getValidName(ENTER_RENT_TYPE, INVALID_RENT_TYPE));
         return service;
-
     }
 
     public static void addNewVilla() {
         Services villa = new Villa();
 
-        addNewGeneralService(villa);
+        villa = addNewGeneralService(villa);
 
-        System.out.println("Enter the room standard: ");
-        ((Villa) villa).setStandard(ScannerUtils.scanner.nextLine());
+        ((Villa)villa).setStandard(getValidName(ENTER_ROOM_STANDARD, INVALID_ROOM_STANDARD));
 
         System.out.println("Enter other facilities: ");
-        ((Villa) villa).setOtherFacility(ScannerUtils.scanner.nextLine());
+        ((Villa)villa).setOtherFacility(ScannerUtils.scanner.nextLine());
 
+        ((Villa)villa).setFloor(getValidNumberInteger(ENTER_NUMBER_OF_FLOORS, INVALID_NUMBER_OF_FLOORS, 0));
 
-        System.out.println("Enter the number of floor: ");
-        ((Villa) villa).setFloor(Integer.parseInt(ScannerUtils.scanner.nextLine()));
-
-
-        System.out.println("Enter the area of swimming pool: ");
-        ((Villa) villa).setPoolArea(Double.parseDouble(ScannerUtils.scanner.nextLine()));
+        ((Villa)villa).setPoolArea(getValidNumberDouble(ENTER_AREA_POOL, INVALID_AREA_POOL, 30.0));
 
         //get list villa from CSV
         ArrayList<Villa> villaList = getListFromCSV(EntityType.VILLA);
@@ -97,18 +99,16 @@ public class ServicesController {
     }
 
     public static void addNewHouse() {
-        House house = new House();
+        Services house = new House();
 
-        addNewGeneralService(house);
+        house = addNewGeneralService(house);
 
-        System.out.println("Enter the room standard: ");
-        house.setStandard(ScannerUtils.scanner.nextLine());
+        ((House)house).setStandard(getValidName(ENTER_ROOM_STANDARD, INVALID_ROOM_STANDARD));
 
         System.out.println("Enter other facilities: ");
-        house.setOtherFacility(ScannerUtils.scanner.nextLine());
+        ((House)house).setOtherFacility(ScannerUtils.scanner.nextLine());
 
-        System.out.println("Enter the number of floor: ");
-        house.setFloor(Integer.parseInt(ScannerUtils.scanner.nextLine()));
+        ((House)house).setFloor(getValidNumberInteger(ENTER_NUMBER_OF_FLOORS, INVALID_NUMBER_OF_FLOORS, 0));
 
         ArrayList<House> houseList = getListFromCSV(EntityType.HOUSE);
 
@@ -124,12 +124,11 @@ public class ServicesController {
     }
 
     public static void addNewRoom() {
-        Room room = new Room();
+        Services room = new Room();
 
-        addNewGeneralService(room);
+        room = addNewGeneralService(room);
 
-        System.out.println("Enter the free service: ");
-        room.setFreeService(ScannerUtils.scanner.nextLine());
+        ((Room)room).setFreeService(getValidFreeServices(ENTER_FREE_SERVICES, INVALID_FREE_SERVICES));
 
         ArrayList<Room> roomList = getListFromCSV(EntityType.ROOM);
 

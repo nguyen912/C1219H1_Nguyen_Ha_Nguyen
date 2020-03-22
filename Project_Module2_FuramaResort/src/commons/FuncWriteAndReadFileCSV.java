@@ -1,6 +1,7 @@
 package commons;
 
 import com.opencsv.CSVWriter;
+import models.Customer;
 import models.House;
 import models.Room;
 import models.Villa;
@@ -93,6 +94,29 @@ public class FuncWriteAndReadFileCSV {
                         {room.getId(), room.getName(), String.valueOf(room.getUsedArea()),
                                 String.valueOf(room.getCost()), String.valueOf(room.getMaxPeople()),
                                 room.getType(), room.getFreeService()});
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void writeCustomerToFileCSV(ArrayList<Customer> arrayList) {
+        try {
+            Writer writer = new FileWriter(PATH_CUSTOMER);
+            CSVWriter csvWriter = new CSVWriter(
+                    writer,
+                    CSVWriter.DEFAULT_SEPARATOR,
+                    CSVWriter.NO_QUOTE_CHARACTER,
+                    CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                    CSVWriter.DEFAULT_LINE_END
+            );
+            csvWriter.writeNext(headerRecordCustomer);
+            for (Customer customer : arrayList) {
+                csvWriter.writeNext(new String[]
+                        {customer.getCustomerName(), customer.getBirthday(), customer.isGender(),
+                        customer.getIdCard(), customer.getPhoneNumber(), customer.getEmail(),
+                        customer.getCustomerType(), customer.getAddress()});
             }
         }
         catch (IOException e) {
