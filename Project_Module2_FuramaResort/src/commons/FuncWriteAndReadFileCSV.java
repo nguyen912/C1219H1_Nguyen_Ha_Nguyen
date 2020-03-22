@@ -199,7 +199,7 @@ public class FuncWriteAndReadFileCSV {
             br = new BufferedReader(new FileReader(path));
 
             while ((line = br.readLine()) != null) {
-                if (getNameServicesFromFile(line).equals("serviceName")) {
+                if (getNameServicesFromFile(line).equals("SERVICE NAME")) {
                     continue;
                 }
                 result.add(getNameServicesFromFile(line));
@@ -220,6 +220,15 @@ public class FuncWriteAndReadFileCSV {
         }
         result.descendingSet();
         return result;
+    }
+
+    public static String getNameServicesFromFile(String csvLine) {
+        String name = "";
+        if (csvLine != null) {
+            String[] splitData = csvLine.split(",");
+            name = splitData[1];
+        }
+        return name;
     }
 
 }
