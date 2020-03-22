@@ -1,11 +1,11 @@
 package controllers;
 
 import commons.FuncGeneric;
+import commons.ScannerUtils;
+import data.Resume;
 import models.Employee;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static controllers.MainController.backMainMenu;
 
@@ -27,6 +27,26 @@ public class EmployeeController {
     }
 
     public static void findEmployeeFromResume() {
-
+        Stack<Employee> employeeStack = Resume.getAllEmployees();
+        System.out.println("Enter key of employee: ");
+        String inputSearch = ScannerUtils.scanner.nextLine();
+        try {
+            while (true) {
+                boolean foundById = employeeStack.peek().getId().contains(inputSearch);
+                if (!foundById) {
+                    employeeStack.pop();
+                }
+                else {
+                    System.out.println("Founded employee below.");
+                    System.out.println(employeeStack.peek().toString());
+                    break;
+                }
+            }
+        }
+        catch (EmptyStackException e) {
+            System.out.println("Key invalid. Please try again!");
+            findEmployeeFromResume();
+        }
+        backMainMenu();
     }
 }
