@@ -50,10 +50,8 @@ chưa từng được Khách hàng thực hiện đặt từ quý 1 của năm 2
 select dich_vu.id_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu, 
 max(ngay_lam_hop_dong) as ngay_dat_gan_nhat
 from dich_vu
-inner join loai_dich_vu
-on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
-inner join hop_dong
-on dich_vu.id_dich_vu = hop_dong.id_dich_vu
+inner join loai_dich_vu on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
+inner join hop_dong on dich_vu.id_dich_vu = hop_dong.id_dich_vu
 group by id_dich_vu
 having ngay_dat_gan_nhat < '2019-01-01';
 
@@ -65,10 +63,8 @@ Khách hàng đặt phòng  trong năm 2019.*/
 select dich_vu.id_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu,
 year(ngay_lam_hop_dong), max(ngay_lam_hop_dong)
 from dich_vu
-inner join loai_dich_vu
-on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
-inner join hop_dong
-on dich_vu.id_dich_vu = hop_dong.id_dich_vu
+inner join loai_dich_vu on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
+inner join hop_dong on dich_vu.id_dich_vu = hop_dong.id_dich_vu
 where year(ngay_lam_hop_dong) = '2018'
 group by dich_vu.id_dich_vu
 having year(max(ngay_lam_hop_dong)) < 2019;
