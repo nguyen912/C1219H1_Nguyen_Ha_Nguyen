@@ -84,7 +84,7 @@ from khach_hang;
 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 
 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.*/
 
-select count(id_khach_hang), month(ngay_lam_hop_dong)
+select month(ngay_lam_hop_dong), count(id_khach_hang)
 from hop_dong
 where year(ngay_lam_hop_dong) = '2019'
 group by month(ngay_lam_hop_dong);
