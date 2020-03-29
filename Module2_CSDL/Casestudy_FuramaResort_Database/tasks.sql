@@ -97,8 +97,7 @@ Kết quả hiển thị bao gồm IDHopDong, NgayLamHopDong, NgayKetthuc, TienD
 select hop_dong.id_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong, 
 count(id_hop_dong_chi_tiet) 
 from hop_dong_chi_tiet
-inner join hop_dong
-on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
+inner join hop_dong on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
 group by id_hop_dong;
 
 /*========================================================================================
@@ -107,12 +106,9 @@ TenLoaiKhachHang là “Diamond” và có địa chỉ là “Vinh” hoặc �
 
 select khach_hang.id_khach_hang, id_loai_khach, dia_chi, dich_vu_di_kem.id_dich_vu_di_kem, ten_dich_vu_di_kem
 from hop_dong_chi_tiet
-inner join hop_dong
-on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
-inner join dich_vu_di_kem
-on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
-inner join khach_hang
-on hop_dong.id_khach_hang = khach_hang.id_khach_hang
+inner join hop_dong on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
+inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
+inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
 where id_loai_khach = 1 and (dia_chi like '%Vinh' or dia_chi like '%Quang Ngai')
 group by khach_hang.id_khach_hang;
 
