@@ -96,12 +96,9 @@ create table dich_vu_di_kem (
 	id_dich_vu_di_kem int auto_increment primary key,
     ten_dich_vu_di_kem varchar(45) not null unique,
     gia int,
-    don_vi int, 
+    don_vi varchar(45), 
     trang_thai_kha_dung varchar(45)
 );
-
-alter table dich_vu_di_kem 
-	modify column don_vi varchar(45);
 
 create table hop_dong_chi_tiet (
 	id_hop_dong_chi_tiet int auto_increment primary key,
@@ -111,13 +108,3 @@ create table hop_dong_chi_tiet (
     constraint fk_id_hop_dong foreign key(id_hop_dong) references hop_dong(id_hop_dong),
     constraint fk_id_dich_vu_di_kem foreign key(id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem)
 );
-    
-    
-    
-    
-    
-    
-    
-
-
-    

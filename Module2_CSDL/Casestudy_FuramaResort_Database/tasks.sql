@@ -206,14 +206,27 @@ là lớn hơn 10.000.000 VNĐ.*/
 SET SQL_SAFE_UPDATES = 0;
 update khach_hang
 set id_loai_khach = 1
-where id_loai_khach = 2
-and (
-	select id_khach_hang, (chi_phi_thue + so_luong * gia) as tong_tien
+where id_loai_khach = 2 and id_khach_hang in(
+	select (chi_phi_thue + so_luong * gia) as tong_tien
     from hop_dong
+    inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
     inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
     inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
+    group by id_khach_hang
     having sum(tong_tien) > 10000000
 );
+
+select * from khach_hang
+where id_loai_khach = 3;
+
+select khach_hang.id_khach_hang, khach_hang.id_loai_khach, (chi_phi_thue + so_luong * gia) as tong_tien
+    from hop_dong
+    inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
+    inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
+    inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
+    inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
+    group by id_khach_hang
+    having sum(tong_tien) > 10000000;
 
 /*========================================================================================
 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).*/
