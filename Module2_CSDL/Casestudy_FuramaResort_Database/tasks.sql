@@ -47,14 +47,15 @@ group by khach_hang.id_khach_hang;
 6.	Hiển thị IDDichVu, TenDichVu, DienTich, ChiPhiThue, TenLoaiDichVu của tất cả các loại Dịch vụ 
 chưa từng được Khách hàng thực hiện đặt từ quý 1 của năm 2019 (Quý 1 là tháng 1, 2, 3).*/
 
-select dich_vu.id_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu, max(ngay_lam_hop_dong)
+select dich_vu.id_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu, 
+max(ngay_lam_hop_dong) as ngay_dat_gan_nhat
 from dich_vu
 inner join loai_dich_vu
 on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
 inner join hop_dong
 on dich_vu.id_dich_vu = hop_dong.id_dich_vu
 group by id_dich_vu
-having max(ngay_lam_hop_dong) < '2019-01-01';
+having ngay_dat_gan_nhat < '2019-01-01';
 
 /*========================================================================================
 7.	Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu 
