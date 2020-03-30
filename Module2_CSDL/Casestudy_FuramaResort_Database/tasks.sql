@@ -145,7 +145,7 @@ inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
 inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
 where year(ngay_lam_hop_dong) = 2019 
 and ((month(ngay_lam_hop_dong) between 10 and 12) and (month(ngay_lam_hop_dong) not between 1 and 6))
-group by id_hop_dong_chi_tiet;
+group by id_hop_dong;
 /*========================================================================================
 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
 (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
