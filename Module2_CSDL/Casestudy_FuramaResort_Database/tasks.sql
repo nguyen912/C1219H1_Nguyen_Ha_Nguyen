@@ -146,33 +146,6 @@ inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
 where year(ngay_lam_hop_dong) = 2019 
 and ((month(ngay_lam_hop_dong) between 10 and 12) and (month(ngay_lam_hop_dong) not between 1 and 6))
 group by id_hop_dong_chi_tiet;
-
-select dich_vu.id_dich_vu, ten_dich_vu, hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, 
-khach_hang.ho_ten as TenKhachHang, khach_hang.sdt as SoDienThoaiKhachHang, 
-sum(so_luong) as SoLuongDichVuDikem, ngay_lam_hop_dong
-from hop_dong
-inner join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
-inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
-inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
-where year(ngay_lam_hop_dong) = 2019 
-and (month(ngay_lam_hop_dong) between 10 and 12)
-group by id_hop_dong_chi_tiet;
-
-select dich_vu.id_dich_vu, ten_dich_vu, hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, 
-khach_hang.ho_ten as TenKhachHang, khach_hang.sdt as SoDienThoaiKhachHang, 
-sum(so_luong) as SoLuongDichVuDikem, ngay_lam_hop_dong
-from hop_dong
-inner join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
-inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
-inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
-where year(ngay_lam_hop_dong) = 2019 
-and month(ngay_lam_hop_dong) not between 1 and 6
-group by id_hop_dong_chi_tiet;
-
-
-
 /*========================================================================================
 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
 (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
