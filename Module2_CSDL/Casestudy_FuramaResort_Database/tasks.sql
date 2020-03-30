@@ -117,6 +117,24 @@ SoLuongDichVuDikem (được tính dựa trên tổng Hợp đồng chi tiết),
 đã từng được khách hàng đặt vào 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt 
 vào 6 tháng đầu năm 2019.*/
 
+-- chị My làm
+select hop_dong.id_dich_vu, hop_dong.id_hop_dong, nhan_vien.ho_ten as ten_nhan_vien, 
+khach_hang.ho_ten as ten_khach_hang, khach_hang.sdt, dich_vu.ten_dich_vu, 
+count(hop_dong_chi_tiet.id_hop_dong_chi_tiet) as so_luong_dich_vu_kem, ngay_lam_hop_dong
+from hop_dong
+inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
+inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
+inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
+inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
+where (ngay_lam_hop_dong between '2019-10-01'  and '2019-12-31' ) and hop_dong.id_hop_dong not in (
+	select hop_dong.id_hop_dong
+	from hop_dong
+	inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
+	where ngay_lam_hop_dong between '2019-01-01'  and '2019-06-30' 
+)
+group by id_hop_dong;
+
+-- cách Nguyên làm
 select hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, khach_hang.ho_ten as TenKhachHang, 
 khach_hang.sdt as SoDienThoaiKhachHang, dich_vu.id_dich_vu, ten_dich_vu,
 sum(so_luong) as SoLuongDichVuDikem, ngay_lam_hop_dong
@@ -128,6 +146,32 @@ inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
 where year(ngay_lam_hop_dong) = 2019 
 and ((month(ngay_lam_hop_dong) between 10 and 12) and (month(ngay_lam_hop_dong) not between 1 and 6))
 group by id_hop_dong_chi_tiet;
+
+select dich_vu.id_dich_vu, ten_dich_vu, hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, 
+khach_hang.ho_ten as TenKhachHang, khach_hang.sdt as SoDienThoaiKhachHang, 
+sum(so_luong) as SoLuongDichVuDikem, ngay_lam_hop_dong
+from hop_dong
+inner join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
+inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
+inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
+inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
+where year(ngay_lam_hop_dong) = 2019 
+and (month(ngay_lam_hop_dong) between 10 and 12)
+group by id_hop_dong_chi_tiet;
+
+select dich_vu.id_dich_vu, ten_dich_vu, hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, 
+khach_hang.ho_ten as TenKhachHang, khach_hang.sdt as SoDienThoaiKhachHang, 
+sum(so_luong) as SoLuongDichVuDikem, ngay_lam_hop_dong
+from hop_dong
+inner join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
+inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
+inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
+inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
+where year(ngay_lam_hop_dong) = 2019 
+and month(ngay_lam_hop_dong) not between 1 and 6
+group by id_hop_dong_chi_tiet;
+
+
 
 /*========================================================================================
 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
@@ -148,14 +192,10 @@ Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLa
 
 select hop_dong_chi_tiet.id_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, count(id_hop_dong_chi_tiet) as SoLanSuDung
 from hop_dong_chi_tiet
-inner join dich_vu_di_kem
-on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
-inner join hop_dong
-on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
-inner join dich_vu
-on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-inner join loai_dich_vu
-on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
+inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
+inner join hop_dong on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
+inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
+inner join loai_dich_vu on dich_vu.id_loai_dich_vu = loai_dich_vu.id_loai_dich_vu
 group by hop_dong_chi_tiet.id_dich_vu_di_kem
 having SoLanSuDung = 1;
 
