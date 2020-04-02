@@ -629,40 +629,24 @@ chỉ cập nhật những khách hàng đã từng đặt phòng với tổng T
 là lớn hơn 10.000.000 VNĐ.*/
 
 SET SQL_SAFE_UPDATES = 0;
-update khach_hang
-set id_loai_khach = 1
-where id_loai_khach = 2 and id_khach_hang in(
-	select (chi_phi_thue + so_luong * gia) as tong_tien
-    from hop_dong
-    inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-    inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
-    inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
-    group by id_khach_hang
-    having sum(tong_tien) > 10000000
-);
-
-select * from khach_hang
-where id_loai_khach = 3;
-
-select khach_hang.id_khach_hang, khach_hang.id_loai_khach, (chi_phi_thue + so_luong * gia) as tong_tien
-    from hop_dong
-    inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
-    inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-    inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
-    inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
-    group by id_khach_hang
-    having sum(tong_tien) > 10000000;
+update khach_hang,
+(select hop_dong.id_khach_hang as id, sum(hop_dong.tong_tien) as tong_tien
+from hop_dong
+where year(ngay_lam_hop_dong) = 2019
+group by hop_dong.id_khach_hang
+having tong_tien > 10000000) as temp
+set khach_hang.id_loai_khach = (select loai_khach.id_loai_khach from loai_khach where ten_loai_khach = 'Diamond')
+where khach_hang.id_loai_khach = (select loai_khach.id_loai_khach from loai_khach where ten_loai_khach = 'Platinium')
+and temp.id = khach_hang.id_khach_hang;
 
 /*========================================================================================
 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).*/
 
-delete from khach_hang
-where (
-	select id_khach_hang
-	from hop_dong 
-    group by id_khach_hang
-    having year(max(ngay_lam_hop_dong)) < 2016
-);
+delete khach_hang, hop_dong, hop_dong_chi_tiet
+from khach_hang
+inner join hop_dong using(id_khach_hang)
+inner join hop_dong_chi_tiet using(id_hop_dong)
+where not exists(select hop_dong.id_hop_dong where year(ngay_lam_hop_dong) > 2016 and khach_hang.id_khach_hang = hop_dong.id_khach_hang);
 
 /*========================================================================================
 19.	Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi.*/
