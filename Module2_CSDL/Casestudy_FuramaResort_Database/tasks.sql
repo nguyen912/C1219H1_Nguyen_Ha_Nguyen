@@ -80,6 +80,9 @@ group by ho_ten;
 select distinct ho_ten
 from khach_hang;
 
+select khach_hang.ho_ten from khach_hang 
+union select khach_hang.ho_ten from khach_hang;
+
 /*========================================================================================
 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 
 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.*/
@@ -104,7 +107,7 @@ group by id_hop_dong;
 11.	Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hàng có 
 TenLoaiKhachHang là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.*/
 
-select khach_hang.id_khach_hang, id_loai_khach, dia_chi, dich_vu_di_kem.id_dich_vu_di_kem, ten_dich_vu_di_kem
+select distinct khach_hang.id_khach_hang, id_loai_khach, dia_chi, dich_vu_di_kem.id_dich_vu_di_kem, ten_dich_vu_di_kem
 from hop_dong_chi_tiet
 inner join hop_dong on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
 inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
@@ -117,12 +120,45 @@ SoLuongDichVuDikem (được tính dựa trên tổng Hợp đồng chi tiết),
 đã từng được khách hàng đặt vào 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt 
 vào 6 tháng đầu năm 2019.*/
 
+select hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, khach_hang.ho_ten as TenKhachHang, 
+khach_hang.sdt as SoDienThoaiKhachHang, hop_dong.id_dich_vu, ten_dich_vu, 
+count(id_hop_dong_chi_tiet) as SoLuongDichVuDikem, tien_dat_coc
+from hop_dong
+inner join nhan_vien using (id_nhan_vien)
+inner join khach_hang using(id_khach_hang)
+inner join dich_vu using(id_dich_vu)
+inner join hop_dong_chi_tiet using(id_hop_dong)
+where (ngay_lam_hop_dong between '2019-10-01' and '2019-12-31')
+and hop_dong.id_dich_vu not in 
+(select hop_dong.id_dich_vu from hop_dong where ngay_lam_hop_dong between '2019-01-01' and '2019-06-30')
+group by hop_dong.id_hop_dong
+;
+
+-- chưa sửa
+select hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, khach_hang.ho_ten as TenKhachHang, 
+khach_hang.sdt as SoDienThoaiKhachHang, hop_dong.id_dich_vu, ten_dich_vu, 
+count(id_hop_dong_chi_tiet) as SoLuongDichVuDikem, tien_dat_coc
+from hop_dong
+inner join nhan_vien using (id_nhan_vien)
+inner join khach_hang using(id_khach_hang)
+inner join dich_vu using(id_dich_vu)
+inner join hop_dong_chi_tiet using(id_hop_dong)
+where exists (id_dich_vu from hop_dong where ngay_lam_hop_dong between '2019-10-01' and '2019-12-31')
+and not exists (id_dich_vu from hop_dong where ngay_lam_hop_dong between '2019-01-01' and '2019-06-30')
+group by hop_dong.id_hop_dong
+;
 
 
 /*========================================================================================
 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
 (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
 
+select dich_vu_di_kem.*, count(id_hop_dong_chi_tiet) as SoLanSuDung
+from dich_vu_di_kem
+inner join hop_dong_chi_tiet using(id_dich_vu_di_kem)
+group by hop_dong_chi_tiet.id_dich_vu_di_kem
+order by SoLanSuDung desc limit 1
+;
 
 /*========================================================================================
 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
@@ -169,31 +205,6 @@ delete from nhan_vien where id_nhan_vien not in
 17.	Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, 
 chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 
 là lớn hơn 10.000.000 VNĐ.*/
-
-SET SQL_SAFE_UPDATES = 0;
-update khach_hang
-set id_loai_khach = 1
-where id_loai_khach = 2 and id_khach_hang in(
-	select (chi_phi_thue + so_luong * gia) as tong_tien
-    from hop_dong
-    inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-    inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
-    inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
-    group by id_khach_hang
-    having sum(tong_tien) > 10000000
-);
-
-select * from khach_hang
-where id_loai_khach = 3;
-
-select khach_hang.id_khach_hang, khach_hang.id_loai_khach, (chi_phi_thue + so_luong * gia) as tong_tien
-    from hop_dong
-    inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
-    inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-    inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
-    inner join dich_vu_di_kem on hop_dong_chi_tiet.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem
-    group by id_khach_hang
-    having sum(tong_tien) > 10000000;
 
 /*========================================================================================
 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràngbuộc giữa các bảng).*/

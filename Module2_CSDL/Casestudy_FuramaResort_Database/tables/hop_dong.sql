@@ -48,6 +48,11 @@ insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong
 insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (47, 27, 45, '2018-11-14', '2015-04-13', 500000);
 insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (47, 28, 1, '2019-07-27', '2018-03-07', 500000);
 insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (4, 25, 31, '2018-05-02', '2016-11-01', 500000);
+insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (4, 25, 2, '2019-03-03', '2019-11-01', 500000);
+insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (7, 26, 2, '2019-11-03', '2019-11-04', 500000);
+insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (4, 25, 3, '2019-07-14', '2019-08-14', 500000);
+insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (4, 25, 3, '2019-11-14', '2019-11-14', 500000);
+insert into hop_dong (id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc) values (4, 25, 22, '2019-03-14', '2019-04-14', 500000);
 
 SET SQL_SAFE_UPDATES = 0;
 update hop_dong

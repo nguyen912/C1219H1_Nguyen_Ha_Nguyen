@@ -1,5 +1,6 @@
 create database furama_resort;
 use furama_resort;
+drop database furama_resort;
 
 /*==============================================================================================
 TẠO BẢNG
@@ -543,47 +544,43 @@ SoLuongDichVuDikem (được tính dựa trên tổng Hợp đồng chi tiết),
 đã từng được khách hàng đặt vào 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt 
 vào 6 tháng đầu năm 2019.*/
 
--- chị My làm
-select hop_dong.id_dich_vu, hop_dong.id_hop_dong, nhan_vien.ho_ten as ten_nhan_vien, 
-khach_hang.ho_ten as ten_khach_hang, khach_hang.sdt, dich_vu.ten_dich_vu, 
-count(hop_dong_chi_tiet.id_hop_dong_chi_tiet) as so_luong_dich_vu_kem, ngay_lam_hop_dong
-from hop_dong
-inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
-inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
-inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
-where (ngay_lam_hop_dong between '2019-10-01'  and '2019-12-31' ) and hop_dong.id_hop_dong not in (
-	select hop_dong.id_hop_dong
-	from hop_dong
-	inner join hop_dong_chi_tiet on hop_dong.id_hop_dong = hop_dong_chi_tiet.id_hop_dong
-	where ngay_lam_hop_dong between '2019-01-01'  and '2019-06-30' 
-)
-group by id_hop_dong;
-
--- cách Nguyên làm
 select hop_dong.id_hop_dong, nhan_vien.ho_ten as TenNhanVien, khach_hang.ho_ten as TenKhachHang, 
-khach_hang.sdt as SoDienThoaiKhachHang, dich_vu.id_dich_vu, ten_dich_vu,
-sum(so_luong) as SoLuongDichVuDikem, ngay_lam_hop_dong
+khach_hang.sdt as SoDienThoaiKhachHang, hop_dong.id_dich_vu, ten_dich_vu, 
+count(id_hop_dong_chi_tiet) as SoLuongDichVuDikem, tien_dat_coc
 from hop_dong
-inner join hop_dong_chi_tiet on hop_dong_chi_tiet.id_hop_dong = hop_dong.id_hop_dong
-inner join dich_vu on hop_dong.id_dich_vu = dich_vu.id_dich_vu
-inner join nhan_vien on hop_dong.id_nhan_vien = nhan_vien.id_nhan_vien
-inner join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
-where year(ngay_lam_hop_dong) = 2019 
-and ((month(ngay_lam_hop_dong) between 10 and 12) and (month(ngay_lam_hop_dong) not between 1 and 6))
-group by id_hop_dong;
+inner join nhan_vien using (id_nhan_vien)
+inner join khach_hang using(id_khach_hang)
+inner join dich_vu using(id_dich_vu)
+inner join hop_dong_chi_tiet using(id_hop_dong)
+where (ngay_lam_hop_dong between '2019-10-01' and '2019-12-31')
+and hop_dong.id_dich_vu not in 
+(select hop_dong.id_dich_vu from hop_dong where ngay_lam_hop_dong between '2019-01-01' and '2019-06-30')
+group by hop_dong.id_hop_dong
+;
+
 /*========================================================================================
 13.	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
 (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).*/
 
-select dich_vu_di_kem.id_dich_vu_di_kem, ten_dich_vu_di_kem, max(so_luot_su_dung) as luot_su_dung_nhieu_nhat
-from (
-	select id_dich_vu_di_kem , 
-		count(id_hop_dong_chi_tiet) as so_luot_su_dung
-    from hop_dong_chi_tiet
-	group by id_dich_vu_di_kem) luot_su_dung
-inner join dich_vu_di_kem
-on luot_su_dung.id_dich_vu_di_kem = dich_vu_di_kem.id_dich_vu_di_kem;
+create temporary table temp
+select ten_dich_vu_di_kem, count(hop_dong_chi_tiet.id_dich_vu_di_kem) as so_lan_su_dung
+from hop_dong_chi_tiet
+inner join dich_vu_di_kem using(id_dich_vu_di_kem)
+group by ten_dich_vu_di_kem;
+select * from temp;
+
+create temporary table temp1
+select max(so_lan_su_dung) as max_so_lan_su_dung
+from temp;
+select * from temp1;
+
+select ten_dich_vu_di_kem, temp.so_lan_su_dung
+from temp
+inner join temp1 on temp.so_lan_su_dung = temp1.max_so_lan_su_dung;
+
+drop table temp1;
+drop table temp;
+
 
 /*========================================================================================
 14.	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 

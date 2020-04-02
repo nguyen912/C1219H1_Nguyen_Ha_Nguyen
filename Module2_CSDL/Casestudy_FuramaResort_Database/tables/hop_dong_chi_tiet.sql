@@ -48,5 +48,6 @@ insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values 
 insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values (9, 4, 2);
 insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values (11, 4, 3);
 insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values (4, 5, 2);
+insert into hop_dong_chi_tiet (id_hop_dong, id_dich_vu_di_kem, so_luong) values (55, 5, 2);
 
 select * from hop_dong_chi_tiet;
