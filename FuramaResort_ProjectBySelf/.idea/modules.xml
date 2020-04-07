@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FuramaResort_ProjectBySelf.iml" filepath="$PROJECT_DIR$/FuramaResort_ProjectBySelf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Module2_JavaWeb.iml" filepath="$PROJECT_DIR$/../Module2_JavaWeb.iml" />
     </modules>
   </component>
 </project>
