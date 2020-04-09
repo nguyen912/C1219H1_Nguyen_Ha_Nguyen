@@ -14,8 +14,7 @@
   </head>
   <body>
   <%
-    Customer customer1 = new Customer();
-    ArrayList<Customer> customers = new ArrayList<>();
+
   %>
   </body>
 </html>
