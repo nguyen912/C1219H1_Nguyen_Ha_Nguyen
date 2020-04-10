@@ -7,6 +7,9 @@ import java.util.*;
 public class CustomerService {
     public static Map<Integer, Customer> customerList = new HashMap<>();
 
+    static {
+        initCustomer();
+    }
     private static void initCustomer() {
         Customer customer1 = new Customer(1,"Nguyen Ha Nguyen", "09/12/1998", "78TNV");
         Customer customer2 = new Customer(2,"Nguyen Toan Thang", "09/12/1998", "78TNV");

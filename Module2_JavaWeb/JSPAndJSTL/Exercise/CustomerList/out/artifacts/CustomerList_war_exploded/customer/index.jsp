@@ -1,10 +1,4 @@
 <%@ page import="java.util.ArrayList" %>
-  Created by IntelliJ IDEA.
-  User: nguye
-  Date: 4/8/2020
-  Time: 9:55 AM
-  To change this template use File | Settings | File Templates.
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -24,7 +18,9 @@
         <c:forEach var="customer" items="${customerList}">
           <tr>
             <td><c:out value="${customer.getId()}"></c:out></td>
-            
+            <td><c:out value="${customer.getName()}"></c:out></td>
+            <td><c:out value="${customer.getBirthday()}"></c:out></td>
+            <td><c:out value="${customer.getAddress()}"></c:out></td>
           </tr>
         </c:forEach>
       </table>
