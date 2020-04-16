@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class CurrencyConverterController {
-    @GetMapping
+    @GetMapping("/converter")
     public String index() {
         return "index";
     }
 
-    @PostMapping
+    @PostMapping("/usd")
     public String submit(@RequestParam String usd, String rate, Model model) {
         float result = Float.parseFloat(usd) * Float.parseFloat(rate);
         model.addAttribute("result", result);
