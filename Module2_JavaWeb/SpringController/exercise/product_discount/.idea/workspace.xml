@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0a210bd5-3a09-4ce7-bb1c-d92513143530" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/.idea/artifacts/java_web_currency_converter_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/java-web-currency-converter.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/out/artifacts/java_web_currency_converter_war_exploded/WEB-INF/classes/ConverterServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/out/artifacts/java_web_currency_converter_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/out/artifacts/java_web_currency_converter_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/out/production/java-web-currency-converter/ConverterServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/src/ConverterServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/java-web-currency-converter/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/.idea/artifacts/server_time_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/out/artifacts/server_time_war_exploded/WEB-INF/classes/ServletServerTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/out/artifacts/server_time_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/out/artifacts/server_time_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/out/production/server_time/ServletServerTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/server_time.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/src/ServletServerTime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/server_time/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/.idea/artifacts/simple_dictionary_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/out/artifacts/simple_dictionary_war_exploded/WEB-INF/classes/TranslationServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/out/artifacts/simple_dictionary_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/out/artifacts/simple_dictionary_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/out/production/simple_dictionary/TranslationServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/simple_dictionary.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/src/TranslationServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_dictionary/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/.idea/artifacts/simple_login_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/out/artifacts/simple_login_war_exploded/WEB-INF/classes/ServletLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/out/artifacts/simple_login_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/out/artifacts/simple_login_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/out/production/simple_login/ServletLogin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/simple_login.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/src/ServletLogin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Practice/simple_login/web/index.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1apcGYFGzsT0o6fmqJ8kMWRaVf5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.33" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.33" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="product_discount:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/product_discount_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="product_discount:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a210bd5-3a09-4ce7-bb1c-d92513143530" name="Default Changelist" comment="" />
+      <created>1587435880342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587435880342</updated>
+      <workItem from="1587435883858" duration="64000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
