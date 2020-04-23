@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a669ee17-8efe-466a-9c10-c0ad7bdd3050" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/.idea/libraries/taglibs_standard_spec_1_2_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/src/controller/ServletProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/src/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/src/services/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/web/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/web/product/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/web/product/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/web/product/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exercise/product_management/web/product/view.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercise/product_management/product_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise/product_management/product_management.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercise/product_management/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../exercise/product_management/src/model/Product.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1avRGU0XJ3c2QEhJVBjPqgp06TJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a669ee17-8efe-466a-9c10-c0ad7bdd3050" name="Default Changelist" comment="" />
+      <created>1587613984476</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587613984476</updated>
+      <workItem from="1587613985604" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="0" key="#Project_Structure" timestamp="1587613996354">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="0" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1587613996354" />
+    <state x="368" y="37" key="FileChooserDialogImpl" timestamp="1587614000539">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="368" y="37" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587614000539" />
+  </component>
+</project>
