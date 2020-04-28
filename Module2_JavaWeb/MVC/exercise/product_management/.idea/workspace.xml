@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71ac88be-42a2-4a8c-851b-a8b4442c907c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/taglibs_standard_spec_1_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/controller/ServletProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/services/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/services/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/delete.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/view.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/product_management/controller/ServletProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/product_management/model/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/product_management/services/ProductService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/product_management/services/ProductServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/product_management.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ServletProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product/delete.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/product/view.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1b9MPAGLEKCXTUbIva8IkDLv4Cy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.33" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.33" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="product_management:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/product_management_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="product_management:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71ac88be-42a2-4a8c-851b-a8b4442c907c" name="Default Changelist" comment="" />
+      <created>1588039829274</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588039829274</updated>
+      <workItem from="1588039832771" duration="1791000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1588040519332">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1588040519332" />
+  </component>
+</project>

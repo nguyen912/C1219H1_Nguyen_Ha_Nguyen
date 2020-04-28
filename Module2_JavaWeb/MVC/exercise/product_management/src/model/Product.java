@@ -1,22 +1,23 @@
 package model;
 
 public class Product {
-    //id, tên sản phẩm, giá sản phẩm, mô tả của sản phẩm, nhà sản xuất
+    //id, tên sản phẩm, giá sản phẩm, mô tả của sản phẩm, nhà sản xuất.
     private int id;
     private String name;
     private long price;
     private String description;
-    private String productionCompany;
+    private String company;
 
     public Product() {
+
     }
 
-    public Product(int id, String name, long price, String description, String productionCompany) {
+    public Product(int id, String name, long price, String description, String company) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
-        this.productionCompany = productionCompany;
+        this.company = company;
     }
 
     public int getId() {
@@ -51,11 +52,11 @@ public class Product {
         this.description = description;
     }
 
-    public String getProductionCompany() {
-        return productionCompany;
+    public String getCompany() {
+        return company;
     }
 
-    public void setProductionCompany(String productionCompany) {
-        this.productionCompany = productionCompany;
+    public void setCompany(String company) {
+        this.company = company;
     }
 }
