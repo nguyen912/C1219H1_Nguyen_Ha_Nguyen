@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71ac88be-42a2-4a8c-851b-a8b4442c907c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/service/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/taglibs_standard_spec_1_2_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/controller/ServletProduct.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/model/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/services/ProductService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/classes/services/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/create.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/delete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/product_management_war_exploded/product/view.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/product_management/controller/ServletProduct.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/product_management/model/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/product_management/services/ProductService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/product_management/services/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/product_management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ServletProduct.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ProductService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ProductServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/product/create.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/product/delete.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/product/edit.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/product/list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/product/view.jsp" beforeDir="false" />
-    </list>
+    <list default="true" id="71ac88be-42a2-4a8c-851b-a8b4442c907c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JSPAndJSTL/exercise/calculator_jsp" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.33" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.33" ALTERNATIVE_JRE_ENABLED="false">
@@ -94,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588039829274</updated>
       <workItem from="1588039832771" duration="1791000" />
+      <workItem from="1588230517503" duration="19000" />
     </task>
     <servers />
   </component>
@@ -105,5 +77,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="399" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1588040519332" />
+    <state x="368" y="37" key="FileChooserDialogImpl" timestamp="1588230534158">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="368" y="37" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588230534158" />
   </component>
 </project>
