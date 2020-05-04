@@ -1,24 +1,24 @@
-package com.example.demo.service.impl;
+package com.example.demo.service;
 
 import com.example.demo.model.Customer;
 import com.example.demo.repository.CustomerRepository;
-import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class CustomerServiceImpl implements CustomerService {
+@Service
+public class CustomerServiceImpl implements CustomerService{
     @Autowired
-    private CustomerRepository customerRepository;
-
+    CustomerRepository customerRepository;
     @Override
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
 
     @Override
-    public Customer findById(Long id) {
-        return customerRepository.findById(id);
+    public Customer findById(Integer id) {
+        return customerRepository.getOne(id);
     }
 
     @Override
@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void remove(Long id) {
-        customerRepository.remove(id);
+    public void remove(Integer id) {
+        customerRepository.deleteById(id);
     }
 }
