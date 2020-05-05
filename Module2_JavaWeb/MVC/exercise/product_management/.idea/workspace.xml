@@ -7,13 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71ac88be-42a2-4a8c-851b-a8b4442c907c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/taglibs_standard_impl_1_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/ServletProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/product/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/product_management_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/product_management_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product_management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/product_management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../DatabaseORM/exercise/blog/src/main/java/com/example/demo/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../DatabaseORM/exercise/blog/src/main/java/com/example/demo/repository/BlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../DatabaseORM/exercise/blog/src/main/java/com/example/demo/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DatabaseORM/practice/hibernate_customer_management/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DatabaseORM/practice/hibernate_customer_management/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,6 +212,7 @@
       <workItem from="1588498434622" duration="1902000" />
       <workItem from="1588501296561" duration="1459000" />
       <workItem from="1588555584513" duration="133000" />
+      <workItem from="1588608876291" duration="7000" />
     </task>
     <servers />
   </component>
