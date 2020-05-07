@@ -10,7 +10,7 @@ public class Province {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    String name;
+    private String name;
 
     @OneToMany(targetEntity = Customer.class)
     private List<Customer> customers;

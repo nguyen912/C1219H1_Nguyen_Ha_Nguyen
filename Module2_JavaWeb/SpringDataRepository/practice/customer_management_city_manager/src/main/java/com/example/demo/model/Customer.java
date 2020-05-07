@@ -15,12 +15,22 @@ public class Customer {
     @Column(name = "last_name")
     private String lastName;
 
+    @ManyToOne
+    @JoinColumn(name = "id_provice")
+    private Province province;
+
     public Customer() {
     }
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Customer(String firstName, String lastName, Province province) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.province = province;
     }
 
     public Integer getId() {
@@ -45,5 +55,13 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Province getProvince() {
+        return province;
+    }
+
+    public void setProvince(Province province) {
+        this.province = province;
     }
 }

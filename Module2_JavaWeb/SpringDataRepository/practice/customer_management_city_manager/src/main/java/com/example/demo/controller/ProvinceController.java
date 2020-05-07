@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Customer;
 import com.example.demo.model.Province;
+import com.example.demo.service.CustomerService;
 import com.example.demo.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.WebParam;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -18,6 +21,23 @@ public class ProvinceController {
     @Autowired
     private ProvinceService provinceService;
 
+    @Autowired
+    private CustomerService customerService;
+
+    @GetMapping("/view-province/{id}")
+    public ModelAndView viewProvince(@PathVariable("id") Integer id){
+        Province province = provinceService.findById(id);
+        if(province == null){
+            return new ModelAndView("province/error.404");
+        }
+
+        Iterable<Customer> customers = customerService.findAllByProvince(province);
+
+        ModelAndView modelAndView = new ModelAndView("province/view");
+        modelAndView.addObject("province", province);
+        modelAndView.addObject("customers", customers);
+        return modelAndView;
+    }
     @GetMapping("/provinces")
     public ModelAndView listProvinces() {
         ModelAndView modelAndView = new ModelAndView("province/list");
@@ -46,7 +66,7 @@ public class ProvinceController {
 
     @GetMapping("/edit/{id}")
     public ModelAndView showEditForm(@PathVariable Integer id) {
-        Optional<Province> province = provinceService.findById(id);
+        Province province = provinceService.findById(id);
 
         if(province != null) {
             ModelAndView modelAndView = new ModelAndView("province/edit");
@@ -70,7 +90,7 @@ public class ProvinceController {
 
     @GetMapping("/delete/{id}")
     public ModelAndView showDeleteForm(@PathVariable Integer id){
-        Optional<Province> province = provinceService.findById(id);
+        Province province = provinceService.findById(id);
         if(province != null) {
             ModelAndView modelAndView = new ModelAndView("/province/delete");
             modelAndView.addObject("province", province);
