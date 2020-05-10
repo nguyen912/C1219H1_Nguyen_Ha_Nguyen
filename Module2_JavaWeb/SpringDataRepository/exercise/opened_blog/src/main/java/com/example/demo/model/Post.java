@@ -1,24 +1,20 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "post")
+@Table
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String title;
 
     private String content;
 
-    private Date date;
-
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public Post() {
     }
@@ -28,10 +24,10 @@ public class Post {
         this.content = content;
     }
 
-    public Post(String title, String content, User user) {
+    public Post(String title, String content, Category category) {
         this.title = title;
         this.content = content;
-        this.user = user;
+        this.category = category;
     }
 
     public Long getId() {
@@ -58,19 +54,11 @@ public class Post {
         this.content = content;
     }
 
-    public Date getDate() {
-        return date;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
