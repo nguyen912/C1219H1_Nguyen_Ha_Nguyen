@@ -45,11 +45,12 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public ModelAndView listCustomers(@RequestParam("s") Optional<String> s, Pageable pageable){
+    public ModelAndView listCustomers(@RequestParam(value = "s", required = false) String s, Pageable pageable){
         Page<Customer> customers;
-        if(s.isPresent()){
-            customers = customerService.findAllByFirstNameContaining(s.get(), pageable);
-        } else {
+        if(s != null) {
+            customers = customerService.findAllByFirstNameContaining(s, pageable);
+        }
+        else {
             customers = customerService.findAll(pageable);
         }
         ModelAndView modelAndView = new ModelAndView("/customer/list");

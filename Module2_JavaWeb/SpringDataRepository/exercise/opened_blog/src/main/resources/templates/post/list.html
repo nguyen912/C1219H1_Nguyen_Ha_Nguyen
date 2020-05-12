@@ -5,8 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Posts</h1>
     <a href="create-post">Create a post</a>
-
+    <h1>Posts</h1>
+    <form>
+        Search by title:
+        <input name="s" type="text">
+        <input type="submit" value="Search">
+    </form><br>
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="post : ${posts}">
+            <tr>
+               <td th:text="${post.title}"></td>
+               <td th:text="${post.content}"></td>
+               <td th:text="${post.category}"></td>
+               <td><a th:href="@{/edit-post/__${post.id}__}">Edit</a> </td>
+               <td><a th:href="@{/delete-post/__${post.id}__}">Delete</a> </td>
+            </tr>
+        </th:block>
+        <div>
+            <a th:href="@{'/posts'(page=${posts.number - 1})}" th:if="${posts.hasPrevious()}">Previous</a>
+            <span th:text="${posts.number + 1}"></span>/<span th:text="${posts.totalPages}"></span>
+            <a th:href="@{'posts'(page=${posts.number + 1})}" th:if="${posts.hasNext()}">Next</a>
+        </div>
+    </table>
 </body>
 </html>
