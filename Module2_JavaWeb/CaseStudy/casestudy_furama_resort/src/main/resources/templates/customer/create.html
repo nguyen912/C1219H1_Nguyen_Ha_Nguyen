@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+</head>
+<body>
+    <h4><a href="/customers">Customer List</a></h4>
+    <h1>Create Customer</h1>
+    <th:block th:if="${message}">
+        <p th:text="${message}"></p>
+    </th:block>
+    <form method="post" th:action="@{/create-customer}" th:object="${customer}">
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td>Birthday: </td>
+                <td><input type="text" th:field="*{birthday}"></td>
+            </tr>
+            <tr>
+                <td>ID Card: </td>
+                <td><input type="text" th:field="*{idCard}"></td>
+            </tr>
+            <tr>
+                <td>Phone Number: </td>
+                <td><input type="text" th:field="*{phoneNumber}"></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><input type="text" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td><input type="text" th:field="*{address}"></td>
+            </tr>
+            <tr>
+                <td>Customer Type:</td>
+                <td>
+                    <select th:field="*{customerType}">
+                        <option th:each="ct : ${customerTypes}" th:value="${ct.id}" th:text="${ct.customerTypeName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create Customer"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

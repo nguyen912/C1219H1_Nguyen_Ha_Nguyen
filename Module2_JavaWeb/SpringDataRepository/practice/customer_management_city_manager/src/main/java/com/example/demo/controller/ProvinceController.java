@@ -47,6 +47,7 @@ public class ProvinceController {
     }
 
     @GetMapping("/create")
+
     public ModelAndView showCreateForm() {
         Province province = new Province();
         ModelAndView modelAndView = new ModelAndView("province/create");
