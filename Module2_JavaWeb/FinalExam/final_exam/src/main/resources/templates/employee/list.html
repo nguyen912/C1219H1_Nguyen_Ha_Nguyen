@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Full name</th>
+<!--            <th>Birthday</th>-->
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>ID Card</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="employee : ${employees}">
+            <tr>
+                <td th:text="${employee.employeeId}"></td>
+                <td th:text="${employee.name}"></td>
+<!--                <td th:text="${employee.birthday}"></td>-->
+                <td th:text="${employee.gender}"></td>
+                <td th:text="${employee.phoneNumber}"></td>
+                <td th:text="${employee.idCard}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.address}"></td>
+                <td th:text="${employee.role.roleName}"></td>
+                <td><a th:href="@{/edit-employee/__${employee.employeeId}__ }">Edit</a></td>
+                <td><a th:href="@{/delete-employee/__${employee.employeeId}__ }">Delete</a></td>
+            </tr>
+        </th:block>
+        <div>
+            <a th:href="@{'/employees'(page=${employees.number - 1})}" th:if="${employees.hasPrevious()}">Previous</a>
+            <span th:text="${employees.number + 1}"></span>/<span th:text="${employees.totalPages}"></span>
+            <a th:href="@{'/employees'(page=${employees.number + 1})}" th:if="${employees.hasNext()}">Next</a>
+        </div>
+    </table>
+</body>
+</html>

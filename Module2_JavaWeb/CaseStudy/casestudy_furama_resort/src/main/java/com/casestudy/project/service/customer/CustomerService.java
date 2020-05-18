@@ -14,5 +14,11 @@ public interface CustomerService {
 
     void deleteCustomerById(Integer id);
 
+    Page<Customer> findCustomerByNameContaining(String name, Pageable pageable);
+
+    Page<Customer> findCustomerByAddressContaining(String address, Pageable pageable);
+
+    Page<Customer> findCustomerByNameContainingAndAddressContaining(String name, String address, Pageable pageable);
+
     Page<Customer> findCustomersByNameContainingAndAddressContainingAndCustomerType(String name, String address, CustomerType customerType, Pageable pageable);
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+
+<form method="get" action="/search">
+    Search By:
+    <select name="search">
+        <option value="name">Name Blog</option>
+        <option value="summary">Summary</option>
+        <option value="date">Date Post</option>
+    </select>
+    <input name="input"/>
+    <input type="submit" value="Search"/>
+</form>
+<form method="get" action="/search-all">
+    Search All:
+    <input name="value1" placeholder="Name Blog"/>
+    <input name="value2" placeholder="Summary"/>
+    <input name="value3" placeholder="Page Number Min"/>
+    <input name="value4" placeholder="Page Number Max"/>
+    <input type="submit" value="Search">
+</form>
+<h1>Blogs</h1>
+<table border="1">
+    <tr>
+        <th>Name Blog</th>
+        <th>Summary</th>
+        <th>View Full Blog</th>
+        <th>Category</th>
+        <th>Page Number</th>
+        <th>Date Post</th>
+        <th>view</th>
+        <th>Update Blog</th>
+        <th>Delete Blog</th>
+    </tr>
+    <th:block th:each="blog : ${blogs}">
+        <tr>
+            <td th:text="${blog.nameBlog}"></td>
+            <td th:text="${blog.quickView}"></td>
+            <td th:text="${blog.content}"></td>
+<!--            <td th:if="${blog.category == null}"-->
+<!--                    th:text="null"></td>-->
+<!--            <td th:if="${blog.category != null}"-->
+<!--                th:text="${blog.category.nameCategory}"></td>-->
+            <td th:text="${blog.category ne null} ? ${blog.category.nameCategory} : 'No category'"></td>
+            <td th:text="${blog.pageNumber}"></td>
+            <td th:text="${blog.datePost}"></td>
+            <td><a th:href="@{/view-blog/__${blog.id}__}">View</a></td>
+            <td><a th:href="@{/edit-blog/__${blog.id}__}">Update</a></td>
+            <td><a th:href="@{/delete-blog/__${blog.id}__}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+<form action="/sort" method="get">
+    <input type="submit" value="Sort">
+</form>
+<a href="/category"><h3>Category List</h3></a>
+
+<a href="/create-blog"><h3>Create new blog</h3></a>
+<div>
+    <a th:href="@{/(name=${name}, page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}">Previous</a>
+    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+    <a th:href="@{/(name=${name}, page=${blogs.number + 1})}" th:if="${blogs.hasNext()}">Next</a>
+</div>
+
+</body>
+</html>

@@ -43,6 +43,10 @@ public class CustomerController {
         modelAndView.addObject("message", "New customer created successfully");
         return modelAndView;
     }
+    @GetMapping("/")
+    public String fullForm() {
+        return "fullform";
+    }
 
     @GetMapping("/customers")
     public ModelAndView listCustomers(@RequestParam(value = "s", required = false) String s, Pageable pageable){

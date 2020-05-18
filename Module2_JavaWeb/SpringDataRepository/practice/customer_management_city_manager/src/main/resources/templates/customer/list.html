@@ -1,19 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="htpp://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap 4 Stacked Checkboxes and Radios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
-<a href="/create-customer">Create new customer</a>
-<h1>Customers</h1>
-<form>
-    Search by first name:
-    <input name="s" type="text"/>
-    <input type="submit" value="Search"/>
-</form>
-<br/>
-<table border="1">
+<div class="bs-example">
+    <a href="/create-customer">Create new customer</a>
+    <h1>Customers</h1>
+<!--    //Confirm delete-->
+    <!-- Button HTML (to Trigger Modal) -->
+    <button type="button" class="btn btn-lg btn-primary" data-target="#myModal" data-toggle="modal">Launch Demo Modal</button>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade" data-backdrop="static" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes to this document before closing?</p>
+                    <p class="text-secondary"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    // CHon cac mot trong cac tinh thanh pho-->
+    <form>
+        <select class="custom-select custom-select-lg">
+            <option selected>Large custom select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <select class="custom-select mt-3">
+            <option selected>Default custom select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <select class="custom-select custom-select-sm mt-3">
+            <option selected>Small custom select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </form>
+
+
+    <form>
+        Search by first name:
+        <!--    <input name="s" type="text"/>-->
+        <!-- Default input group -->
+        <div class="input-group mt-2">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Search</span>
+            </div>
+            <input type="text" class="form-control" name="s">
+            <button type="submit" class="btn btn-primary"><span class="fa fa-search"></span> Search</button>
+        </div>
+
+    </form>
+
+<!--    // form tim kiem dropdown-->
+
+    <form>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <button type="button" class="btn btn-outline-secondary">Action</button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Action</a>
+                            <a href="#" class="dropdown-item">Another action</a>
+                        </div>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-secondary">Action</button>
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Action</a>
+                            <a href="#" class="dropdown-item">Another action</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br/>
+
+    // Button radio chon gioi tinh
+    <form>
+        <h4>Choose your favorite sports</h4>
+        <div class="form-group">
+            <label class="d-block">
+                <input type="checkbox" class="mr-1" name="sports"> Cricket
+            </label>
+            <label class="d-block">
+                <input type="checkbox" class="mr-1" name="sports"> Football
+            </label>
+            <label class="d-block">
+                <input type="checkbox" class="mr-1" name="sports"> Tennis
+            </label>
+        </div>
+        <hr>
+        <h4>Choose your gender</h4>
+        <div class="form-group">
+            <label class="d-block">
+                <input type="radio" class="mr-1" name="gender"> Male
+            </label>
+            <label class="d-block">
+                <input type="radio" class="mr-1" name="gender"> Female
+            </label>
+        </div>
+    </form>
+
+
+<div class="bs-example">
+<table border="1" class="table">
     <tr>
         <th>First name</th>
         <th>Last name</th>
@@ -26,15 +159,35 @@
             <td th:text="${customer.firstName}"></td>
             <td th:text="${customer.lastName}"></td>
             <td th:text="${customer.getProvince().getName()}"></td>
-            <td><a th:href="@{/edit-customer/__${customer.id}__ }">Edit</a></td>
-            <td><a th:href="@{/delete-customer/__${customer.id}__ }">Delete</a></td>
+            <td><a th:href="@{/edit-customer/__${customer.id}__ }" class="nav-item nav-link active"><i class="fa fa-edit"></i>Edit</a></td>
+            <td><a th:href="@{/delete-customer/__${customer.id}__ }" class="nav-item nav-link active"><i class="fa fa-remove"></i>Delete</a></td>
         </tr>
     </th:block>
+
+
     <div>
         <a th:href="@{'/customers'(page=${customers.number - 1})}" th:if="${customers.hasPrevious()}">Previous</a>
         <span th:text="${customers.number + 1}"></span>/<span th:text="${customers.totalPages}"></span>
         <a th:href="@{'/customers'(page=${customers.number + 1})}" th:if="${customers.hasNext()}">Next</a>
     </div>
 </table>
+
+    // form create
+    <form action="/examples/actions/confirmation.php" method="post">
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+</div>
 </body>
 </html>

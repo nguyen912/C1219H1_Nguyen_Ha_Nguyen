@@ -54,24 +54,23 @@ public class CustomerController {
     @GetMapping("customers")
     public ModelAndView listCustomer(@RequestParam(value = "name", required = false, defaultValue = "") String name,
                                      @RequestParam(value = "address", required = false, defaultValue = "") String address,
-                                     @RequestParam(value = "type", required = false, defaultValue = "") String type,
                                      Pageable pageable) {
-
-        List<CustomerType> customerTypes = new ArrayList<>();
-        Page<Customer> customers = null;
-        
-        if (name != null && address != null && type != null) {
-            for (CustomerType ct : customerTypes) {
-                if (type.equalsIgnoreCase(ct.getCustomerTypeName())) {
-                    customers = customerService.findCustomersByNameContainingAndAddressContainingAndCustomerType(name, address, ct, pageable);
-                    break;
-                }
-            }
+        Page<Customer> customers;
+        if(name != null && address != null) {
+            customers = customerService.findCustomerByNameContainingAndAddressContaining(name, address, pageable);
         }
         else {
-            customers = customerService.findAllCustomer(pageable);
-        }
+            if (name != null) {
+                customers = customerService.findCustomerByNameContaining(name, pageable);
+            }
+            else if (address != null) {
+                customers = customerService.findCustomerByAddressContaining(address, pageable);
+            }
+            else {
+                customers = customerService.findAllCustomer(pageable);
+            }
 
+        }
         ModelAndView modelAndView = new ModelAndView("/customer/list");
         modelAndView.addObject("customers", customers);
         return modelAndView;

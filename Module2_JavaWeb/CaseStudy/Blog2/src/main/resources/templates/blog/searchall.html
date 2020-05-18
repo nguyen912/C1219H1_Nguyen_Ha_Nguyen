@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs</title>
+</head>
+<body>
+
+<table border="1">
+    <tr>
+        <th>Name Blog</th>
+        <th>Summary</th>
+        <th>View Full Blog</th>
+        <th>Category</th>
+        <th>Date Post</th>
+        <th>Page Number</th>
+
+    </tr>
+    <th:block th:each="blog : ${blogs}">
+        <tr>
+            <td th:text="${blog.nameBlog}"></td>
+            <td th:text="${blog.quickView}"></td>
+            <td th:text="${blog.content}"></td>
+            <td th:text="${blog?.category?.nameCategory}"></td>
+            <td th:text="${blog.datePost}"></td>
+            <td th:text="${blog.pageNumber}"></td>
+
+        </tr>
+    </th:block>
+</table>
+<a href="/category"><h3>Category List</h3></a>
+
+<a href="/"><h3>Blog List</h3></a>
+
+
+<div>
+    <a th:href="@{'/search-all'(value1=${value1}, value2=${value2},value3=${value3}, value4=${value4}, page=${blogs.number - 1}, sort=${sort})}" th:if="${blogs.hasPrevious()}">Previous</a>
+    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+    <a th:href="@{'/search-all'(value1=${value1}, value2=${value2}, value3=${value3}, value4=${value4}, page=${blogs.number + 1}, sort=${sort})}" th:if="${blogs.hasNext()}">Next</a>
+</div>
+
+</body>
+</html>
