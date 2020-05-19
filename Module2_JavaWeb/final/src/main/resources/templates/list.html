@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Discount List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body><div class="bs-example">
+<p>
+    <a href="/create-discount">Create Discount</a>
+</p>
+<h1>Discount List</h1>
+<form method="get" action="/search">
+    Search By:
+    <select name="search">
+        <option value="discount">Discount</option>
+        <option value="start">Start Time</option>
+        <option value="end">End Time</option>
+    </select>
+    <input name="input"/>
+    <input type="submit" value="Search"/>
+</form>
+<form method="get" action="/search-all">
+    Search All:
+    <input name="discount" placeholder="Discount percent"/>
+    <input name="start" placeholder="Start Time"/>
+    <input name="end" placeholder="End Time"/>
+    <input type="submit" value="Search">
+</form>
+<table border="1" class="table">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Discount Percent</th>
+        <th>Detail</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <th:block th:each="discount : ${discounts}">
+        <tr>
+            <td th:text="${discount.id}"></td>
+            <td th:text="${discount.title}"></td>
+            <td th:text="${discount.startTime}"></td>
+            <td th:text="${discount.endTime}"></td>
+            <td th:text="${discount.discountPercent}"></td>
+            <td th:text="${discount.detail}"></td>
+            <td><a th:href="@{/edit-discount/__${discount.id}__}">Edit</a></td>
+            <td><a th:href="@{/delete-discount/__${discount.id}__}">Delete</a></td>
+        </tr>
+    </th:block>
+</table></div>
+</body>
+</html>

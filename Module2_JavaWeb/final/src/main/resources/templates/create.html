@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Discount</title>
+</head>
+<body>
+<h1>Create Discount</h1>
+<p>
+    <a href="/discounts">Discount list</a>
+</p>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/create-discount}" th:object="${discount}" method="post">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><textarea style="width: 700px" th:field="*{title}"/></td>
+        </tr>
+        <tr>
+            <td>Start Time:</td>
+            <td><textarea style="width: 700px"  th:field="*{startTime}"/></td>
+        </tr>
+        <tr>
+            <td>End Time:</td>
+            <td><textarea th:field="*{endTime}" style="height: 300px; width: 700px"/></td>
+        </tr>
+        <tr>
+            <td>Discount</td>
+            <td><textarea th:field="*{discountPercent}" style="height: 300px; width: 700px"/></td>
+        </tr>
+        <tr>
+            <td>Detail:</td>
+            <td><textarea th:field="*{detail}" style="height: 300px; width: 700px"/></td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create Discount"></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

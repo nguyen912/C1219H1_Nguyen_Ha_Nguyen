@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>Delete discount</title>
+</head>
+<body>
+<h1>Delete discount</h1>
+
+<form th:action="@{/delete-discount}" th:object="${discount}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td th:text="${discount.title}"></td>
+        </tr>
+        <tr>
+            <td>Start Time:</td>
+            <td th:text="${discount.startTime}"></td>
+        </tr>
+        <tr>
+            <td>End Time:</td>
+            <td th:text="${discount.endTime}"></td>
+        </tr>
+        <tr>
+            <td>Discount:</td>
+            <td th:text="${discount.discountPercent}"></td>
+        </tr>
+        <tr>
+            <td>Detail:</td>
+            <td th:text="${discount.detail}"></td>
+        </tr>
+        <tr>
+            <td><h3>Are you sure?</h3></td>
+            <td>
+                <input type="submit" value="Yes">
+                <p>
+                    <a href="/discounts">No</a>
+                </p>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

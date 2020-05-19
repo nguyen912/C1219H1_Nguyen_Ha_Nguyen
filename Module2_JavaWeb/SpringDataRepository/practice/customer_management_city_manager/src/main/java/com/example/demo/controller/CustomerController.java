@@ -11,9 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
-import java.util.Optional;
-
 @Controller
 public class CustomerController {
     @Autowired
@@ -42,10 +39,6 @@ public class CustomerController {
         modelAndView.addObject("customer", customer);
         modelAndView.addObject("message", "New customer created successfully");
         return modelAndView;
-    }
-    @GetMapping("/")
-    public String fullForm() {
-        return "fullform";
     }
 
     @GetMapping("/customers")

@@ -1,7 +1,5 @@
 package com.codegym.exam.model;
 
-import com.codegym.exam.model.Employee;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -14,15 +12,15 @@ public class Role {
 
     private String roleName;
 
-    @OneToMany(targetEntity = Employee.class)
-    private List<Employee> employees;
+    @OneToMany(targetEntity = Discount.class)
+    private List<Discount> discounts;
 
     public Role() {
     }
 
-    public Role(String roleName, List<Employee> employees) {
+    public Role(String roleName, List<Discount> discounts) {
         this.roleName = roleName;
-        this.employees = employees;
+        this.discounts = discounts;
     }
 
     public Long getRoleId() {
@@ -41,11 +39,11 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
+    public List<Discount> getDiscounts() {
+        return discounts;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    public void setDiscounts(List<Discount> discounts) {
+        this.discounts = discounts;
     }
 }

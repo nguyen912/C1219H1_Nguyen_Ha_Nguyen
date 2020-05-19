@@ -4,6 +4,7 @@ import com.casestudy.project.model.contract.Contract;
 
 import javax.persistence.*;
 import java.util.List;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "service")

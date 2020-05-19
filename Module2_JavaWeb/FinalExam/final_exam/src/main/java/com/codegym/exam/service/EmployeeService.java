@@ -1,14 +1,14 @@
 package com.codegym.exam.service;
 
-import com.codegym.exam.model.Employee;
+import com.codegym.exam.model.Discount;
 import org.springframework.data.domain.Pageable;
 
 public interface EmployeeService {
-    Iterable<Employee> findAll(Pageable pageable);
+    Iterable<Discount> findAll(Pageable pageable);
 
-    Employee findById(Long id);
+    Discount findById(Long id);
 
-    void save(Employee employee);
+    void save(Discount discount);
 
-    void delete(Employee employee);
+    void delete(Discount discount);
 }

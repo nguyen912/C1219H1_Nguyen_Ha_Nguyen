@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Discount Percent</th>
+        <th>Detail</th>
+
+    </tr>
+    <th:block th:each="d : ${discounts}">
+        <tr>
+            <td th:text="${d.title}"></td>
+            <td th:text="${d.startTime}"></td>
+            <td th:text="${d.endTime}"></td>
+            <td th:text="${d.discountPercent}"></td>
+            <td th:text="${d.detail}"></td>
+        </tr>
+    </th:block>
+</table>
+
+<a href="/discounts"><h3>Discount List</h3></a>
+</body>
+</html>
