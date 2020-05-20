@@ -1,0 +1,42 @@
+#grandparent {
+    background: yellow;
+    height: 400px;
+    width: 50%;
+    z-index: -1;
+}
+
+h1 {
+    color: black;
+    height: 400px;
+    width: 50%;
+}
+
+#parent {
+    background: orange;
+    height: 50%;
+    width: 50%;
+
+    /*Định vị vị trí so với vị trí mặc định ban đầu top:100px và left:50px*/
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+#child {
+    background: red;
+    height: 50%;
+    width: 50%;
+
+    /*Nếu parent có position là static thì child sẽ dựa vào vị trí của của thành phần trước parent và cũng phải có thuộc tính position khác static*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/*#grandchild {*/
+/*    background: blue;*/
+/*    height: 50%;*/
+/*    width: 50%;*/
+/*    position: fixed;*/
+/*    top: 0px;*/
+/*}*/

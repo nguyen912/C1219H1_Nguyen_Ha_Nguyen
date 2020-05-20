@@ -1,0 +1,54 @@
+body {
+    margin:5px;
+}
+
+#main {
+
+}
+
+#head {
+    background: #ffe5e5;
+    height: 150px;
+    width: 100%;
+}
+
+#head-link {
+    margin-top: 5px;
+    background: #ffe5e5;
+    height: 50px;
+    width: 100%;
+}
+
+#left {
+    background: #ffe5e5;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 400px;
+    width: 10%;
+    float: left;
+}
+
+#content {
+    background: #ff9999;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 400px;
+    width: 70%;
+    float: left;
+}
+
+#right {
+    background: #ffe5e5;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 400px;
+    width: 20%;
+    float: left;
+}
+
+#footer {
+    background: #ffe5e5;
+    height: 100px;
+    width: 100%;
+    clear: both;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Service</title>
+</head>
+<body>
+    <h4><a href="/services">Service List</a></h4>
+    <h1>Create Service</h1>
+    <th:block th:if="${message}">
+        <p th:text="${message}"></p>
+    </th:block>
+    <form method="post" th:action="@{/create-service}" th:object="${service}">
+        <table>
+<!--            <tr>-->
+<!--                <td>ID: </td>-->
+<!--                <td><input type="text" th:field="*{id}"></td>-->
+<!--                <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name Error</td>-->
+<!--            </tr>-->
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" th:field="*{serviceName}"></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{serviceName}">Name Error</td>
+            </tr>
+            <tr>
+                <td>Room Area: </td>
+                <td><input type="text" th:field="*{roomArea}"></td>
+                <td th:if="${#fields.hasErrors('roomArea')}" th:errors="*{roomArea}">Room Area Error</td>
+            </tr>
+            <tr>
+                <td>Floors: </td>
+                <td><input type="text" th:field="*{floors}"></td>
+                <td th:if="${#fields.hasErrors('floors')}" th:errors="*{floors}">Floors Error</td>
+            </tr>
+            <tr>
+                <td>Max People: </td>
+                <td><input type="text" th:field="*{maxPeople}"></td>
+                <td th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}">Max People Error</td>
+            </tr>
+            <tr>
+                <td>Rent Cost: </td>
+                <td><input type="text" th:field="*{rentCost}"></td>
+                <td th:if="${#fields.hasErrors('rentCost')}" th:errors="*{rentCost}">Rent Cost Error</td>
+            </tr>
+            <tr>
+                <td>Status: </td>
+                <td><input type="text" th:field="*{status}"></td>
+                <td th:if="${#fields.hasErrors('status')}" th:errors="*{status}">Status Error</td>
+            </tr>
+            <tr>
+                <td>Service Type:</td>
+                <td>
+                    <select th:field="*{serviceType}">
+                        <option th:each="st : ${serviceTypes}" th:value="${st.id}" th:text="${st.serviceTypeName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Rent Type:</td>
+                <td>
+                    <select th:field="*{rentType}">
+                        <option th:each="rt : ${rentTypes}" th:value="${rt.id}" th:text="${rt.rentTypeName}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create Service"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

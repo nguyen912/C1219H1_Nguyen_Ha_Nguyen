@@ -3,18 +3,20 @@ package com.casestudy.project.model.service;
 import com.casestudy.project.model.contract.DetailContract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
-@Table(name = "other_service")
 public class OtherService {
-    //id_dich_vu_di_kem, ten_dich_vu_di_kem, gia, don_vi, trang_thai_kha_dung
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @NotBlank
     private String otherServiceName;
 
+    @Min(1)
     private Long otherServiceCost;
 
     private String unit;
@@ -27,7 +29,8 @@ public class OtherService {
     public OtherService() {
     }
 
-    public OtherService(String otherServiceName, Long otherServiceCost, String unit, String availabilityStatus, List<DetailContract> detailContracts) {
+    public OtherService(@NotBlank String otherServiceName, @Min(1) Long otherServiceCost,
+                        String unit, String availabilityStatus, List<DetailContract> detailContracts) {
         this.otherServiceName = otherServiceName;
         this.otherServiceCost = otherServiceCost;
         this.unit = unit;

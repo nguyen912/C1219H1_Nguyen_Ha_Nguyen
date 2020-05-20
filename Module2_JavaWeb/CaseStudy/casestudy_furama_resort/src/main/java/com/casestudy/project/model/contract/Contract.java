@@ -1,55 +1,60 @@
 package com.casestudy.project.model.contract;
 
-import com.casestudy.project.model.customer.Customer;
-import com.casestudy.project.model.staff.Employee;
+import com.casestudy.project.model.people.customer.Customer;
+import com.casestudy.project.model.people.staff.Employee;
 import com.casestudy.project.model.service.Service;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "contract")
 public class Contract {
-    //id_hop_dong, id_nhan_vien, id_khach_hang, id_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, tong_tien
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id")
+    @JoinColumn(name = "fk_employee")
     private Employee employee;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "fk_customer")
     private Customer customer;
 
     @ManyToOne
-    @JoinColumn(name = "service_id")
+    @JoinColumn(name = "fk_service")
     private Service service;
 
     @OneToMany(targetEntity = DetailContract.class)
     private List<DetailContract> detailContracts;
 
-    private String contractStartDate;
+    @DateTimeFormat(pattern = "DD/MM/YYYY")
+    private Date contractStartDate;
 
-    private String contractEndDate;
+    @DateTimeFormat(pattern = "DD/MM/YYYY")
+    private Date contractEndDate;
 
+    @Min(1)
     private Long deposit;
 
+    @Min(1)
     private Long total;
 
     public Contract() {
     }
 
-    public Contract(Employee employee, Customer customer, Service service, String contractStartDate, String contractEndDate, Long deposit, Long total, List<DetailContract> detailContracts) {
+    public Contract(Employee employee, Customer customer, Service service, List<DetailContract> detailContracts, Date contractStartDate, Date contractEndDate, @Min(1) Long deposit, @Min(1) Long total) {
         this.employee = employee;
         this.customer = customer;
         this.service = service;
+        this.detailContracts = detailContracts;
         this.contractStartDate = contractStartDate;
         this.contractEndDate = contractEndDate;
         this.deposit = deposit;
         this.total = total;
-        this.detailContracts = detailContracts;
     }
 
     public Integer getId() {
@@ -84,19 +89,27 @@ public class Contract {
         this.service = service;
     }
 
-    public String getContractStartDate() {
+    public List<DetailContract> getDetailContracts() {
+        return detailContracts;
+    }
+
+    public void setDetailContracts(List<DetailContract> detailContracts) {
+        this.detailContracts = detailContracts;
+    }
+
+    public Date getContractStartDate() {
         return contractStartDate;
     }
 
-    public void setContractStartDate(String contractStartDate) {
+    public void setContractStartDate(Date contractStartDate) {
         this.contractStartDate = contractStartDate;
     }
 
-    public String getContractEndDate() {
+    public Date getContractEndDate() {
         return contractEndDate;
     }
 
-    public void setContractEndDate(String contractEndDate) {
+    public void setContractEndDate(Date contractEndDate) {
         this.contractEndDate = contractEndDate;
     }
 
@@ -114,13 +127,5 @@ public class Contract {
 
     public void setTotal(Long total) {
         this.total = total;
-    }
-
-    public List<DetailContract> getDetailContracts() {
-        return detailContracts;
-    }
-
-    public void setDetailContracts(List<DetailContract> detailContracts) {
-        this.detailContracts = detailContracts;
     }
 }

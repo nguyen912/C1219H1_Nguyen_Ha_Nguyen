@@ -1,10 +1,10 @@
-package com.casestudy.project.model.customer;
+package com.casestudy.project.model.people.customer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
-@Table(name = "customer_type")
 public class CustomerType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

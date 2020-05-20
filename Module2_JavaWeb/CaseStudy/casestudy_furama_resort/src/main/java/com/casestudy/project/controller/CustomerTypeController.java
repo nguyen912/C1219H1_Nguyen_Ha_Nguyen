@@ -1,11 +1,9 @@
 package com.casestudy.project.controller;
 
-import com.casestudy.project.model.customer.CustomerType;
+import com.casestudy.project.model.people.customer.CustomerType;
 import com.casestudy.project.service.customer_type.CustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 

@@ -1,10 +1,9 @@
-package com.casestudy.project.model.staff;
+package com.casestudy.project.model.people.staff;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "degree")
 public class Degree {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,25 +1,24 @@
-package com.casestudy.project.model.staff;
+package com.casestudy.project.model.people.staff;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "role")
-public class Role {
+public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private String roleName;
+    private String departmentName;
 
     @OneToMany(targetEntity = Employee.class)
     private List<Employee> employees;
 
-    public Role() {
+    public Department() {
     }
 
-    public Role(String roleName, List<Employee> employees) {
-        this.roleName = roleName;
+    public Department(String departmentName, List<Employee> employees) {
+        this.departmentName = departmentName;
         this.employees = employees;
     }
 
@@ -31,12 +30,12 @@ public class Role {
         this.id = id;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
     public List<Employee> getEmployees() {

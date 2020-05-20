@@ -12,29 +12,40 @@
     </th:block>
     <form method="post" th:action="@{/create-customer}" th:object="${customer}">
         <table>
+<!--            <tr>-->
+<!--                <td>ID: </td>-->
+<!--                <td><input type="text" th:field="*{id}"></td>-->
+<!--                <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Name Error</td>-->
+<!--            </tr>-->
             <tr>
                 <td>Name: </td>
                 <td><input type="text" th:field="*{name}"></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
             </tr>
             <tr>
                 <td>Birthday: </td>
                 <td><input type="text" th:field="*{birthday}"></td>
+                <td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Name Error</td>
             </tr>
             <tr>
                 <td>ID Card: </td>
                 <td><input type="text" th:field="*{idCard}"></td>
+                <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}">Name Error</td>
             </tr>
             <tr>
                 <td>Phone Number: </td>
                 <td><input type="text" th:field="*{phoneNumber}"></td>
+                <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Name Error</td>
             </tr>
             <tr>
                 <td>Email: </td>
                 <td><input type="text" th:field="*{email}"></td>
+                <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
             </tr>
             <tr>
                 <td>Address: </td>
                 <td><input type="text" th:field="*{address}"></td>
+                <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Name Error</td>
             </tr>
             <tr>
                 <td>Customer Type:</td>

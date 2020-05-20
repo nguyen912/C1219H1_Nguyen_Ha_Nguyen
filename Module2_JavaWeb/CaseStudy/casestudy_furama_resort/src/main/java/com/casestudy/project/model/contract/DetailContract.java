@@ -3,29 +3,29 @@ package com.casestudy.project.model.contract;
 import com.casestudy.project.model.service.OtherService;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Entity
-@Table(name = "detail_contract")
 public class DetailContract {
-    //id_hop_dong_chi_tiet, id_hop_dong, id_dich_vu_di_kem, so_luong
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "contract_id")
+    @JoinColumn(name = "fk_contract")
     private Contract contract;
 
     @ManyToOne
-    @JoinColumn(name = "other_service_id")
+    @JoinColumn(name = "fk_other_service")
     private OtherService otherService;
 
+    @Min(1)
     private Integer amount;
 
     public DetailContract() {
     }
 
-    public DetailContract(Contract contract, OtherService otherService, Integer amount) {
+    public DetailContract(Contract contract, OtherService otherService, @Min(1) Integer amount) {
         this.contract = contract;
         this.otherService = otherService;
         this.amount = amount;

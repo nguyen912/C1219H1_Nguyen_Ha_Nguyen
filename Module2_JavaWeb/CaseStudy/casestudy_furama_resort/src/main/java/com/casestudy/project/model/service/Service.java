@@ -1,36 +1,53 @@
 package com.casestudy.project.model.service;
 
+import com.casestudy.project.StringPrefixedSequenceIdGenerator;
 import com.casestudy.project.model.contract.Contract;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Entity
-@Table(name = "service")
 public class Service {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "service_seq")
+    @GenericGenerator(
+            name = "service_seq",
+            strategy = "com.casestudy.project.StringPrefixedSequenceIdGenerator",
+            parameters = {
+//                    @Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
+                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "DV-"),
+                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%04d")
+            }
+    )
+    private String id;
 
+    @NotBlank
     private String serviceName;
 
+    @Min(1)
     private Double roomArea;
 
+    @Min(1)
     private Integer floors;
 
+    @Min(1)
     private Integer maxPeople;
 
+    @Min(1)
     private Long rentCost;
 
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "service_type_id")
-    private Service service;
+    @JoinColumn(name = "fk_service_type")
+    private ServiceType serviceType;
 
     @ManyToOne
-    @JoinColumn(name = "rent_type_id")
+    @JoinColumn(name = "fk_rent_type")
     private RentType rentType;
 
     @OneToMany(targetEntity = Contract.class)
@@ -39,23 +56,31 @@ public class Service {
     public Service() {
     }
 
-    public Service(String serviceName, Double roomArea, Integer floors, Integer maxPeople, Long rentCost, String status, Service service, RentType rentType, List<Contract> contracts) {
+    public Service(@NotBlank String serviceName,
+                   @Min(1) Double roomArea,
+                   @Min(1) Integer floors,
+                   @Min(1) Integer maxPeople,
+                   @Min(1) Long rentCost,
+                   String status,
+                   ServiceType serviceType,
+                   RentType rentType,
+                   List<Contract> contracts) {
         this.serviceName = serviceName;
         this.roomArea = roomArea;
         this.floors = floors;
         this.maxPeople = maxPeople;
         this.rentCost = rentCost;
         this.status = status;
-        this.service = service;
+        this.serviceType = serviceType;
         this.rentType = rentType;
         this.contracts = contracts;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -107,12 +132,12 @@ public class Service {
         this.status = status;
     }
 
-    public Service getService() {
-        return service;
+    public ServiceType getServiceType() {
+        return serviceType;
     }
 
-    public void setService(Service service) {
-        this.service = service;
+    public void setServiceType(ServiceType serviceType) {
+        this.serviceType = serviceType;
     }
 
     public RentType getRentType() {
