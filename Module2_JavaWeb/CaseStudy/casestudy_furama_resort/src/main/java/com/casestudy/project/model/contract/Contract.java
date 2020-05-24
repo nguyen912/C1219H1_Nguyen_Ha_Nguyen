@@ -31,10 +31,10 @@ public class Contract {
     @OneToMany(targetEntity = DetailContract.class)
     private List<DetailContract> detailContracts;
 
-    @DateTimeFormat(pattern = "DD/MM/YYYY")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date contractStartDate;
 
-    @DateTimeFormat(pattern = "DD/MM/YYYY")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date contractEndDate;
 
     @Min(1)

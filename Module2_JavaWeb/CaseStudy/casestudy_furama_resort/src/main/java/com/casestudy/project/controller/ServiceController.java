@@ -1,5 +1,6 @@
 package com.casestudy.project.controller;
 
+import com.casestudy.project.model.service.Service;
 import com.casestudy.project.model.service.RentType;
 import com.casestudy.project.model.service.Service;
 import com.casestudy.project.model.service.ServiceType;
@@ -14,9 +15,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -70,5 +73,58 @@ public class ServiceController {
         ModelAndView modelAndView = new ModelAndView("/service/list");
         modelAndView.addObject("services", services);
         return modelAndView;
+    }
+
+    //show update service form
+    @GetMapping("update-service/{id}")
+    public ModelAndView showUpdateForm(@PathVariable String id) {
+        Service service = serviceService.findById(id);
+
+        ModelAndView modelAndView;
+        if (service != null) {
+            modelAndView = new ModelAndView("service/update");
+            modelAndView.addObject("service", service);
+        }
+        else {
+            modelAndView = new ModelAndView("error");
+        }
+        return modelAndView;
+    }
+
+    //update service process
+    @PostMapping("update-service")
+    public ModelAndView updateCustomer(@ModelAttribute Service service, BindingResult bindingResult) {
+        ModelAndView modelAndView = new ModelAndView("service/update");
+        if (bindingResult.hasErrors()) {
+            modelAndView.addObject("bindingResult", bindingResult);
+            return modelAndView;
+        }
+        serviceService.save(service);
+        modelAndView.addObject("service", service);
+        modelAndView.addObject("message", "The service was updated successfully!");
+        return modelAndView;
+    }
+
+    //show delete form
+    @GetMapping("delete-service/{id}")
+    public ModelAndView showDeleteForm(@PathVariable String id) {
+        Service service = serviceService.findById(id);
+
+        ModelAndView modelAndView;
+        if (service != null) {
+            modelAndView = new ModelAndView("service/delete");
+            modelAndView.addObject("service", service);
+        }
+        else {
+            modelAndView = new ModelAndView("error");
+        }
+        return modelAndView;
+    }
+
+    //delete service process
+    @PostMapping("delete-service")
+    public String deleteCustomer(@ModelAttribute Service service) {
+        serviceService.delete(service);
+        return "redirect:services";
     }
 }

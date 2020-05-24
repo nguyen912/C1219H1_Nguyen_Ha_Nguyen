@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+    <title>Contract List</title>
+    <link href="home.css" rel="stylesheet">
+</head>
+<body>
+<div class="bs-example">
+    <h4><a href="/create-contract">Create Contract</a> </h4>
+    <h1>Contract List</h1>
+    <table border="1" class="table">
+        <tr>
+            <th>Contract ID</th>
+            <th>Employee Name</th>
+            <th>Customer Name</th>
+            <th>Service</th>
+            <th>Contract Start Date</th>
+            <th>Contract End Date</th>
+            <th>Deposit</th>
+            <th>Total</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="c : ${contracts}">
+            <tr>
+                <td th:text="${c.id}"></td>
+                <td th:text="${c.employee.name}"></td>
+                <td th:text="${c.customer.name}"></td>
+                <td th:text="${c.service.serviceName}"></td>
+                <td th:text="${c.contractStartDate}"></td>
+                <td th:text="${c.contractEndDate}"></td>
+                <td th:text="${c.deposit}"></td>
+                <td th:text="${c.total}"></td>
+                <td><a th:href="@{/update-contract/__${c.id}__}">Edit</a></td>
+                <td><a th:href="@{/delete-contract/__${c.id}__}">Delete</a></td>
+            </tr>
+        </th:block>
+        <div>
+            <a th:href="@{'/contracts'(page=${contracts.number - 1})}" th:if="${contracts.hasPrevious()}">Previous</a>
+            <span th:text="${contracts.number + 1}"></span>/<span th:text="${contracts.totalPages}"></span>
+            <a th:href="@{'/contracts'(page=${contracts.number + 1})}" th:if="${contracts.hasNext()}">Next</a>
+        </div>
+    </table>
+</div>
+</body>
+</html>

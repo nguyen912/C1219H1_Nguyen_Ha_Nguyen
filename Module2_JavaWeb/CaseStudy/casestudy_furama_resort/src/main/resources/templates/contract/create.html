@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Contract</title>
+</head>
+<body>
+<h4><a href="/contracts">Contract List</a></h4>
+<h1>Create Contract</h1>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form method="post" th:action="@{/create-contract}" th:object="${contract}">
+    <table>
+        <tr>
+            <td>Employee Name: </td>
+            <td>
+                <select th:field="*{employee}">
+                    <option th:each="e : ${employees}" th:value="${e.id}" th:text="${e.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Customer Name: </td>
+            <td>
+                <select th:field="*{customer}">
+                    <option th:each="c : ${customers}" th:value="${c.id}" th:text="${c.name}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Service Name: </td>
+            <td>
+                <select th:field="*{service}">
+                    <option th:each="s : ${services}" th:value="${s.id}" th:text="${s.serviceName}"></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Contract Start Date: </td>
+            <td><input type="text" th:field="*{contractStartDate}"></td>
+            <td th:if="${#fields.hasErrors('contractStartDate')}" th:errors="*{contractStartDate}">Contract Start Date Error</td>
+        </tr>
+        <tr>
+            <td>Contract End Date: </td>
+            <td><input type="text" th:field="*{contractEndDate}"></td>
+            <td th:if="${#fields.hasErrors('contractEndDate')}" th:errors="*{contractEndDate}">Contract End Date Error</td>
+        </tr>
+        <tr>
+            <td>Deposit: </td>
+            <td><input type="text" th:field="*{deposit}"></td>
+            <td th:if="${#fields.hasErrors('deposit')}" th:errors="*{deposit}">Deposit Error</td>
+        </tr>
+        <tr>
+            <td>Total: </td>
+            <td><input type="text" th:field="*{total}"></td>
+            <td th:if="${#fields.hasErrors('total')}" th:errors="*{total}">Total Error</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Create Contract"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

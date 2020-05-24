@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
+    <title>Detail Contract List</title>
+    <link href="home.css" rel="stylesheet">
+</head>
+<body>
+<div class="bs-example">
+    <h4><a href="/create-detailcontract">Create Detail Contract</a> </h4>
+    <h1>Detail Contract List</h1>
+    <table border="1" class="table">
+        <tr>
+            <th>Detail Contract ID</th>
+            <th>Contract ID</th>
+            <th>Other Service</th>
+            <th>Amount</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="dc : ${detailContracts}">
+            <tr>
+                <td th:text="${dc.id}"></td>
+                <td th:text="${dc.contract.id}"></td>
+                <td th:text="${dc.otherService.otherServiceName}"></td>
+                <td th:text="${dc.amount}"></td>
+                <td><a th:href="@{/update-detailcontract/__${dc.id}__}">Edit</a></td>
+                <td><a th:href="@{/delete-detailcontract/__${dc.id}__}">Delete</a></td>
+            </tr>
+        </th:block>
+        <div>
+            <a th:href="@{'/detailcontracts'(page=${detailContracts.number - 1})}" th:if="${detailContracts.hasPrevious()}">Previous</a>
+            <span th:text="${detailContracts.number + 1}"></span>/<span th:text="${detailContracts.totalPages}"></span>
+            <a th:href="@{'/detailcontracts'(page=${detailContracts.number + 1})}" th:if="${detailContracts.hasNext()}">Next</a>
+        </div>
+    </table>
+</div>
+</body>
+</html>

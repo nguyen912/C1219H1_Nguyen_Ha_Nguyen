@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f3c949-f8dd-4e65-856d-d806510e49a2" name="Default Changelist" comment="" />
+    <list default="true" id="92f3c949-f8dd-4e65-856d-d806510e49a2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/model/people/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/model/people/PersonInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/resources/templates/customer/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/resources/templates/customer/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Demo/Style2/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Exercise/wattpad/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Demo/Style2/style2.html" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Exercise/wattpad/style2_wattpad.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +45,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1c9VsTsPXF2rdwwZpFvgr3ADURO" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,13 +71,24 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="liveEdit" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\CSS\Exercise\wattpad" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\CSS\Demo" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\CSS" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="mall.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Module3_FrontEnd/Bootstrap/Practice/BootstrapLayout/mall.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.mall.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,16 +103,96 @@
       <workItem from="1589941004734" duration="62000" />
       <workItem from="1589941100183" duration="4601000" />
       <workItem from="1589967948587" duration="2189000" />
+      <workItem from="1590025411220" duration="8001000" />
+      <workItem from="1590111442194" duration="4424000" />
+      <workItem from="1590120009154" duration="1342000" />
+      <workItem from="1590145937651" duration="671000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="142" y="0" key="SettingsEditor" timestamp="1589947348093">
+    <state width="611" height="190" key="GridCell.Tab.0.bottom" timestamp="1590146613710">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1589947348093" />
+    <state width="611" height="190" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590146613710" />
+    <state width="611" height="190" key="GridCell.Tab.0.center" timestamp="1590146613710">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590146613710" />
+    <state width="611" height="190" key="GridCell.Tab.0.left" timestamp="1590146613709">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590146613709" />
+    <state width="611" height="190" key="GridCell.Tab.0.right" timestamp="1590146613710">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590146613710" />
+    <state width="611" height="190" key="GridCell.Tab.1.bottom" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.1.center" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.1.left" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.1.right" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.2.bottom" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.2.center" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.2.left" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.2.right" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.3.bottom" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.3.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.3.center" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.3.center/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.3.left" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.3.left/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state width="611" height="190" key="GridCell.Tab.3.right" timestamp="1590146613711">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="611" height="190" key="GridCell.Tab.3.right/0.0.1280.680@0.0.1280.680" timestamp="1590146613711" />
+    <state x="65" y="0" key="SettingsEditor" timestamp="1590146428572">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="65" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590146428572" />
   </component>
 </project>

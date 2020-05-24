@@ -2,20 +2,23 @@ package com.casestudy.project.model.people;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.persistence.PersistenceUnit;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.*;
 import java.util.Date;
 
 @MappedSuperclass
 public class PersonInfo {
-    @NotBlank
+    @NotBlank(message = "Not Empty!")
     private String name;
 
+    @NotNull(message = "Not Empty!")
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date birthday;
 
+    @Column(name = "id_card", unique = true)
     @Pattern(regexp = "(^\\d{9}$)|(^\\d{12}$)")
     private String idCard;
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Service</title>
+</head>
+<body>
+<h2><a href="/services">Service List</a> </h2>
+<h1>Update Service</h1>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+
+<form th:action="@{/update-service}" method="post" th:object="${service}">
+    <input type="hidden" th:field="*{id}">
+
+    <label>Name</label>
+    <input type="text" th:field="*{serviceName}"><br>
+
+    <label>Room Area</label>
+    <input type="text" th:field="*{roomArea}"><br>
+
+    <label>Floors</label>
+    <input type="text" th:field="*{floors}"><br>
+
+    <label>Max People</label>
+    <input type="text" th:field="*{maxPeople}"><br>
+
+    <label>Rent Cost</label>
+    <input type="text" th:field="*{rentCost}"><br>
+
+    <label>Status</label>
+    <input type="text" th:field="*{status}"><br>
+
+    <label>Service Type</label>
+    <select name="serviceType">
+        <option
+                th:each="st : ${serviceTypes}"
+                th:value="${st.id}"
+                th:text="${st.serviceTypeName}"
+                th:selected="(${st.id} == ${service.serviceType.id})"
+        ></option>
+    </select><br>
+
+    <label>Rent Type</label>
+    <select name="rentType">
+        <option
+                th:each="rt : ${rentTypes}"
+                th:value="${rt.id}"
+                th:text="${rt.rentTypeName}"
+                th:selected="(${rt.id} == ${service.rentType.id})"
+        ></option>
+    </select><br>
+
+    <input type="submit" value="Update">
+</form>
+</body>
+</html>

@@ -20,17 +20,28 @@
 <div class="bs-example">
     <h4><a href="/create-customer">Create Customer</a> </h4>
     <h1>Customer List</h1>
-    <form>
-        Name: <input type="text" name="name">
-        Address: <input type="text" name="address">
-<!--        Customer type: <input type="text" name="type">-->
-        <input type="submit" value="Search">
-<!--        <select name="type" th:object="${customerTypes}">-->
-<!--            <option th:each="ct : ${customerTypes}" th:value="${ct.id}" th:text="${ct.customerTypeName}"></option>-->
-<!--        </select>-->
+    <form method="get" action="/search-each">
+        Search By:
+        <select name="search">
+            <option value="name">Name</option>
+            <option value="birthday">Birthday</option>
+            <option value="phone">Phone Number</option>
+        </select>
+        <input name="input"/>
+        <input type="submit" value="Search"/>
     </form>
     <br>
-    <table class="table">
+    <form method="get" action="/search-all">
+        Search All:
+        <input name="name" placeholder="Name"/>
+        <input name="birthday" placeholder="Birthday"/>
+        <select name="customerType">
+            <option th:each="ct : ${customerTypes}" th:value="${ct.id}" th:text="${ct.customerTypeName}"></option>
+        </select>
+        <input type="submit" value="Search">
+    </form>
+    <br>
+    <table border="1" class="table">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -53,8 +64,8 @@
                 <td th:text="${c.email}"></td>
                 <td th:text="${c.address}"></td>
                 <td th:text="${c.customerType.getCustomerTypeName()}"></td>
-                <td th:href="@{/update-customer/__${c.id}__}">Edit</td>
-                <td th:href="@{/delete-customer/__${c.id}__}">Delete</td>
+                <td><a th:href="@{/update-customer/__${c.id}__}">Edit</a></td>
+                <td><a th:href="@{/delete-customer/__${c.id}__}">Delete</a></td>
             </tr>
         </th:block>
         <div>

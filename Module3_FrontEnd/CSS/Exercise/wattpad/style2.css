@@ -1,6 +1,6 @@
 body {
-    font-family: Arial;
-    background-color: #d14836;
+    font-family: "Lucida Console", Courier, monospace;
+    background-color: orange;
     line-height: 20px;
 }
 
@@ -37,12 +37,12 @@ body {
 }
 
 #main h1, #main h2 {
-    color: #d14836;
+    color: orange;
 }
 
 #sidebar {
     background-color: #F6DAD7;
-    color: #d14836;
+    color: orange;
     padding: 10px;
 }
 
@@ -60,8 +60,8 @@ body {
 
 .menuitem {
     width: 155px;
-    background-color: #d14836;
-    border: 1px solid #d14836;
+    background-color: orange;
+    border: 1px solid orange;
     border-radius: 40px;
     color: #ffffff;
     list-style-type: none;
@@ -71,19 +71,19 @@ body {
     cursor: pointer;
 }
 
-.menuitem:nth-child(2) {
-    background-color:white;
-    color: #d14836;
-    font-weight:bold;
-}
+/*.menuitem:nth-child(2) {*/
+/*    background-color:white;*/
+/*    color: #d14836;*/
+/*    font-weight:bold;*/
+/*}*/
 
 .menuitem:hover {
     background-color: #ffffff;
-    color: #d14836;
+    color: orange;
 }
 
 a {
-    color: #d14836;
+    color: orange;
     text-decoration: none;
 }
 

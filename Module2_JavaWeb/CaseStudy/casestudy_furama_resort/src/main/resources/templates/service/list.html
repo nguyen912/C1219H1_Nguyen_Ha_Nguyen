@@ -20,11 +20,11 @@
 <div class="bs-example">
     <h4><a href="/create-service">Create Service</a> </h4>
     <h1>Service List</h1>
-    <table class="table">
+    <table border="1" class="table">
         <tr>
             <th>Service ID</th>
             <th>Name</th>
-            <th>Room Area</th>
+            <th>Room Area(m)</th>
             <th>Floors</th>
             <th>Max People</th>
             <th>Rent Cost</th>
@@ -45,8 +45,8 @@
                 <td th:text="${s.status}"></td>
                 <td th:text="${s.serviceType.serviceTypeName}"></td>
                 <td th:text="${s.rentType.rentTypeName}"></td>
-                <td th:href="@{/update-service/__${s.id}__}">Edit</td>
-                <td th:href="@{/delete-service/__${s.id}__}">Delete</td>
+                <td><a th:href="@{/update-service/__${s.id}__}">Edit</a></td>
+                <td><a th:href="@{/delete-service/__${s.id}__}">Delete</a></td>
             </tr>
         </th:block>
         <div>
