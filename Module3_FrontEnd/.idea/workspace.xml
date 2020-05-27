@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92f3c949-f8dd-4e65-856d-d806510e49a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/controller/ContractController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/repository/ContractRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/service/contract/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/service/contract/ContractService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/service/contract/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module2_JavaWeb/CaseStudy/casestudy_furama_resort/src/main/java/com/casestudy/project/service/contract/ContractServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap/Practice/BootstrapLayout/images/header-object.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap/Practice/BootstrapLayout/mall.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap/Practice/BootstrapLayout/mall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.html" beforeDir="false" afterPath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -137,6 +130,7 @@
       <workItem from="1590554697621" duration="89000" />
       <workItem from="1590573720909" duration="4132000" />
       <workItem from="1590578901563" duration="6782000" />
+      <workItem from="1590586159376" duration="806000" />
     </task>
     <servers />
   </component>
