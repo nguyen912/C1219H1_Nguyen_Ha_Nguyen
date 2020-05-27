@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jqueryui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="jqueryui.js"></script>
+
+    <title>jQuery UI</title>
+</head>
+<body>
+    <div class="nav">
+        <ul class="nav nav-tabs mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">jQuery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">jQuery UI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">jQuery Mobile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sizzle</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">QUint</a>
+            </li>
+        </ul>
+        <ul class="nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Plugins</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contribute</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Support</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">JS Foundation</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+        <div>
+        <h2 id="logo" class="align-middle">
+            <a href="#"><img src="images/logo-jquery-ui.png" class="rounded float-left"></a>
+        </h2>
+        <img src="images/donate.png" class="rounded float-right">
+        </div>
+        <div id="main">
+            <div class="nav" >
+                <ul class="nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Demos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">API Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Themes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Development</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-warning border-radius">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="row">
+                <div class="sidebar-sticky pt-3 col-3">
+                    <h6 class="sidebar-heading" id="first-sidebar">Interactions</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Draggable
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Droppable
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Resizable
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Selectable
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Sortable
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading">Widgets</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Accordion
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Autocomplete
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Datepicker
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Dialog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Slider
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Progressbar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Spinner
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Tabs
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Tooltip
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading">Effects</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Add Class
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Remove Class
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Effect
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-9">
+
+                    <div class="jumbotron bg-dark text-white d-flex bd-highlight mb-2">
+                        <div class="col-7 mr-auto">
+                            <h5>
+                                jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.
+                            </h5>
+                        </div>
+                        <div class="card p-2 bd-highlight bg-secondary">
+                            <h4 class="text-primary"><b>Download jQuery UI 1.12.1</b></h4>
+                            <button><b>Custom Download</b></button>
+                            <h4>Quick Downloads:</h4>
+                            <div class="bd-highlight mb-2">
+                                <button class="mr-auto">Stable</button>
+                                <button class="ml-auto">Legacy</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div id="content" class="d-flex bd-highlight mb-2">
+                        <div class="col-9 mr-auto">
+                            <h4><b>What's New in jQuery UI 1.12?</b></h4>
+                            <p><b>New theme:</b> New theme: Our long-time default grayscale theme Smoothness has been succeeded by a modern theme with some colors, less gradients and some other improvements.</p>
+                            <p><b>New widgets:</b> jQuery UI 1.12 includes widgets: Controlgroup replaces buttonset and adds support for selectmenu and the new checkboxradio widget. We've added support for using jQuery UI with AMD and Bower. We also have over 50 bug fixes.</p>
+                            <p><b>New classes option:</b> All widgets got a new option, called classes. This gives a lot more control over visual styling and custom theming. For example, building a Bootstrap theme for jQuery UI is now a lot easier.</p>
+                            <p>Interested in the full details of what changed? Check out the 1.12 upgrade guide, 1.12.0 changelog, and 1.12.1 changelog.</p>
+                            <hr>
+                        </div>
+                        <div class="card p-2 bd-highlight bg-light">
+                            <h4 class="text-secondary"><b>Developer Links</b></h4>
+                            <ul class="nav bg-light" id="other-link">
+                                <li class="nav-item"><a href="#">Source Code (GitHub)</a></li>
+                                <li class="nav-item"><a href="#">jQuery UI Git (WIP Build)</a></li>
+                                <li class="nav-item"><a href="#">Theme (WIP Build)</a></li>
+                                <li class="nav-item"><a href="#">Bug Tracker</a></li>
+                                <li class="nav-item"><a href="#">Submit a New Bug Report</a></li>
+                                <li class="nav-item"><a href="#">Discussion Forum</a></li>
+                                <li class="nav-item"><a href="#">Using jQuery UI</a></li>
+                                <li class="nav-item"><a href="#">Developing jQuery UI</a></li>
+                                <li class="nav-item"><a href="#">Development Planning Wiki</a></li>
+                                <li class="nav-item"><a href="#">Roadmap</a></li>
+                                <li class="nav-item"><a href="#">Browser Support</a></li>
+                                <li class="nav-item"><a href="#">Previous Releases</a></li>
+                                <li class="nav-item"><a href="#">Changelogs</a></li>
+                                <li class="nav-item"><a href="#">Upgrade Guides</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <h4><b>Dive In!</b></h4>
+                        <p>jQuery UI is built for designers and developers alike. We've designed all of our plugins to get you up and running quickly while being flexible enough to evolve with your needs and solve a plethora of use cases. If you're new to jQuery UI, check out our getting started guide and other tutorials. Play around with the demos and read through the API documentation to get an idea of what's possible.</p>
+                        <p>Stay informed about what's going on with jQuery UI by subscribing to our blog and following us on Twitter.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

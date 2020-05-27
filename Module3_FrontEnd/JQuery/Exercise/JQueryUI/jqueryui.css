@@ -1,0 +1,45 @@
+body {
+    background-color: #b24926;
+}
+.nav {
+    background-color: #333333;
+    /*height: 34px;*/
+}
+li a {
+    color: white;
+}
+#main {
+    background-color: white;
+    border-radius: 10px;
+    border-color: white;
+    border-width: 20px;
+    border-style: solid;
+    clear: both;
+    padding: 0;
+}
+#main .nav {
+    background-color: #b24926;
+}
+.form-inline input{
+    background-color: #b24926;
+    border-radius: 20px 0 0 20px;
+}
+button .btn {
+    color: white;
+    border-radius: 0 20px 20px 0;
+}
+div .row {
+    background-color: white;
+}
+.sidebar-heading {
+    background-color: lightgray;
+    padding: 10px;
+    margin-top: 10px;
+}
+#other-link li a{
+    color: #b24926;
+    text-decoration: underline;
+}
+#first-sidebar {
+    margin-top: 0;
+}

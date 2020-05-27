@@ -1,7 +1,9 @@
 package com.casestudy.project.controller;
 
+import com.casestudy.project.model.contract.Contract;
 import com.casestudy.project.model.people.customer.Customer;
 import com.casestudy.project.model.people.customer.CustomerType;
+import com.casestudy.project.service.contract.ContractService;
 import com.casestudy.project.service.customer.CustomerService;
 import com.casestudy.project.service.customer_type.CustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class CustomerController {
 
     @Autowired
     private CustomerTypeService customerTypeService;
+
+    @Autowired
+    private ContractService contractService;
 
     // auto list customer type
     @ModelAttribute("customerTypes")
@@ -175,4 +180,5 @@ public class CustomerController {
         modelAndView.addObject("customerType", customerType);
         return modelAndView;
     }
+
 }

@@ -9,6 +9,7 @@ import com.casestudy.project.service.customer.CustomerService;
 import com.casestudy.project.service.employee.EmployeeService;
 import com.casestudy.project.service.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import sun.util.calendar.BaseCalendar;
+
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 public class ContractController {
@@ -77,4 +84,22 @@ public class ContractController {
         return modelAndView;
     }
 
+    //find customers don't have contract end date
+    public ModelAndView listPresentCustomers(@PageableDefault(size = 3) Pageable pageable) {
+        ModelAndView modelAndView = new ModelAndView("customer/present");
+        Page<Customer> customers = customerService.findAllCustomer(pageable);
+        Iterable<Contract> contracts = contractService.findAll(pageable);
+
+        List<Contract> presentContracts = null;
+        for (Contract contract : contracts) {
+            if (contract.getContractEndDate() == null) {
+                presentContracts.add(contract);
+            }
+        }
+
+        for (Contract pc : presentContracts) {
+            pc.getCustomer().getName();
+        }
+            return modelAndView;
+    }
 }
