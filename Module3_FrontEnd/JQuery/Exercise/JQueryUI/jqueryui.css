@@ -1,6 +1,9 @@
 body {
     background-color: #b24926;
 }
+a:hover {
+    color: yellow;
+}
 .nav {
     background-color: #333333;
     /*height: 34px;*/

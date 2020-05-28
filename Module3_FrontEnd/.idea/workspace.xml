@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="92f3c949-f8dd-4e65-856d-d806510e49a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.html" beforeDir="false" afterPath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.css" beforeDir="false" afterPath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,7 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -66,15 +67,17 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Typescript\variable" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Bootstrap\Demo" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Bootstrap\Exercise\SimpleGallery\images" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Bootstrap\Exercise\SimpleGallery" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\CSS\Exercise\wattpad" />
-      <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\CSS\Demo" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -131,11 +134,24 @@
       <workItem from="1590573720909" duration="4132000" />
       <workItem from="1590578901563" duration="6782000" />
       <workItem from="1590586159376" duration="806000" />
+      <workItem from="1590625731773" duration="64000" />
+      <workItem from="1590628898461" duration="598000" />
+      <workItem from="1590630498885" duration="947000" />
+      <workItem from="1590649083669" duration="2111000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Typescript/conditions/condition.js" />
+        <option value="$PROJECT_DIR$/Typescript/array/array.js" />
+        <option value="$PROJECT_DIR$/Typescript/function/function.js" />
+        <option value="$PROJECT_DIR$/Typescript/object/object.js" />
+        <option value="$PROJECT_DIR$/Typescript/promise/promise.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -150,6 +166,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="338" y="161" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590658400223">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="338" y="161" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1590658400223" />
     <state width="613" height="195" key="GridCell.Tab.0.bottom" timestamp="1590381492661">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
