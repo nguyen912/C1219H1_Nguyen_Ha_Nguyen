@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92f3c949-f8dd-4e65-856d-d806510e49a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.css" beforeDir="false" afterPath="$PROJECT_DIR$/JQuery/Exercise/JQueryUI/jqueryui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Typescript/array/array.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Typescript/promise/promise.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +36,7 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="SCSS File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -59,8 +62,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -69,18 +73,18 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Angular\Practice\pet\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Angular\Exercise" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Typescript\variable" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Bootstrap\Demo" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Bootstrap\Exercise\SimpleGallery\images" />
       <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\Bootstrap\Exercise\SimpleGallery" />
-      <recent name="D:\C1219H1_Nguyen_Ha_Nguyen\Module3_FrontEnd\CSS\Exercise\wattpad" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="Node.js.promise.js">
     <configuration name="gallery.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Module3_FrontEnd/Bootstrap/Exercise/SimpleGallery/gallery.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -90,8 +94,12 @@
     <configuration name="mall.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Module3_FrontEnd/Bootstrap/Practice/BootstrapLayout/mall.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="promise.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Typescript/promise/promise.js" working-dir="$PROJECT_DIR$/Typescript/promise">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.promise.js" />
         <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JavaScript Debug.gallery.html" />
         <item itemvalue="JavaScript Debug.mall.html" />
@@ -138,6 +146,25 @@
       <workItem from="1590628898461" duration="598000" />
       <workItem from="1590630498885" duration="947000" />
       <workItem from="1590649083669" duration="2111000" />
+      <workItem from="1590660291059" duration="118000" />
+      <workItem from="1590660433959" duration="181000" />
+      <workItem from="1590660699105" duration="13000" />
+      <workItem from="1590663277408" duration="12000" />
+      <workItem from="1590673814142" duration="338000" />
+      <workItem from="1590674202823" duration="296000" />
+      <workItem from="1590714269610" duration="41000" />
+      <workItem from="1590715028072" duration="5975000" />
+      <workItem from="1590721961288" duration="1317000" />
+      <workItem from="1590723510863" duration="582000" />
+      <workItem from="1590724375261" duration="9000" />
+      <workItem from="1590724393864" duration="414000" />
+      <workItem from="1590726410349" duration="616000" />
+      <workItem from="1590977799952" duration="556000" />
+      <workItem from="1590978997814" duration="294000" />
+      <workItem from="1590979963120" duration="106000" />
+      <workItem from="1591028111812" duration="66000" />
+      <workItem from="1591062859247" duration="115000" />
+      <workItem from="1591062983413" duration="173000" />
     </task>
     <servers />
   </component>
@@ -150,6 +177,12 @@
         <option value="$PROJECT_DIR$/Typescript/function/function.js" />
         <option value="$PROJECT_DIR$/Typescript/object/object.js" />
         <option value="$PROJECT_DIR$/Typescript/promise/promise.js" />
+        <option value="$PROJECT_DIR$/Typescript/typescript-demo-master/src/exercise/index.js" />
+        <option value="$PROJECT_DIR$/Typescript/demo_promise/promise.js" />
+        <option value="$PROJECT_DIR$/angular-starter-example-master/src/polyfills.js" />
+        <option value="$PROJECT_DIR$/angular-starter-example-master/src/main.js" />
+        <option value="$PROJECT_DIR$/angular-starter-example-master/src/app/app.component.js" />
+        <option value="$PROJECT_DIR$/angular-starter-example-master/src/app/app.module.js" />
       </list>
     </option>
   </component>
@@ -170,22 +203,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="338" y="161" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1590658400223" />
-    <state width="613" height="195" key="GridCell.Tab.0.bottom" timestamp="1590381492661">
+    <state x="249" y="67" key="EditFileWatcherDialog" timestamp="1590674011502">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="613" height="195" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1590381492661" />
-    <state width="613" height="195" key="GridCell.Tab.0.center" timestamp="1590381492660">
+    <state x="249" y="67" key="EditFileWatcherDialog/0.0.1280.680@0.0.1280.680" timestamp="1590674011502" />
+    <state x="368" y="20" key="FileChooserDialogImpl" timestamp="1591028155666">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="613" height="195" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1590381492660" />
-    <state width="613" height="195" key="GridCell.Tab.0.left" timestamp="1590381492660">
+    <state x="368" y="20" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1591028155666" />
+    <state width="1253" height="148" key="GridCell.Tab.0.bottom" timestamp="1591063158465">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="613" height="195" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1590381492660" />
-    <state width="613" height="195" key="GridCell.Tab.0.right" timestamp="1590381492660">
+    <state width="1253" height="148" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591063158465" />
+    <state width="1253" height="148" key="GridCell.Tab.0.center" timestamp="1591063158465">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="613" height="195" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1590381492660" />
+    <state width="1253" height="148" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591063158465" />
+    <state width="1253" height="148" key="GridCell.Tab.0.left" timestamp="1591063158465">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1253" height="148" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591063158465" />
+    <state width="1253" height="148" key="GridCell.Tab.0.right" timestamp="1591063158465">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1253" height="148" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591063158465" />
     <state width="613" height="195" key="GridCell.Tab.1.bottom" timestamp="1590381492661">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -234,9 +275,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="613" height="195" key="GridCell.Tab.3.right/0.0.1280.680@0.0.1280.680" timestamp="1590381492661" />
-    <state x="65" y="0" key="SettingsEditor" timestamp="1590457395106">
+    <state x="65" y="0" key="SettingsEditor" timestamp="1590660613502">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="65" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590457395106" />
+    <state x="65" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1590660613502" />
   </component>
 </project>
