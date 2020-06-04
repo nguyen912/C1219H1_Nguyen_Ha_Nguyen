@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
-export class AppComponent {
-  output: number;
+export class CalculatorComponent implements OnInit {
+
   first: number;
   second: number;
+  output:number;
   operator = '+';
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
   onFirstChange(value) {
     this.first = Number(value);
@@ -19,14 +25,14 @@ export class AppComponent {
     this.second = Number(value);
   }
 
-  onSelectChange(value) {
+  onOperatorChange(value) {
     this.operator = value;
   }
 
-  calculate() {
+  calculator() {
     switch (this.operator) {
       case '+':
-        this.output = this.first + this.second;
+        this.output = Number(this.first) + Number(this.second);
         break;
       case '-':
         this.output = this.first - this.second;
@@ -38,8 +44,5 @@ export class AppComponent {
         this.output = this.first / this.second;
         break;
     }
-  }
-
-  constructor() {
   }
 }
