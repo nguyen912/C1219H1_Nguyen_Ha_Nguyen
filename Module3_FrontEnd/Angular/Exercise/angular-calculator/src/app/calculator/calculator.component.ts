@@ -17,17 +17,17 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFirstChange(value) {
-    this.first = Number(value);
-  }
-
-  onSecondChange(value) {
-    this.second = Number(value);
-  }
-
-  onOperatorChange(value) {
-    this.operator = value;
-  }
+  // onFirstChange(value) {
+  //   this.first = Number(value);
+  // }
+  //
+  // onSecondChange(value) {
+  //   this.second = Number(value);
+  // }
+  //
+  // onOperatorChange(value) {
+  //   this.operator = value;
+  // }
 
   calculator() {
     switch (this.operator) {
